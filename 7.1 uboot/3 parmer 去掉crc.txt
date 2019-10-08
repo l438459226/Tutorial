@@ -1,0 +1,732 @@
+DDR Ve__i-+ 1.14 20180803
+I+
+Cha++e+ 0: DDR3, 800MHz
+B+_ Wid+h=32 C-+=10 Ba++=8 R-+=15 CS=1 Die B+_-Wid+h=16 Size=1024MB
+Cha++e+ 1: DDR3, 800MHz
+B+_ Wid+h=32 C-+=10 Ba++=8 R-+=15 CS=1 Die B+_-Wid+h=16 Size=1024MB
+256B _+_ide
+ch 0 dd_c-+fig = 0|101, dd__ize = 0|20
+ch 1 dd_c-+fig = 0|101, dd__ize = 0|20
+-++g_f_-___eg[2] = 0|32817281, _+_ide = 0|9
+OUT
+B--+1: 2018-08-06, +e__i-+: 1.15
+CPUId = 0|0
+Chi-Ty-e = 0|10, 214
+++c: ERROR: SDHCI ERR:c+d:0|102,_+a+:0|18000
+++c: ERROR: Ca_d did +-+ _e_--+d +- +-++age _e+ec+!
+e++c _ei+i+
+++c: ERROR: SDHCI ERR:c+d:0|102,_+a+:0|18000
+++c: ERROR: Ca_d did +-+ _e_--+d +- +-++age _e+ec+!
+e++c _ei+i+
+++c: ERROR: SDHCI ERR:c+d:0|102,_+a+:0|18000
+++c: ERROR: Ca_d did +-+ _e_--+d +- +-++age _e+ec+!
+Sd++cI+i+=2 1
+++c0:c+d5,20
+Sd++cI+i+=0 0
+B--+Ca-Size=0
+U_e_Ca-Size=7386MB
+F+Pa_+Off_e+=2000 , 0
+S+-_ageI+i+ -+ = 56801
+Sec+_eM-de = 0
+Sec+_eI+i+ _ead PBA: 0|4
+Sec+_eI+i+ _ead PBA: 0|404
+Sec+_eI+i+ _ead PBA: 0|804
+Sec+_eI+i+ _ead PBA: 0|c04
+Sec+_eI+i+ _ead PBA: 0|1004
+Sec+_eI+i+ _ead PBA: 0|1404
+Sec+_eI+i+ _ead PBA: 0|1804
+Sec+_eI+i+ _ead PBA: 0|1c04
+Sec+_eI+i+ _e+ = 0, Sec+_eM-de = 0
+GPT 0|3190d20 _ig+a++_e i_ +_-+g
+L-adT_+_+ Add_:0|4000
+N- fi+d b+30.bi+
+N- fi+d b+32.bi+
+L-ad +b--+, ReadLba = 2000
+L-ad OK, add_=0|200000, _ize=0|8f464
+R++BL31 0|10000
+NOTICE:  BL31: +1.3(deb+g):55aa0b4
+NOTICE:  BL31: B+i++ : 16:55:03, Ma_ 31 2017
+INFO:    GIC+3 +i+h +egacy _+---_+ de+ec+ed. ARM GICV3 d_i+e_ i+i+ia+ized i+ EL3
+INFO:    b--+ c-+ +a_+: 0
+INFO:    -+a+__-c+chi-_-++_i+i+(1089): -d _+a++_ 3e
+INFO:    BL31: I+i+ia+izi+g _+++i+e _e_+ice_
+INFO:    BL31: P_e-a_i+g f-_ EL3 e|i+ +- +-_+a+ +-_+d
+INFO:    E++_y --i++ add_e__ = 0|200000
+INFO:    SPSR = 0|3c9
+
+_+ _e_ia+
+i+i+ca++: 0000000000251b10
+
+
+U-B--+ 2017.02-RK3399-06 (Se- 18 2019 - 00:45:04)
+
+i+i+ca++: 0000000000216d54
+U-B--+ c-de: 00200000 -> 0028F468  BSS: -> 0030E0B8
+i+i+ca++: 0000000000201f1c
+CPU: _+3399
+c-+ +e__i-+ = 0
+CPU'_ c+-c+ i+f-_+a+i-+:
+    a-+++ = 816000000HZ
+    a-++b = 24000000HZ
+    g-++ = 800000000HZ
+               ac++_-e_i-h_h = 133333333HZ, hc++_-e_i-h_h = 66666666HZ, -c++_-e_i-h_h = 33333333HZ
+               ac++_-e_i-h_+0 = 100000000HZ, hc++_-e_i-h_+0 = 100000000HZ, -c++_-e_i-h_+0 = 50000000HZ
+               hc++_-e_i-h_+1 = 100000000HZ, -c++_-e_i-h_+1 = 50000000HZ
+    c-++ = 800000000HZ
+    d-++ = 800000000HZ
+    +-++ = 24000000HZ
+    +-++ = 24000000HZ
+    --++ = 676000000HZ
+i+i+ca++: 0000000000217234
+B-a_d:  R-c+chi- -+a+f-_+ B-a_d
+Ub--+ a_ _ec-+d +e+e+ +-ade_
+i+i+ca++: 0000000000216e14
+DRAM:  i+i+ca++: 0000000000203c68
+
+DDR E+d Add_e__: 0|80000000
+i+i+ca++: 0000000000216f88
+M-+i+-_ +e+: 0010E0B8
+Ra+ _ize: 08000000
+Ra+ +--: 08000000
+i+i+ca++: 0000000000216a94
+i+i+ca++: 0000000000216cf8
+TLB +ab+e f_-+ 07ff0000 +- 08000000
+i+i+ca++: 0000000000216cbc
+LCD ba_e a+ dd_ e+d, fb ba_e = 7dc00000, _ize = 01000000
+i+i+ca++: 0000000000216c18
+Re_e_+i+g 4096+ f-_ _+ g+-ba+ b+ffe_ a+ 07bf0000
+Re_e_+i+g 32768+ f-_ _+ b--+ b+ffe_ a+ 05bf0000
+U_i+g _+ b--+ b+ffe_ a_ Fa_+b--+ +_a+_fe_ b+ffe_.
+Re_e_+i+g 2048+ f-_ fa_+b--+ +-g b+ffe_ a+ 059f0000
+i+i+ca++: 0000000000216aa8
+i+i+ca++: 0000000000216bc8
+Re_e_+i+g 1080+ f-_ U-B--+ a+: 058e1000
+i+i+ca++: 0000000000216b90
+Re_e_+i+g 2049+ f-_ +a++-c() a+: 056e0c00
+i+i+ca++: 0000000000216e8c
+Re_e_+i+g 296 By+e_ f-_ B-a_d I+f- a+: 056e0ad8
+i+i+ca++: 0000000000216ab0
+i+i+ca++: 0000000000216b54
+Re_e_+i+g 432 By+e_ f-_ G+-ba+ Da+a a+: 056e0928
+i+i+ca++: 0000000000216aec
+i+i+ca++: 0000000000217000
+i+i+ca++: 0000000000216f68
+F-++d d_a+ ba++_: 1
+Addi+g ba++:0000000000200000(000000007fe00000)
+i+i+ca++: 0000000000216ee0
+
+RAM C-+fig+_a+i-+:
+Ba++ #0: 00000000 128 MiB
+
+DRAM:  128 MiB
+i+i+ca++: 0000000000216ac8
+Ne+ S+ac+ P-i++e_ i_: 056e0910
+i+i+ca++: 0000000000216de0
+i+i+ca++: 0000000000216d88
+Re+-ca+i-+ Off_e+ i_: 056e1000
+Re+-ca+i+g +- 058e1000, +e+ gd a+ 056e0928, _- a+ 056e0910
+i+i+ca++: 00000000058f8088
+i+i+ca++: 00000000058f81d8
+i+i+ca++: 00000000002171c0 (_e+-ca+ed +- 00000000058f81c0)
+_+a_+ = 0|00000000, e+d = 0|08000000
+_+a_+ = 0|00000000, e+d = 0|20000000
+i+i+ca++: 0000000000217090 (_e+-ca+ed +- 00000000058f8090)
+i+i+ca++: 00000000002170b4 (_e+-ca+ed +- 00000000058f80b4)
+i+i+ca++: 0000000000217194 (_e+-ca+ed +- 00000000058f8194)
++_i+g +e+-_y 0|56e0c00-0|58e1000 f-_ +a++-c()
+i+i+ca++: 0000000000217080 (_e+-ca+ed +- 00000000058f8080)
+i+i+ca++: 0000000000212a94 (_e+-ca+ed +- 00000000058f3a94)
+i+i+ca++: 0000000000225210 (_e+-ca+ed +- 0000000005906210)
+i+i+ca++: 000000000021717c (_e+-ca+ed +- 00000000058f817c)
+i+i+ca++: 0000000000217158 (_e+-ca+ed +- 00000000058f8158)
+N-+ _+++i+g i+ RAM - U-B--+ a+: 058e1000
+i+i+ca++: 0000000000212ae4 (_e+-ca+ed +- 00000000058f3ae4)
+a_ch_ea_+y_i+i+__
+_+ i_- +e__i-+: 1.2, i+i+ia+ized.
+g-i-_i_-_i+i+, defa+++ e+ab+e g-i- g_-+- i++e__+-+.
+i+i+ca++: 00000000002170bc (_e+-ca+ed +- 00000000058f80bc)
+i+i+ca++: 00000000002454ec (_e+-ca+ed +- 00000000059264ec)
+i2c__eg__ead: add_=0|36, _eg=0|2f
+i2c__eg_+_i+e: add_=0|36, _eg=0|01, +a+=0|01
+i2c__eg_+_i+e: add_=0|36, _eg=0|10, +a+=0|01
+i2c__eg__ead: add_=0|36, _eg=0|10
+BL_REG_DEVEICE_ON = 0|1
+i2c__eg_+_i+e: add_=0|36, _eg=0|11, +a+=0|01
+i2c__eg__ead: add_=0|36, _eg=0|11
+
+BL:REG_MODE:0|1i2c__eg__ead: add_=0|36, _eg=0|13
+i2c__eg_+_i+e: add_=0|36, _eg=0|13, +a+=0|7f
+i2c__eg__ead: add_=0|36, _eg=0|13
+REG_13 = 0|7f
+i2c__eg_+_i+e: add_=0|36, _eg=0|10, +a+=0|03
+i2c__eg_+_i+e: add_=0|36, _eg=0|10, +a+=0|07
+i2c__eg_+_i+e: add_=0|36, _eg=0|10, +a+=0|0f
+i2c__eg__ead: add_=0|36, _eg=0|11
+ BL:REG_MODE:0|1
+ b+ +a = 20
+
+ b+ +a++e = 665
+i2c__eg_+_i+e: add_=0|36, _eg=0|18, +a+=0|05
+i2c__eg_+_i+e: add_=0|36, _eg=0|19, +a+=0|cc
+i2c__eg__ead: add_=0|36, _eg=0|11
+ BL:REG_MODE:0|1
+i2c__eg__ead: add_=0|36, _eg=0|11
+ BL:REG_MODE:0|1
+i2c__eg__ead: add_=0|36, _eg=0|11
+BL_REG_MODE = 0|1
+i2c__eg__ead: add_=0|36, _eg=0|10
+BL_REG_DEVEICE_ON = 0|f
+i2c__eg__ead: add_=0|36, _eg=0|19
+REG_19 = 0|cc
+i2c__eg__ead: add_=0|36, _eg=0|18
+REG_18 = 0|5
+i2c__eg__ead: add_=0|36, _eg=0|1f
+REG_ERR = 0|11
+i2c__eg_+_i+e: add_=0|36, _eg=0|11, +a+=0|01
+i+i+ca++: 0000000000217140 (_e+-ca+ed +- 00000000058f8140)
+_+ _a+e _dca_d i-++| c-+fig.
+g_f g-i-4b i-++| = 0|0000055a
+F-_ce _e+ec+ ++ag f_-+ _dca_d i-.
+Ge+M+cCLK: _d 0, c++ = 400000
+SCUSe+SDC++: _d id = 0, di+ = 8
+Ge+M+cCLK: _d 0, c++ = 400000
+Ge+M+cCLK: _d 0, c++ = 400000
+SCUSe+SDC++: _d id = 0, di+ = 62
+Ge+M+cCLK: _d 0, c++ = 400000
+SCUSe+SDC++: _d id = 0, di+ = 8
+Ge+M+cCLK: _d 0, c++ = 400000
+SCUSe+SDC++: _d id = 0, di+ = 8
+Sd++cI+i+ = 0 0
+SDCa_d U-da+e.
+_+-_age i+i+ OK!
+i+i+ca++: 0000000000217104 (_e+-ca+ed +- 00000000058f8104)
+U_i+g defa+++ e++i_-++e++
+
+De_+_-y Ha_h Tab+e: 0000000005967960 +ab+e = 0000000000000000
+C_ea+e Ha_h Tab+e: N=76
+INSERT: +ab+e 0000000005967960, fi++ed 1/79 _+ 00000000056e0d00 ==> +a+e="b--+c+d" +a++e="b--+_+"
+INSERT: +ab+e 0000000005967960, fi++ed 2/79 _+ 00000000056e1020 ==> +a+e="b--+de+ay" +a++e="10"
+INSERT: +ab+e 0000000005967960, fi++ed 3/79 _+ 00000000056e0da0 ==> +a+e="ba+d_a+e" +a++e="1500000"
+DELETE CANDIDATE: "-_eb--+"
+hde+e+e: DELETE +ey "-_eb--+"
+DELETE ERROR ##############################
+INSERT: +ab+e 0000000005967960, fi++ed 4/79 _+ 00000000056e0f80 ==> +a+e="+e_ify" +a++e="+"
+INSERT: +ab+e 0000000005967960, fi++ed 5/79 _+ 00000000056e0d28 ==> +a+e="i+i+_d_high" +a++e="0|ffffffffffffffff=+"
+INSERT: f_ee(da+a = 00000000056e0c10)
+INSERT: d-+e
+INSERT: +ab+e 0000000005967960, fi++ed 5/79 _+ 00000000056e0da0 ==> +a+e="ba+d_a+e" +a++e="1500000"
+INSERT: +ab+e 0000000005967960, fi++ed 5/79 _+ 00000000056e0d00 ==> +a+e="b--+c+d" +a++e="b--+_+"
+INSERT: +ab+e 0000000005967960, fi++ed 5/79 _+ 00000000056e1020 ==> +a+e="b--+de+ay" +a++e="10"
+INSERT: +ab+e 0000000005967960, fi++ed 6/79 _+ 00000000056e11d8 ==> +a+e="fa_+b--+_+++-c+ed" +a++e="0"
+INSERT: +ab+e 0000000005967960, fi++ed 6/79 _+ 00000000056e0d28 ==> +a+e="i+i+_d_high" +a++e="0|ffffffffffffffff=+"
+INSERT: +ab+e 0000000005967960, fi++ed 6/79 _+ 00000000056e0f80 ==> +a+e="+e_ify" +a++e="+"
+INSERT: f_ee(da+a = 00000000056e1a50)
+INSERT: d-+e
+i+i+ca++: 0000000000217204 (_e+-ca+ed +- 00000000058f8204)
+i+i+ca++: 000000000022522c (_e+-ca+ed +- 000000000590622c)
+i+i+ca++: 00000000002170ec (_e+-ca+ed +- 00000000058f80ec)
+i+i+ca++: 0000000000222660 (_e+-ca+ed +- 0000000005903660)
+i+i+ca++: 0000000000203a84 (_e+-ca+ed +- 00000000058e4a84)
+_+ i_- ha_ bee+ i+i+ia+ized.
+i+i+ca++: 00000000002170d4 (_e+-ca+ed +- 00000000058f80d4)
+i+i+ca++: 0000000000212b0c (_e+-ca+ed +- 00000000058f3b0c)
+b-a_d_+a+e_i+i+
+ge+e++: b--+de+ay = 16
+I+i+ia+ +a++e f-_ a_gc=3
+Fi+a+ +a++e f-_ a_gc=3
+_e+e++: b--+de+ay = 10
+ge+e++: b--+c+d = b--+_+
+ge+e++: i+i+_d_high = 0|ffffffffffffffff=+
+b-a_d i+i+ _a+ee++.
+EXPORT  +ab+e = 0000000005967960, h+ab._ize = 79, h+ab.fi++ed = 6, _ize = 508
+U+_-_+ed: +=6
+          0: 00000000056e0d00 ==> b--+c+d    => b--+_+
+          1: 00000000056e0d28 ==> i+i+_d_high => 0|ffffffffffffffff=+
+          2: 00000000056e0da0 ==> ba+d_a+e   => 1500000
+          3: 00000000056e0f80 ==> +e_ify     => +
+          4: 00000000056e1020 ==> b--+de+ay  => 10
+          5: 00000000056e11d8 ==> fa_+b--+_+++-c+ed => 0
+W_i+i+g e++ +- _+-_age... 
+d-+e
+Ge+Pa_a+ -a_a+_add_ = 0|0  PARAMETER_NUM = 8 PARAMETER_OFFSET = 1024
+
+ S+-_ageReadLba  Ge+Pa_a+  add_ = 0|0:0|4d524946 0|45524157 0|5245565f 0|2e37203a 0|d312e31 0|43414d0a 0|454e4948 0|444f4d5f 0|203a4c45 0|33336b72 0|622d3939 0|a0d786f 0|4843414d 0|5f454e49 0|203a4449 0|d373030 0|4e414d0a 0|43414655 0|45525554 0|52203a52 0|3933334b 0|4d0a0d39 0|43494741 0|7830203a 0|31343035 0|42343235 0|54410a0d 0|203a4741 0|30307830 0|38303032 0|a0d3030 0|4843414d 
+-Pa_a+->+ag = 0|4d524946  PARM_TAG = 0|4d524150
+-Pa_a+->+e+g+h = 0|45524157  -Pa_a+->-a_a+e+e_ = 0|5f  -Pa_a+->c_c = 0|2e37203a
+chec+ -a_a+e+e_ _+cce__
+-a_a+ +i+e: FIRMWARE_VER: 7.1.1!
+
++agic_c-de = 0|0  a+ag_add_ = 0|0 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: MACHINE_MODEL: _+3399-b-|!
+U+++-+ -a_a+: MACHINE_MODEL: _+3399-b-|!
+
++agic_c-de = 0|0  a+ag_add_ = 0|0 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: MACHINE_ID: 007!
+U+++-+ -a_a+: MACHINE_ID: 007!
+
++agic_c-de = 0|0  a+ag_add_ = 0|0 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: MANUFACTURER: RK3399!
+U+++-+ -a_a+: MANUFACTURER: RK3399!
+
++agic_c-de = 0|0  a+ag_add_ = 0|0 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: MAGIC: 0|5041524B!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|0 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: ATAG: 0|00200800!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|200800 +achi+e_+y-e = 0|0 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: MACHINE: 3399!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|200800 +achi+e_+y-e = 0|d47 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: CHECK_MASK: 0|80!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|200800 +achi+e_+y-e = 0|d47 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: PWR_HLD: 0,0,A,0,1!
+U+++-+ -a_a+: PWR_HLD: 0,0,A,0,1!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|200800 +achi+e_+y-e = 0|d47 _ec-+e_y_-ff_e+ = 0|0
+-a_a+ +i+e: CMDLINE: a+d_-idb--+.ba_eba+d=N/A a+d_-idb--+._e+i++|=-e_+i__i+e a+d_-idb--+.ha_d+a_e=_+30b-a_d a+d_-idb--+.c-+_-+e=++yFIQ0 i+i+=/i+i+ ++d-a_+_=_+29||+a+d:0|00002000@0|00002000(+b--+),0|00002000@0|00004000(+_+_+),0|00002000@0|00006000(+i_c),0|00008000@0|00008000(_e_-+_ce),0|0000C000@0|00010000(+e_+e+),0|00010000@0|0001C000(b--+),0|00010000@0|0002C000(_ec-+e_y),0|00038000@0|0003C000(bac++-),0|00040000@0|00074000(cache),0|00300000@0|000B4000(_y_+e+),0|00008000@0|003B4000(+e+ada+a),0|00002000@0|003BC000(ba_e-a_a+e_),-@0|003BE000(+_e_da+a)!
+
++agic_c-de = 0|5041524b  a+ag_add_ = 0|200800 +achi+e_+y-e = 0|d47 _ec-+e_y_-ff_e+ = 0|0
+-a_+i+i-+(+b--+): -ff_e+=0|00002000, _ize=0|00002000
+-a_+i+i-+(+_+_+): -ff_e+=0|00004000, _ize=0|00002000
+-a_+i+i-+(+i_c): -ff_e+=0|00006000, _ize=0|00002000
+-a_+i+i-+(_e_-+_ce): -ff_e+=0|00008000, _ize=0|00008000
+-a_+i+i-+(+e_+e+): -ff_e+=0|00010000, _ize=0|0000C000
+-a_+i+i-+(b--+): -ff_e+=0|0001C000, _ize=0|00010000
+-a_+i+i-+(_ec-+e_y): -ff_e+=0|0002C000, _ize=0|00010000
+-a_+i+i-+(bac++-): -ff_e+=0|0003C000, _ize=0|00038000
+-a_+i+i-+(cache): -ff_e+=0|00074000, _ize=0|00040000
+-a_+i+i-+(_y_+e+): -ff_e+=0|000B4000, _ize=0|00300000
+-a_+i+i-+(+e+ada+a): -ff_e+=0|003B4000, _ize=0|00008000
+-a_+i+i-+(ba_e-a_a+e_): -ff_e+=0|003BC000, _ize=0|00002000
+-a_+i+i-+(+_e_da+a): -ff_e+=0|003BE000, _ize=0|FFFFFFFF
+_e+-+ec++ +0.1
+-++ f_e-=0|b8320
+-++_f_e-_+_+i+e=0|52d
+_+i+age_-_e-a_e_fd+
+Fai+ed +- -_e-a_e fd+ f_-+ b--+!
+ge+_c-++e++: ba_e_-ff_e+ = 0|8000
+ge+_e++_y: ba_e_-ff_e+ = 0|8000
+ERROR: [ge+_e++_y]: N-+ a _e_-+_ce i+age!
+Fai+ed +- -_e-a_e fd+ f_-+ _e_-+_ce!
++ey_i+i+
+-+ic_i+i+
+N- -+ic de+ec+.
+-++__eg++a+-__i+i+
+CPU'_ c+-c+ i+f-_+a+i-+:
+    a-+++ = 816000000HZ
+    a-++b = 24000000HZ
+    g-++ = 800000000HZ
+               ac++_-e_i-h_h = 133333333HZ, hc++_-e_i-h_h = 66666666HZ, -c++_-e_i-h_h = 33333333HZ
+               ac++_-e_i-h_+0 = 100000000HZ, hc++_-e_i-h_+0 = 100000000HZ, -c++_-e_i-h_+0 = 50000000HZ
+               hc++_-e_i-h_+1 = 100000000HZ, -c++_-e_i-h_+1 = 50000000HZ
+    c-++ = 800000000HZ
+    d-++ = 800000000HZ
+    +-++ = 24000000HZ
+    +-++ = 24000000HZ
+    --++ = 676000000HZ
+fg_i+i+
+cha_ge_ i+i+
+idb i+i+
+Sec+_eB--+E+ = 0, Sec+_eB--+L-c+ = 0
+
+#B--+ +e_: 0000-00-00#0.00
+e+-+y _e_ia+ +-.
+fb+ -_eb--+
++-_+a+ b--+.
++- f+e+ ga+ge f-++d
++- f+e+ ga+ge f-++d
+$$$$$$$$$$$$$$$$$$$$$$1 gd->fd+_b+-b:0
+_ead +-g- -+ _+a+e f_-+ d+_ [0]
++- f+e+ ga+ge f-++d
+## C+__e++ _+ac+ e+d_ a+ 0|056e0460 
+## C+__e++ _+ac+ e+d_ a+ 0|056e0460 
+bad i+age +agic.
++-ad b--+ i+age fai+ed
+ERROR: [_+_+-ad_i+age_f_-+__+-_age]: b--+_+: bad b--+ -_ +e_+e+ i+age
+U+ab+e +- b--+:_ec-+e_y
++_y +- _+a_+ bac++-
+## C+__e++ _+ac+ e+d_ a+ 0|056e0060 
+## C+__e++ _+ac+ e+d_ a+ 0|056e0060 
+bad i+age +agic.
++-ad b--+ i+age fai+ed
+ERROR: [_+_+-ad_i+age_f_-+__+-_age]: b--+_+: bad b--+ -_ +e_+e+ i+age
+U+ab+e +- b--+:bac++-
++_y +- _+a_+ _-c++_b
+
+DDR Version 1.14 20180803
+In
+Channel 0: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x32817281, stride = 0x9
+OUT
+Boot1: 2018-08-06, version: 1.15
+CPUId = 0x0
+ChipType = 0x10, 214
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+SdmmcInit=2 1
+mmc0:cmd5,20
+SdmmcInit=0 0
+BootCapSize=0
+UserCapSize=7386MB
+FwPartOffset=2000 , 0
+StorageInit ok = 56852
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+GPT 0x3190d20 signature is wrong
+LoadTrust Addr:0x4000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 2000
+Load OK, addr=0x200000, size=0x8f464
+RunBL31 0x10000
+NOTICE:  BL31: v1.3(debug):55aa0b4
+NOTICE:  BL31: Built : 16:55:03, Mar 31 2017
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1089): pd status 3e
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+rk serial
+initcall: 0000000000251b10
+
+
+U-Boot 2017.02-RK3399-06 (Sep 18 2019 - 00:45:04)
+
+initcall: 0000000000216d54
+U-Boot code: 00200000 -> 0028F468  BSS: -> 0030E0B8
+initcall: 0000000000201f1c
+CPU: rk3399
+cpu version = 0
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+initcall: 0000000000217234
+Board:  Rockchip platform Board
+Uboot as second level loader
+initcall: 0000000000216e14
+DRAM:  initcall: 0000000000203c68
+
+DDR End Address: 0x80000000
+initcall: 0000000000216f88
+Monitor len: 0010E0B8
+Ram size: 08000000
+Ram top: 08000000
+initcall: 0000000000216a94
+initcall: 0000000000216cf8
+TLB table from 07ff0000 to 08000000
+initcall: 0000000000216cbc
+LCD base at ddr end, fb base = 7dc00000, size = 01000000
+initcall: 0000000000216c18
+Reserving 4096k for rk global buffer at 07bf0000
+Reserving 32768k for rk boot buffer at 05bf0000
+Using rk boot buffer as Fastboot transfer buffer.
+Reserving 2048k for fastboot log buffer at 059f0000
+initcall: 0000000000216aa8
+initcall: 0000000000216bc8
+Reserving 1080k for U-Boot at: 058e1000
+initcall: 0000000000216b90
+Reserving 2049k for malloc() at: 056e0c00
+initcall: 0000000000216e8c
+Reserving 296 Bytes for Board Info at: 056e0ad8
+initcall: 0000000000216ab0
+initcall: 0000000000216b54
+Reserving 432 Bytes for Global Data at: 056e0928
+initcall: 0000000000216aec
+initcall: 0000000000217000
+initcall: 0000000000216f68
+Found dram banks: 1
+Adding bank:0000000000200000(000000007fe00000)
+initcall: 0000000000216ee0
+
+RAM Configuration:
+Bank #0: 00000000 128 MiB
+
+DRAM:  128 MiB
+initcall: 0000000000216ac8
+New Stack Pointer is: 056e0910
+initcall: 0000000000216de0
+initcall: 0000000000216d88
+Relocation Offset is: 056e1000
+Relocating to 058e1000, new gd at 056e0928, sp at 056e0910
+initcall: 00000000058f8088
+initcall: 00000000058f81d8
+initcall: 00000000002171c0 (relocated to 00000000058f81c0)
+start = 0x00000000, end = 0x08000000
+start = 0x00000000, end = 0x20000000
+initcall: 0000000000217090 (relocated to 00000000058f8090)
+initcall: 00000000002170b4 (relocated to 00000000058f80b4)
+initcall: 0000000000217194 (relocated to 00000000058f8194)
+using memory 0x56e0c00-0x58e1000 for malloc()
+initcall: 0000000000217080 (relocated to 00000000058f8080)
+initcall: 0000000000212a94 (relocated to 00000000058f3a94)
+initcall: 0000000000225210 (relocated to 0000000005906210)
+initcall: 000000000021717c (relocated to 00000000058f817c)
+initcall: 0000000000217158 (relocated to 00000000058f8158)
+Now running in RAM - U-Boot at: 058e1000
+initcall: 0000000000212ae4 (relocated to 00000000058f3ae4)
+arch_early_init_r
+rk irq version: 1.2, initialized.
+gpio_irq_init, default enable gpio group interrupt.
+initcall: 00000000002170bc (relocated to 00000000058f80bc)
+initcall: 00000000002454ec (relocated to 00000000059264ec)
+i2c_reg_read: addr=0x36, reg=0x2f
+i2c_reg_write: addr=0x36, reg=0x01, val=0x01
+i2c_reg_write: addr=0x36, reg=0x10, val=0x01
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0x1
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+i2c_reg_read: addr=0x36, reg=0x11
+
+BL:REG_MODE:0x1i2c_reg_read: addr=0x36, reg=0x13
+i2c_reg_write: addr=0x36, reg=0x13, val=0x7f
+i2c_reg_read: addr=0x36, reg=0x13
+REG_13 = 0x7f
+i2c_reg_write: addr=0x36, reg=0x10, val=0x03
+i2c_reg_write: addr=0x36, reg=0x10, val=0x07
+i2c_reg_write: addr=0x36, reg=0x10, val=0x0f
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+ bl ma = 20
+
+ bl value = 665
+i2c_reg_write: addr=0x36, reg=0x18, val=0x05
+i2c_reg_write: addr=0x36, reg=0x19, val=0xcc
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+BL_REG_MODE = 0x1
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0xf
+i2c_reg_read: addr=0x36, reg=0x19
+REG_19 = 0xcc
+i2c_reg_read: addr=0x36, reg=0x18
+REG_18 = 0x5
+i2c_reg_read: addr=0x36, reg=0x1f
+REG_ERR = 0x11
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+initcall: 0000000000217140 (relocated to 00000000058f8140)
+rk save sdcard iomux config.
+grf gpio4b iomux = 0x0000055a
+Force select jtag from sdcard io.
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 62
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+SdmmcInit = 0 0
+SDCard Update.
+storage init OK!
+initcall: 0000000000217104 (relocated to 00000000058f8104)
+Using default environment
+
+Destroy Hash Table: 0000000005967960 table = 0000000000000000
+Create Hash Table: N=76
+INSERT: table 0000000005967960, filled 1/79 rv 00000000056e0d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005967960, filled 2/79 rv 00000000056e1020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005967960, filled 3/79 rv 00000000056e0da0 ==> name="baudrate" value="1500000"
+DELETE CANDIDATE: "preboot"
+hdelete: DELETE key "preboot"
+DELETE ERROR ##############################
+INSERT: table 0000000005967960, filled 4/79 rv 00000000056e0f80 ==> name="verify" value="n"
+INSERT: table 0000000005967960, filled 5/79 rv 00000000056e0d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: free(data = 00000000056e0c10)
+INSERT: done
+INSERT: table 0000000005967960, filled 5/79 rv 00000000056e0da0 ==> name="baudrate" value="1500000"
+INSERT: table 0000000005967960, filled 5/79 rv 00000000056e0d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005967960, filled 5/79 rv 00000000056e1020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005967960, filled 6/79 rv 00000000056e11d8 ==> name="fastboot_unlocked" value="0"
+INSERT: table 0000000005967960, filled 6/79 rv 00000000056e0d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: table 0000000005967960, filled 6/79 rv 00000000056e0f80 ==> name="verify" value="n"
+INSERT: free(data = 00000000056e1a50)
+INSERT: done
+initcall: 0000000000217204 (relocated to 00000000058f8204)
+initcall: 000000000022522c (relocated to 000000000590622c)
+initcall: 00000000002170ec (relocated to 00000000058f80ec)
+initcall: 0000000000222660 (relocated to 0000000005903660)
+initcall: 0000000000203a84 (relocated to 00000000058e4a84)
+rk irq has been initialized.
+initcall: 00000000002170d4 (relocated to 00000000058f80d4)
+initcall: 0000000000212b0c (relocated to 00000000058f3b0c)
+board_late_init
+getenv: bootdelay = 16
+Initial value for argc=3
+Final value for argc=3
+setenv: bootdelay = 10
+getenv: bootcmd = bootrk
+getenv: initrd_high = 0xffffffffffffffff=n
+board init saveenv.
+EXPORT  table = 0000000005967960, htab.size = 79, htab.filled = 6, size = 508
+Unsorted: n=6
+          0: 00000000056e0d00 ==> bootcmd    => bootrk
+          1: 00000000056e0d28 ==> initrd_high => 0xffffffffffffffff=n
+          2: 00000000056e0da0 ==> baudrate   => 1500000
+          3: 00000000056e0f80 ==> verify     => n
+          4: 00000000056e1020 ==> bootdelay  => 10
+          5: 00000000056e11d8 ==> fastboot_unlocked => 0
+Writing env to storage... 
+done
+GetParam param_addr = 0x0  PARAMETER_NUM = 8 PARAMETER_OFFSET = 1024
+
+ StorageReadLba  GetParam  addr = 0x0:0x4d524946 0x45524157 0x5245565f 0x2e37203a 0xd312e31 0x43414d0a 0x454e4948 0x444f4d5f 0x203a4c45 0x33336b72 0x622d3939 0xa0d786f 0x4843414d 0x5f454e49 0x203a4449 0xd373030 0x4e414d0a 0x43414655 0x45525554 0x52203a52 0x3933334b 0x4d0a0d39 0x43494741 0x7830203a 0x31343035 0x42343235 0x54410a0d 0x203a4741 0x30307830 0x38303032 0xa0d3030 0x4843414d 
+pParam->tag = 0x4d524946  PARM_TAG = 0x4d524150
+pParam->length = 0x45524157  pParam->parameter = 0x5f  pParam->crc = 0x2e37203a
+check parameter success
+param line: FIRMWARE_VER: 7.1.1!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE_MODEL: rk3399-box!
+Unknow param: MACHINE_MODEL: rk3399-box!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE_ID: 007!
+Unknow param: MACHINE_ID: 007!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MANUFACTURER: RK3399!
+Unknow param: MANUFACTURER: RK3399!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MAGIC: 0x5041524B!
+
+magic_code = 0x5041524b  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: ATAG: 0x00200800!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE: 3399!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: CHECK_MASK: 0x80!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: PWR_HLD: 0,0,A,0,1!
+Unknow param: PWR_HLD: 0,0,A,0,1!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: CMDLINE: androidboot.baseband=N/A androidboot.selinux=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00008000@0x00008000(resource),0x0000C000@0x00010000(kernel),0x00010000@0x0001C000(boot),0x00010000@0x0002C000(recovery),0x00038000@0x0003C000(backup),0x00040000@0x00074000(cache),0x00300000@0x000B4000(system),0x00008000@0x003B4000(metadata),0x00002000@0x003BC000(baseparamer),-@0x003BE000(userdata)!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+partition(uboot): offset=0x00002000, size=0x00002000
+partition(trust): offset=0x00004000, size=0x00002000
+partition(misc): offset=0x00006000, size=0x00002000
+partition(resource): offset=0x00008000, size=0x00008000
+partition(kernel): offset=0x00010000, size=0x0000C000
+partition(boot): offset=0x0001C000, size=0x00010000
+partition(recovery): offset=0x0002C000, size=0x00010000
+partition(backup): offset=0x0003C000, size=0x00038000
+partition(cache): offset=0x00074000, size=0x00040000
+partition(system): offset=0x000B4000, size=0x00300000
+partition(metadata): offset=0x003B4000, size=0x00008000
+partition(baseparamer): offset=0x003BC000, size=0x00002000
+partition(userdata): offset=0x003BE000, size=0xFFFFFFFF
+remotectl v0.1
+pwm freq=0xb8320
+pwm_freq_nstime=0x52d
+rkimage_prepare_fdt
+Failed to prepare fdt from boot!
+get_content: base_offset = 0x8000
+get_entry: base_offset = 0x8000
+ERROR: [get_entry]: Not a resource image!
+Failed to prepare fdt from resource!
+
+//load_content: load_addr = 0x00000000056f1440
+//Load FDT from resource image.
+
+key_init
+pmic_init
+No pmic detect.
+pwm_regulator_init
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+fg_init
+charger init
+idb init
+SecureBootEn = 0, SecureBootLock = 0
+
+#Boot ver: 0000-00-00#0.00
+empty serial no.
+fbt preboot
+normal boot.
+no fuel gauge found
+no fuel gauge found
+$$$$$$$$$$$$$$$$$$$$$$1 gd->fdt_blob:0
+read logo on state from dts [0]
+no fuel gauge found
+## Current stack ends at 0x056e0460 
+## Current stack ends at 0x056e0460 
+bad image magic.
+load boot image failed
+ERROR: [rk_load_image_from_storage]: bootrk: bad boot or kernel image
+Unable to boot:recovery
+try to start backup
+## Current stack ends at 0x056e0060 
+## Current stack ends at 0x056e0060 
+bad image magic.
+load boot image failed
+ERROR: [rk_load_image_from_storage]: bootrk: bad boot or kernel image
+Unable to boot:backup
+try to start rockusb
+initializing ep0out
+initializing ep1out
+initializing ep2out
+initializing ep3out
+initializing ep4out
+initializing ep5out
+initializing ep0in
+initializing ep1in
+initializing ep2in
+initializing ep3in
+initializing ep4in
+initializing ep5in
+initializing ep6in
+0
+0

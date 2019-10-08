@@ -1,0 +1,216 @@
+sd卡加载文件  fatload mmc 1 0x2000000 boot.img
+  
+  11 + 4
+  
+1.228734] usb_phy_generic.0.auto supply vcc not found, using dummy regulator
+[    1.240465] musb-hdrc musb-hdrc.1.auto: MUSB HDRC host driver
+[    1.249970] musb-hdrc musb-hdrc.1.auto: new USB bus registered, assigned bus number 1
+[    1.262855] hub 1-0:1.0: USB hub found
+[    1.270653] hub 1-0:1.0: 1 port detected
+[    1.279137] using random self ethernet address
+[    1.287372] using random host ethernet address
+[    1.296538] usb0: HOST MAC 5a:00:6c:9e:2f:a1
+[    1.304394] usb0: MAC ee:89:31:f5:e2:d5
+[    1.311804] g_cdc gadget: CDC Composite Gadget, version: King Kamehameha Day 2008
+[    1.322814] g_cdc gadget: g_cdc ready
+[    1.332402] sun4i-codec 1c22c00.codec: Codec <-> 1c22c00.codec mapping ok
+[    1.345809] sun6i-rtc 1c20400.rtc: setting system clock to 1970-01-01 00:00:05 UTC (5)
+[    1.357551] vcc5v0: disabling
+[    1.363974] ALSA device list:
+[    1.370303]   #0: V3s Audio Codec
+[    1.378347] EXT4-fs (mmcblk0p2): couldn't mount as ext3 due to feature incompatibilities
+[    1.391315] EXT4-fs (mmcblk0p2): couldn't mount as ext2 due to feature incompatibilities
+[    1.422437] random: fast init done
+[    1.689744] EXT4-fs (mmcblk0p2): recovery complete
+[    1.700818] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    1.712272] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    1.722841] devtmpfs: mounted
+[    1.730327] Freeing unused kernel memory: 1024K
+[    1.850252] EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered
+[   11.968781] random: crng init done
+[ 1575.525478] mmc0: card 0002 removed
+[ 1575.536081] EXT4-fs error (device mmcblk0p2): ext4_find_entry:1463: inode #2: comm syslogd: reading directory lblock 0
+
+    1.383826] mmcblk0: mmc0:0002 N/A   3.75 GiB 
+[    1.390297]  mmcblk0: p1 p2
+[    1.394421] mmcblk mmc0:0002: Card claimed for testing.
+[    1.400382] mmc0:0002: N/A   3.75 GiB 
+[    1.404755] platform reg-20-cs-dcdc2: Driver reg-20-cs-dcdc2 requests probe deferral
+[    1.413607] *******************sd init ok*******************
+[    1.420564] platform reg-20-cs-dcdc3: Driver reg-20-cs-dcdc3 requests probe deferral
+[    1.429477] EXT4-fs (mmcblk0p2): couldn't mount as ext3 due to feature incompatibilities
+[    1.438786] platform reg-20-cs-ldo1: Driver reg-20-cs-ldo1 requests probe deferral
+[    1.447811] platform reg-20-cs-ldo2: Driver reg-20-cs-ldo2 requests probe deferral
+[    1.456439] EXT4-fs (mmcblk0p2): couldn't mount as ext2 due to feature incompatibilities
+[    1.465726] platform reg-20-cs-ldo3: Driver reg-20-cs-ldo3 requests probe deferral
+[    1.474695] platform reg-20-cs-ldo4: Driver reg-20-cs-ldo4 requests probe deferral
+[    1.483499] platform reg-20-cs-ldoio0: Driver reg-20-cs-ldoio0 requests probe deferral
+[    4.465393] EXT4-fs (mmcblk0p2): recovery complete
+[    5.027923] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    5.037188] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    5.045556] devtmpfs: mounted
+[    5.049142] Freeing init memory: 140K
+[    5.178249] EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered
+Starting logging: OK
+
+void RunModbusCombFun(void)
+{
+	
+	struct Comb_Fun *CombFunp = 0;
+	
+	struct Comb_Fun *CombFunp1 = 0;
+	struct Comb_Fun *CombFunp2 = 0;
+	u16 *Parme;
+	
+	CombFunsp = pvPortMalloc(sizeof(struct Comb_Fun));		
+	(*CombFunsp).Function = F1;
+	Parme =pvPortMalloc(8);
+	sprintf((char*)Parme,"p11");
+	(*CombFunsp).Parme = Parme;
+	(*CombFunsp).Next = 0;
+	printf("list 1 :0x%x\r\n",(int)CombFunsp);
+	
+	CombFunp1 = pvPortMalloc(sizeof(struct Comb_Fun));
+	(*CombFunsp).Next = CombFunp1;	
+	(*CombFunp1).Function = F2;
+	Parme =pvPortMalloc(8);
+	sprintf((char*)Parme,"p22");
+	(*CombFunp1).Parme = Parme;
+	(*CombFunp1).Next = 0;
+	printf("list 2 :0x%x\r\n",(int)CombFunp1);
+	
+	CombFunp2 = pvPortMalloc(sizeof(struct Comb_Fun));
+	(*CombFunp1).Next = CombFunp2;		
+	(*CombFunp2).Function = F3;
+	Parme =pvPortMalloc(8);
+	sprintf((char*)Parme,"p33");
+	(*CombFunp2).Parme = Parme;
+	(*CombFunp2).Next = 0;
+	printf("list 3 :0x%x\r\n",(int)CombFunp2);
+	
+	 CombFunp1 = pvPortMalloc(sizeof(struct Comb_Fun));
+	(*CombFunp2).Next = CombFunp1;		
+	(*CombFunp1).Function = F4;
+	Parme =pvPortMalloc(8);
+	sprintf((char*)Parme,"p44");
+	(*CombFunp1).Parme = Parme;
+	(*CombFunp1).Next = 0;
+	printf("list 4 :0x%x\r\n",(int)CombFunp1);
+	
+// 	CombFun.Function = F1;
+// 	Parme =pvPortMalloc(8);			//
+// 	sprintf((char*)Parme,"f11");
+// 	CombFun.Parme = Parme;
+// 	CombFun.Next = &CombFun1;
+	
+	CombFun1.Function = F2;
+	Parme =pvPortMalloc(8);			//
+	sprintf((char*)Parme,"f22");
+	CombFun1.Parme = Parme;
+	CombFun1.Next = &CombFun2;
+	
+	CombFun2.Function = F3;
+	Parme =pvPortMalloc(8);			//
+	sprintf((char*)Parme,"f33");
+	CombFun2.Parme = Parme;
+	CombFun2.Next = &CombFun3;
+	
+	CombFun3.Function = F4;
+	Parme =pvPortMalloc(8);			//
+	sprintf((char*)Parme,"f144");
+	CombFun3.Parme = Parme;
+	CombFun3.Next = 0;
+	
+	CombFunp = CombFunsp;
+	while(CombFunp != 0)
+	{
+		CombFunp->Function(CombFunp->Parme,CombFunp->Parme);
+		CombFunp = CombFunp->Next;
+	}
+	
+	CombFunp = CombFunsp;
+	CombFunp1 = CombFunsp;
+	
+	FreeCombFun(CombFunsp);
+}
+
+
+
+
+Tx:105-00 88 00 00 00 06 01 06 00 64 00 22
+Rx:106-00 88 00 00 00 06 01 06 00 64 00 22
+
+_logger.InfoFormat("TX: {0}", frame.Join(", "));
+public int Read(byte[] buffer, int offset, int size)
+Rx:030-00 37 00 00 00 17 01 03 14 00 00 02 A3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Tx:033-00 39 00 00 00 06 01 03 00 64 00 0A
+
+Tx:728-01 03 00 14 00 05 C5 CD
+Tx:618-00 03 00 14 00 05 C4 1C
+000029-Rx:01 20 00 0A 71 FE
+
+Tx:389-01 03 00 14 00 01 C4 0E
+
+
+Tx:375-01 03 00 24 00 01 C4 01
+Rx:376-01 03 00 24 00 01 C4 01 01 03 02 00 00 B8 44
+Rx:436-01 03 00 24 00 01 C4 01 01 03 02 00 00 B8 44
+
+
+000010-Rx:01 03 00 24 00 01 C4 01
+000011-Tx:01 83 02 C0 F1
+000089-Tx:01 03 02 00 00 B8 44
+000089-Tx:01 03 02 00 00 B8 44
+000105-Tx:01 03 02 00 77 F8 62
+000111-Tx:01 03 02 00 77 F8 62
+
+Tx:068-01 03 00 28 00 0A 45 C5
+
+Tx:094-01 03 00 19 00 01 55 CD
+01 03 02 00 43 F9 B5 
+
+Tx:209-01 03 00 14 00 0A 85 C9
+
+01 10 00 19 00 01 02 00 63 E4 70
+Tx:128-01 10 00 19 00 01 02 00 63 E4 70
+60*60*24 = 86400
+279172874.175
+
+3231.167523148148  天
+8年
+eMBRegHoldingCB
+
+i2c read    u8 GY2561_RD(u8 reg)    reg  len 
+i2c write							reg len dat1....datn
+
+reg  1000  功能寄存器
+addr 1001-1127  256
+date 1128-1256  256
+
+Tx:555-01 03 03 E8 00 0A 45 BD
+
+多寄存器写  
+Tx:557-01 10 03 E8 00 01 02 00 2C 83 A5    无响应  eMBFuncWriteMultipleHoldingRegister    eMBRegHoldingCB    MB_WriteRegisters
+Tx:5781-01 10 03 EB 00 04 08 00 22 00 37 00 1B 00 27 13 47
+
+
+Tx:605-01 10 03 E8 00 01 02 00 2C 83 A5
+
+
+Rx:3827-01 06 03 E8 00 01 C8 7A
+
+
+Current Time:1900-07-27 00:57:24 |134256563    2019-06-23  17:55
+
+
+crc
+len
+sendfile 
+outtime
+
+
+
+
+
+
+

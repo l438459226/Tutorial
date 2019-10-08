@@ -1,0 +1,351 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DDR Version 1.14 20180803
+In
+Channel 0: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x32817281, stride = 0x9
+OUT
+Boot1: 2018-08-06, version: 1.15
+CPUId = 0x0
+ChipType = 0x10, 214
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+SdmmcInit=2 1
+mmc0:cmd5,20
+SdmmcInit=0 0
+BootCapSize=0
+UserCapSize=7386MB
+FwPartOffset=2000 , 0
+StorageInit ok = 56876
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+GPT 0x3190d20 signature is wrong
+LoadTrust Addr:0x4000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 2000
+Load OK, addr=0x200000, size=0x8f37c
+RunBL31 0x10000
+NOTICE:  BL31: v1.3(debug):55aa0b4
+NOTICE:  BL31: Built : 16:55:03, Mar 31 2017
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1089): pd status 3e
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+rk serial
+initcall: 0000000000251b28
+
+
+U-Boot 2017.02-RK3399-06 (Sep 17 2019 - 00:35:42)
+
+initcall: 0000000000216d6c
+U-Boot code: 00200000 -> 0028F380  BSS: -> 0030DFB8
+initcall: 0000000000201f1c
+CPU: rk3399
+cpu version = 0
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+initcall: 000000000021724c
+Board:  Rockchip platform Board
+Uboot as second level loader
+initcall: 0000000000216e2c
+DRAM:  initcall: 0000000000203c68
+
+DDR End Address: 0x80000000
+initcall: 0000000000216fa0
+Monitor len: 0010DFB8
+Ram size: 08000000
+Ram top: 08000000
+initcall: 0000000000216aac
+initcall: 0000000000216d10
+TLB table from 07ff0000 to 08000000
+initcall: 0000000000216cd4
+LCD base at ddr end, fb base = 7dc00000, size = 01000000
+initcall: 0000000000216c30
+Reserving 4096k for rk global buffer at 07bf0000
+Reserving 32768k for rk boot buffer at 05bf0000
+Using rk boot buffer as Fastboot transfer buffer.
+Reserving 2048k for fastboot log buffer at 059f0000
+initcall: 0000000000216ac0
+initcall: 0000000000216be0
+Reserving 1079k for U-Boot at: 058e2000
+initcall: 0000000000216ba8
+Reserving 2049k for malloc() at: 056e1c00
+initcall: 0000000000216ea4
+Reserving 296 Bytes for Board Info at: 056e1ad8
+initcall: 0000000000216ac8
+initcall: 0000000000216b6c
+Reserving 432 Bytes for Global Data at: 056e1928
+initcall: 0000000000216b04
+initcall: 0000000000217018
+initcall: 0000000000216f80
+Found dram banks: 1
+Adding bank:0000000000200000(000000007fe00000)
+initcall: 0000000000216ef8
+
+RAM Configuration:
+Bank #0: 00000000 128 MiB
+
+DRAM:  128 MiB
+initcall: 0000000000216ae0
+New Stack Pointer is: 056e1910
+initcall: 0000000000216df8
+initcall: 0000000000216da0
+Relocation Offset is: 056e2000
+Relocating to 058e2000, new gd at 056e1928, sp at 056e1910
+initcall: 00000000058f90a0
+initcall: 00000000058f91f0
+initcall: 00000000002171d8 (relocated to 00000000058f91d8)
+start = 0x00000000, end = 0x08000000
+start = 0x00000000, end = 0x20000000
+initcall: 00000000002170a8 (relocated to 00000000058f90a8)
+initcall: 00000000002170cc (relocated to 00000000058f90cc)
+initcall: 00000000002171ac (relocated to 00000000058f91ac)
+using memory 0x56e1c00-0x58e2000 for malloc()
+initcall: 0000000000217098 (relocated to 00000000058f9098)
+initcall: 0000000000212aac (relocated to 00000000058f4aac)
+initcall: 0000000000225228 (relocated to 0000000005907228)
+initcall: 0000000000217194 (relocated to 00000000058f9194)
+initcall: 0000000000217170 (relocated to 00000000058f9170)
+Now running in RAM - U-Boot at: 058e2000
+initcall: 0000000000212afc (relocated to 00000000058f4afc)
+arch_early_init_r
+rk irq version: 1.2, initialized.
+gpio_irq_init, default enable gpio group interrupt.
+initcall: 00000000002170d4 (relocated to 00000000058f90d4)
+initcall: 0000000000245504 (relocated to 0000000005927504)
+i2c_reg_read: addr=0x36, reg=0x2f
+i2c_reg_write: addr=0x36, reg=0x01, val=0x01
+i2c_reg_write: addr=0x36, reg=0x10, val=0x01
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0x1
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+i2c_reg_read: addr=0x36, reg=0x11
+
+BL:REG_MODE:0x1i2c_reg_read: addr=0x36, reg=0x13
+i2c_reg_write: addr=0x36, reg=0x13, val=0x7f
+i2c_reg_read: addr=0x36, reg=0x13
+REG_13 = 0x7f
+i2c_reg_write: addr=0x36, reg=0x10, val=0x03
+i2c_reg_write: addr=0x36, reg=0x10, val=0x07
+i2c_reg_write: addr=0x36, reg=0x10, val=0x0f
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+ bl ma = 20
+
+ bl value = 665
+i2c_reg_write: addr=0x36, reg=0x18, val=0x05
+i2c_reg_write: addr=0x36, reg=0x19, val=0xcc
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+BL_REG_MODE = 0x1
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0xf
+i2c_reg_read: addr=0x36, reg=0x19
+REG_19 = 0xcc
+i2c_reg_read: addr=0x36, reg=0x18
+REG_18 = 0x5
+i2c_reg_read: addr=0x36, reg=0x1f
+REG_ERR = 0x11
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+initcall: 0000000000217158 (relocated to 00000000058f9158)
+rk save sdcard iomux config.
+grf gpio4b iomux = 0x0000055a
+Force select jtag from sdcard io.
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 62
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+SdmmcInit = 0 0
+SDCard Update.
+storage init OK!
+initcall: 000000000021711c (relocated to 00000000058f911c)
+Using default environment
+
+Destroy Hash Table: 0000000005968878 table = 0000000000000000
+Create Hash Table: N=76
+INSERT: table 0000000005968878, filled 1/79 rv 00000000056e1d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005968878, filled 2/79 rv 00000000056e2020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005968878, filled 3/79 rv 00000000056e1da0 ==> name="baudrate" value="1500000"
+DELETE CANDIDATE: "preboot"
+hdelete: DELETE key "preboot"
+DELETE ERROR ##############################
+INSERT: table 0000000005968878, filled 4/79 rv 00000000056e1f80 ==> name="verify" value="n"
+INSERT: table 0000000005968878, filled 5/79 rv 00000000056e1d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: free(data = 00000000056e1c10)
+INSERT: done
+INSERT: table 0000000005968878, filled 5/79 rv 00000000056e1da0 ==> name="baudrate" value="1500000"
+INSERT: table 0000000005968878, filled 5/79 rv 00000000056e1d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005968878, filled 5/79 rv 00000000056e2020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005968878, filled 6/79 rv 00000000056e21d8 ==> name="fastboot_unlocked" value="0"
+INSERT: table 0000000005968878, filled 6/79 rv 00000000056e1d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: table 0000000005968878, filled 6/79 rv 00000000056e1f80 ==> name="verify" value="n"
+INSERT: free(data = 00000000056e2a50)
+INSERT: done
+initcall: 000000000021721c (relocated to 00000000058f921c)
+initcall: 0000000000225244 (relocated to 0000000005907244)
+initcall: 0000000000217104 (relocated to 00000000058f9104)
+initcall: 0000000000222678 (relocated to 0000000005904678)
+initcall: 0000000000203a84 (relocated to 00000000058e5a84)
+rk irq has been initialized.
+initcall: 00000000002170ec (relocated to 00000000058f90ec)
+initcall: 0000000000212b24 (relocated to 00000000058f4b24)
+board_late_init
+getenv: bootdelay = 16
+Initial value for argc=3
+Final value for argc=3
+setenv: bootdelay = 10
+getenv: bootcmd = bootrk
+getenv: initrd_high = 0xffffffffffffffff=n
+board init saveenv.
+EXPORT  table = 0000000005968878, htab.size = 79, htab.filled = 6, size = 508
+Unsorted: n=6
+          0: 00000000056e1d00 ==> bootcmd    => bootrk
+          1: 00000000056e1d28 ==> initrd_high => 0xffffffffffffffff=n
+          2: 00000000056e1da0 ==> baudrate   => 1500000
+          3: 00000000056e1f80 ==> verify     => n
+          4: 00000000056e2020 ==> bootdelay  => 10
+          5: 00000000056e21d8 ==> fastboot_unlocked => 0
+Writing env to storage... 
+done
+GetParam
+W: Invalid Parameter's tag (0x4D524946)!
+Invalid parameter
+remotectl v0.1
+pwm freq=0xb8320
+pwm_freq_nstime=0x52d
+rkimage_prepare_fdt
+Failed to find part: 'boot'
+Failed to prepare fdt from boot!
+Failed to find part: 'resource'
+Failed to prepare fdt from resource!
+key_init
+pmic_init
+No pmic detect.
+pwm_regulator_init
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+fg_init
+charger init
+idb init
+SecureBootEn = 0, SecureBootLock = 0
+
+#Boot ver: 0000-00-00#0.00
+empty serial no.
+fbt preboot
+normal boot.
+no fuel gauge found
+no fuel gauge found
+$$$$$$$$$$$$$$$$$$$$$$1 gd->fdt_blob:0
+read logo on state from dts [0]
+no fuel gauge found
+## Current stack ends at 0x056e1460 
+## Current stack ends at 0x056e1460 
+Failed to find part: 'recovery'
+'recovery' does not seem to be a partition nor an address
+Unable to boot:recovery
+try to start backup
+## Current stack ends at 0x056e1060 
+## Current stack ends at 0x056e1060 
+Failed to find part: 'backup'
+'backup' does not seem to be a partition nor an address
+Unable to boot:backup
+try to start rockusb
+initializing ep0out
+initializing ep1out
+initializing ep2out
+initializing ep3out
+initializing ep4out
+initializing ep5out
+initializing ep0in
+initializing ep1in
+initializing ep2in
+initializing ep3in
+initializing ep4in
+initializing ep5in
+initializing ep6in
+0
+0

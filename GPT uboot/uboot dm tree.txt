@@ -1,0 +1,613 @@
+supports@9tripod.com
+supports@9tripod.com
+
+zjlich@isoftstone.com   fk%3wyaH
+
+static int i2c_bind_driver(struct udevice *bus, uint chip_addr, uint offset_len,
+			   struct udevice **devp)
+{
+	struct dm_i2c_chip *chip;
+	char name[30], *str;
+	struct udevice *dev;
+	int ret;
+
+	snprintf(name, sizeof(name), "generic_%x", chip_addr);
+	str = strdup(name);
+	if (!str)
+		return -ENOMEM;
+	ret = device_bind_driver(bus, "i2c_generic_chip_drv", str, &dev);
+	debug("%s:  device_bind_driver: ret=%d\n", __func__, ret);
+	if (ret)
+		goto err_bind;
+
+	/* Tell the device what we know about it */
+	chip = dev_get_parent_platdata(dev);
+	chip->chip_addr = chip_addr;
+	chip->offset_len = offset_len;
+	ret = device_probe(dev);
+	debug("%s:  device_probe: ret=%d\n", __func__, ret);
+	if (ret)
+		goto err_probe;
+
+	*devp = dev;
+	return 0;
+
+err_probe:
+	/*
+	 * If the device failed to probe, unbind it. There is nothing there
+	 * on the bus so we don't want to leave it lying around
+	 */
+	device_unbind(dev);
+err_bind:
+	free(str);
+	return ret;
+}
+
+
+
+=> dm tree
+ Class      Probed        Driver               Name(设备驱动信息)
+----------------------------------------------------------
+ root       [ + ]   root_driver                root_driver
+ firmware   [   ]   psci                       |-- psci
+ sysreset   [   ]   psci-sysreset              |   `-- psci-sysreset
+ clk        [ + ]   fixed_rate_clock           |-- xin24m
+ simple_bus [   ]   generic_simple_bus         |-- amba
+ eth        [ + ]   gmac_rockchip              |-- ethernet@fe300000
+ mmc        [ + ]   rockchip_rk3288_dw_mshc    |-- dwmmc@fe320000
+ blk        [ + ]   mmc_blk                    |   `-- dwmmc@fe320000.blk
+ mmc        [ + ]   rockchip_rk3399_sdhci_5_1  |-- sdhci@fe330000
+ blk        [   ]   mmc_blk                    |   `-- sdhci@fe330000.blk
+ usb        [   ]   ehci_generic               |-- usb@fe380000
+ usb        [   ]   ohci_generic               |-- usb@fe3a0000
+ usb        [   ]   ehci_generic               |-- usb@fe3c0000
+ usb        [   ]   ohci_generic               |-- usb@fe3e0000
+ adc        [   ]   rockchip_saradc            |-- saradc@ff100000
+ i2c        [   ]   i2c_rockchip               |-- i2c@ff110000
+ i2c        [   ]   i2c_rockchip               |-- i2c@ff130000
+ serial     [   ]   ns16550_serial             |-- serial@ff180000
+ serial     [ + ]   ns16550_serial             |-- serial@ff1a0000
+ syscon     [   ]   syscon                     |-- qos@ffa58000
+ syscon     [   ]   syscon                     |-- qos@ffa5c000
+ syscon     [   ]   syscon                     |-- qos@ffa60080
+ syscon     [   ]   syscon                     |-- qos@ffa60100
+ syscon     [   ]   syscon                     |-- qos@ffa60180
+ syscon     [   ]   syscon                     |-- qos@ffa70000
+ syscon     [   ]   syscon                     |-- qos@ffa70080
+ syscon     [   ]   syscon                     |-- qos@ffa74000
+ syscon     [   ]   syscon                     |-- qos@ffa76000
+ syscon     [   ]   syscon                     |-- qos@ffa90000
+ syscon     [   ]   syscon                     |-- qos@ffa98000
+ syscon     [   ]   syscon                     |-- qos@ffaa0000
+ syscon     [   ]   syscon                     |-- qos@ffaa0080
+ syscon     [   ]   syscon                     |-- qos@ffaa8000
+ syscon     [   ]   syscon                     |-- qos@ffaa8080
+ syscon     [   ]   syscon                     |-- qos@ffab0000
+ syscon     [   ]   syscon                     |-- qos@ffab0080
+ syscon     [   ]   syscon                     |-- qos@ffab8000
+ syscon     [   ]   syscon                     |-- qos@ffac0000
+ syscon     [   ]   syscon                     |-- qos@ffac0080
+ syscon     [   ]   syscon                     |-- qos@ffac8000
+ syscon     [   ]   syscon                     |-- qos@ffac8080
+ syscon     [   ]   syscon                     |-- qos@ffad0000
+ syscon     [   ]   syscon                     |-- qos@ffad8080
+ syscon     [   ]   syscon                     |-- qos@ffae0000
+ syscon     [   ]   syscon                     |-- power-management@ff310000
+ syscon     [ + ]   rk3399_syscon              |-- syscon@ff320000
+ syscon     [   ]   rk3399_syscon              |-- syscon@ff330000
+ i2c        [ + ]   i2c_rockchip               |-- i2c@ff3d0000
+ i2c_generi [ + ]   i2c_generic_chip_drv       |   |-- generic_36 //这个器件 （使用i2c类下的i2c4总线设备驱动  ）    
+ i2c_generi [ + ]   i2c_generic_chip_drv       |   |-- generic_37
+ i2c_generi [ + ]   i2c_generic_chip_drv       |   |-- generic_38
+ i2c_generi [ + ]   i2c_generic_chip_drv       |   |-- generic_1b
+ i2c_generi [ + ]   i2c_generic_chip_drv       |   `-- generic_65
+ pwm        [   ]   rk_pwm                     |-- pwm@ff420000
+ pwm        [ + ]   rk_pwm                     |-- pwm@ff420020
+ syscon     [   ]   rk3399_syscon              |-- syscon@ff620000
+ ram        [   ]   rockchip_rk3399_dmc        |-- dmc
+ misc       [ + ]   rockchip_efuse             |-- efuse@ff690000
+ clk        [ + ]   rockchip_rk3399_pmucru     |-- pmu-clock-controller@ff750000
+ reset      [   ]   rockchip_reset             |   `-- reset
+ clk        [ + ]   rockchip_rk3399_cru        |-- clock-controller@ff760000
+ sysreset   [   ]   rockchip_sysreset          |   |-- sysreset
+ reset      [   ]   rockchip_reset             |   `-- reset
+ syscon     [ + ]   rk3399_syscon              |-- syscon@ff770000
+ i2c        [ + ]   i2c_rockchip               |-- i2c@ff3c0000
+ pmic       [ + ]   rk8xx pmic                 |   `-- pmic@1b  //这个器件（使用i2c类下的i2c4总线设备驱动）属于电源类 使用的是   rk8xx pmic 驱动  
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG1
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG2
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG3
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG4
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG1
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG2
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG3
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG4
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG5
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG6
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG7
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG8
+ regulator  [ + ]   rk8xx_switch               |       |-- SWITCH_REG1
+ regulator  [ + ]   rk8xx_switch               |       `-- SWITCH_REG2
+ pinctrl    [ + ]   rockchip_pinctrl           |-- pinctrl
+ gpio       [   ]   gpio_rockchip              |   |-- gpio0@ff720000
+ gpio       [ + ]   gpio_rockchip              |   |-- gpio1@ff730000
+ gpio       [   ]   gpio_rockchip              |   |-- gpio2@ff780000
+ gpio       [ + ]   gpio_rockchip              |   |-- gpio3@ff788000
+ gpio       [   ]   gpio_rockchip              |   |-- gpio4@ff790000
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none-12ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up-8ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down-4ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up-2ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down-12ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none-13ma
+ pinconfig  [   ]   pinconfig                  |   |-- clock
+ pinconfig  [   ]   pinconfig                  |   |   `-- clk-32k
+ pinconfig  [   ]   pinconfig                  |   |-- edp
+ pinconfig  [   ]   pinconfig                  |   |   `-- edp-hpd
+ pinconfig  [ + ]   pinconfig                  |   |-- gmac
+ pinconfig  [ + ]   pinconfig                  |   |   |-- rgmii-pins
+ pinconfig  [   ]   pinconfig                  |   |   `-- rmii-pins
+ pinconfig  [ + ]   pinconfig                  |   |-- i2c0
+ pinconfig  [ + ]   pinconfig                  |   |   `-- i2c0-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c1
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c1-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c2
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c2-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c3
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c3-xfer
+ pinconfig  [ + ]   pinconfig                  |   |-- i2c4
+ pinconfig  [ + ]   pinconfig                  |   |   `-- i2c4-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c5
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c5-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c6
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c6-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c7
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c7-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c8
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c8-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2s0
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2s0-8ch-bus
+ pinconfig  [   ]   pinconfig                  |   |-- i2s1
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2s1-2ch-bus
+ pinconfig  [   ]   pinconfig                  |   |-- sdio0
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bus1
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bus4
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-cmd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-cd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-pwr
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bkpwr
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-wp
+ pinconfig  [   ]   pinconfig                  |   |   `-- sdio0-int
+ pinconfig  [   ]   pinconfig                  |   |-- sdmmc
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-bus1
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-bus4
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-cmd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmcc-cd
+ pinconfig  [   ]   pinconfig                  |   |   `-- sdmmc-wp
+ pinconfig  [   ]   pinconfig                  |   |-- sleep
+ pinconfig  [   ]   pinconfig                  |   |   |-- ap-pwroff
+ pinconfig  [   ]   pinconfig                  |   |   `-- ddrio-pwroff
+ pinconfig  [   ]   pinconfig                  |   |-- spdif
+ pinconfig  [   ]   pinconfig                  |   |   |-- spdif-bus
+ pinconfig  [   ]   pinconfig                  |   |   `-- spdif-bus-1
+ pinconfig  [   ]   pinconfig                  |   |-- spi0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-cs1
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-tx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi0-rx
+ pinconfig  [   ]   pinconfig                  |   |-- spi1
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi1-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi2
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi2-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi3
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi3-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi4
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi4-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi5
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi5-tx
+ pinconfig  [   ]   pinconfig                  |   |-- tsadc
+ pinconfig  [   ]   pinconfig                  |   |   |-- otp-gpio
+ pinconfig  [   ]   pinconfig                  |   |   `-- otp-out
+ pinconfig  [   ]   pinconfig                  |   |-- uart0
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart0-xfer
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart0-cts
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart0-rts
+ pinconfig  [   ]   pinconfig                  |   |-- uart1
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart1-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart2a
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart2a-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart2b
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart2b-xfer
+ pinconfig  [ + ]   pinconfig                  |   |-- uart2c
+ pinconfig  [ + ]   pinconfig                  |   |   `-- uart2c-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart3
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart3-xfer
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart3-cts
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart3-rts
+ pinconfig  [   ]   pinconfig                  |   |-- uart4
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart4-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uarthdcp
+ pinconfig  [   ]   pinconfig                  |   |   `-- uarthdcp-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- pwm0
+ pinconfig  [   ]   pinconfig                  |   |   |-- pwm0-pin
+ pinconfig  [   ]   pinconfig                  |   |   `-- vop0-pwm-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm1
+ pinconfig  [   ]   pinconfig                  |   |   |-- pwm1-pin
+ pinconfig  [   ]   pinconfig                  |   |   `-- vop1-pwm-pin
+ pinconfig  [ + ]   pinconfig                  |   |-- pwm2
+ pinconfig  [ + ]   pinconfig                  |   |   `-- pwm2-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm3a
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwm3a-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm3b
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwm3b-pin
+ pinconfig  [   ]   pinconfig                  |   |-- hdmi
+ pinconfig  [   ]   pinconfig                  |   |   |-- hdmi-i2c-xfer
+ pinconfig  [   ]   pinconfig                  |   |   `-- hdmi-cec
+ pinconfig  [ + ]   pinconfig                  |   |-- pcie
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqn
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqnb
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqn-cpm
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqnb-cpm
+ pinconfig  [ + ]   pinconfig                  |   |   |-- pcie-drv
+ pinconfig  [   ]   pinconfig                  |   |   `-- pcie-3g-drv
+ pinconfig  [   ]   pinconfig                  |   |-- buttons
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwrbtn
+ pinconfig  [   ]   pinconfig                  |   |-- lcd-panel
+ pinconfig  [   ]   pinconfig                  |   |   `-- lcd-panel-reset
+ pinconfig  [ + ]   pinconfig                  |   |-- pmic
+ pinconfig  [   ]   pinconfig                  |   |   |-- vsel1-gpio
+ pinconfig  [   ]   pinconfig                  |   |   |-- vsel2-gpio
+ pinconfig  [ + ]   pinconfig                  |   |   `-- pmic-int-l
+ pinconfig  [   ]   pinconfig                  |   |-- sdio-pwrseq
+ pinconfig  [   ]   pinconfig                  |   |   `-- wifi-enable-h
+ pinconfig  [   ]   pinconfig                  |   |-- rt5640
+ pinconfig  [   ]   pinconfig                  |   |   `-- rt5640-hpcon
+ pinconfig  [ + ]   pinconfig                  |   `-- usb2
+ pinconfig  [ + ]   pinconfig                  |       `-- host-vbus-drv
+ clk        [ + ]   fixed_rate_clock           |-- external-gmac-clock
+ regulator  [ + ]   fixed regulator            |-- vcc3v3-pcie-regulator
+ regulator  [ + ]   fixed regulator            |-- vcc3v3-sys
+ regulator  [ + ]   fixed regulator            |-- vcc5v0-host-regulator
+ regulator  [ + ]   fixed regulator            |-- vcc5v0-sys
+ regulator  [ + ]   fixed regulator            |-- vcc-phy-regulator
+ regulator  [ + ]   pwm_regulator              |-- vdd-log
+ regulator  [ + ]   fixed regulator            `-- vccadc-ref
+
+ 
+  i2c ledon 0 13
+  i2c ledon 64 27 
+ 启动时的tree
+  Class      Probed        Driver               Name
+----------------------------------------------------------
+ root       [ + ]   root_driver                root_driver
+ firmware   [   ]   psci                       |-- psci
+ sysreset   [   ]   psci-sysreset              |   `-- psci-sysreset
+ clk        [ + ]   fixed_rate_clock           |-- xin24m
+ simple_bus [   ]   generic_simple_bus         |-- amba
+ eth        [ + ]   gmac_rockchip              |-- ethernet@fe300000
+ mmc        [ + ]   rockchip_rk3288_dw_mshc    |-- dwmmc@fe320000
+ blk        [ + ]   mmc_blk                    |   `-- dwmmc@fe320000.blk
+ mmc        [ + ]   rockchip_rk3399_sdhci_5_1  |-- sdhci@fe330000
+ blk        [   ]   mmc_blk                    |   `-- sdhci@fe330000.blk
+ usb        [   ]   ehci_generic               |-- usb@fe380000
+ usb        [   ]   ohci_generic               |-- usb@fe3a0000
+ usb        [   ]   ehci_generic               |-- usb@fe3c0000
+ usb        [   ]   ohci_generic               |-- usb@fe3e0000
+ adc        [   ]   rockchip_saradc            |-- saradc@ff100000
+ i2c        [   ]   i2c_rockchip               |-- i2c@ff110000
+ i2c        [   ]   i2c_rockchip               |-- i2c@ff130000
+ serial     [   ]   ns16550_serial             |-- serial@ff180000
+ serial     [ + ]   ns16550_serial             |-- serial@ff1a0000
+ syscon     [   ]   syscon                     |-- qos@ffa58000
+ syscon     [   ]   syscon                     |-- qos@ffa5c000
+ syscon     [   ]   syscon                     |-- qos@ffa60080
+ syscon     [   ]   syscon                     |-- qos@ffa60100
+ syscon     [   ]   syscon                     |-- qos@ffa60180
+ syscon     [   ]   syscon                     |-- qos@ffa70000
+ syscon     [   ]   syscon                     |-- qos@ffa70080
+ syscon     [   ]   syscon                     |-- qos@ffa74000
+ syscon     [   ]   syscon                     |-- qos@ffa76000
+ syscon     [   ]   syscon                     |-- qos@ffa90000
+ syscon     [   ]   syscon                     |-- qos@ffa98000
+ syscon     [   ]   syscon                     |-- qos@ffaa0000
+ syscon     [   ]   syscon                     |-- qos@ffaa0080
+ syscon     [   ]   syscon                     |-- qos@ffaa8000
+ syscon     [   ]   syscon                     |-- qos@ffaa8080
+ syscon     [   ]   syscon                     |-- qos@ffab0000
+ syscon     [   ]   syscon                     |-- qos@ffab0080
+ syscon     [   ]   syscon                     |-- qos@ffab8000
+ syscon     [   ]   syscon                     |-- qos@ffac0000
+ syscon     [   ]   syscon                     |-- qos@ffac0080
+ syscon     [   ]   syscon                     |-- qos@ffac8000
+ syscon     [   ]   syscon                     |-- qos@ffac8080
+ syscon     [   ]   syscon                     |-- qos@ffad0000
+ syscon     [   ]   syscon                     |-- qos@ffad8080
+ syscon     [   ]   syscon                     |-- qos@ffae0000
+ syscon     [   ]   syscon                     |-- power-management@ff310000
+ syscon     [ + ]   rk3399_syscon              |-- syscon@ff320000
+ syscon     [   ]   rk3399_syscon              |-- syscon@ff330000
+ i2c        [   ]   i2c_rockchip               |-- i2c@ff3d0000
+ pwm        [   ]   rk_pwm                     |-- pwm@ff420000
+ pwm        [ + ]   rk_pwm                     |-- pwm@ff420020
+ syscon     [   ]   rk3399_syscon              |-- syscon@ff620000
+ ram        [   ]   rockchip_rk3399_dmc        |-- dmc
+ misc       [ + ]   rockchip_efuse             |-- efuse@ff690000
+ clk        [ + ]   rockchip_rk3399_pmucru     |-- pmu-clock-controller@ff750000
+ reset      [   ]   rockchip_reset             |   `-- reset
+ clk        [ + ]   rockchip_rk3399_cru        |-- clock-controller@ff760000
+ sysreset   [   ]   rockchip_sysreset          |   |-- sysreset
+ reset      [   ]   rockchip_reset             |   `-- reset
+ syscon     [ + ]   rk3399_syscon              |-- syscon@ff770000
+ i2c        [ + ]   i2c_rockchip               |-- i2c@ff3c0000	
+ pmic       [ + ]   rk8xx pmic                 |   `-- pmic@1b
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG1
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG2
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG3
+ regulator  [ + ]   rk8xx_buck                 |       |-- DCDC_REG4
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG1
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG2
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG3
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG4
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG5
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG6
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG7
+ regulator  [ + ]   rk8xx_ldo                  |       |-- LDO_REG8
+ regulator  [ + ]   rk8xx_switch               |       |-- SWITCH_REG1
+ regulator  [ + ]   rk8xx_switch               |       `-- SWITCH_REG2
+ pinctrl    [ + ]   rockchip_pinctrl           |-- pinctrl
+ gpio       [   ]   gpio_rockchip              |   |-- gpio0@ff720000
+ gpio       [ + ]   gpio_rockchip              |   |-- gpio1@ff730000
+ gpio       [   ]   gpio_rockchip              |   |-- gpio2@ff780000
+ gpio       [ + ]   gpio_rockchip              |   |-- gpio3@ff788000
+ gpio       [   ]   gpio_rockchip              |   |-- gpio4@ff790000
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none-12ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up-8ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down-4ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-up-2ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-down-12ma
+ pinconfig  [   ]   pinconfig                  |   |-- pcfg-pull-none-13ma
+ pinconfig  [   ]   pinconfig                  |   |-- clock
+ pinconfig  [   ]   pinconfig                  |   |   `-- clk-32k
+ pinconfig  [   ]   pinconfig                  |   |-- edp
+ pinconfig  [   ]   pinconfig                  |   |   `-- edp-hpd
+ pinconfig  [ + ]   pinconfig                  |   |-- gmac
+ pinconfig  [ + ]   pinconfig                  |   |   |-- rgmii-pins
+ pinconfig  [   ]   pinconfig                  |   |   `-- rmii-pins
+ pinconfig  [ + ]   pinconfig                  |   |-- i2c0
+ pinconfig  [ + ]   pinconfig                  |   |   `-- i2c0-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c1
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c1-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c2
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c2-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c3
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c3-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c4
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c4-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c5
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c5-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c6
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c6-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c7
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c7-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2c8
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2c8-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- i2s0
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2s0-8ch-bus
+ pinconfig  [   ]   pinconfig                  |   |-- i2s1
+ pinconfig  [   ]   pinconfig                  |   |   `-- i2s1-2ch-bus
+ pinconfig  [   ]   pinconfig                  |   |-- sdio0
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bus1
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bus4
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-cmd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-cd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-pwr
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-bkpwr
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdio0-wp
+ pinconfig  [   ]   pinconfig                  |   |   `-- sdio0-int
+ pinconfig  [   ]   pinconfig                  |   |-- sdmmc
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-bus1
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-bus4
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmmc-cmd
+ pinconfig  [   ]   pinconfig                  |   |   |-- sdmcc-cd
+ pinconfig  [   ]   pinconfig                  |   |   `-- sdmmc-wp
+ pinconfig  [   ]   pinconfig                  |   |-- sleep
+ pinconfig  [   ]   pinconfig                  |   |   |-- ap-pwroff
+ pinconfig  [   ]   pinconfig                  |   |   `-- ddrio-pwroff
+ pinconfig  [   ]   pinconfig                  |   |-- spdif
+ pinconfig  [   ]   pinconfig                  |   |   |-- spdif-bus
+ pinconfig  [   ]   pinconfig                  |   |   `-- spdif-bus-1
+ pinconfig  [   ]   pinconfig                  |   |-- spi0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-cs1
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi0-tx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi0-rx
+ pinconfig  [   ]   pinconfig                  |   |-- spi1
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi1-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi1-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi2
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi2-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi2-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi3
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi3-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi3-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi4
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi4-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi4-tx
+ pinconfig  [   ]   pinconfig                  |   |-- spi5
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-clk
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-cs0
+ pinconfig  [   ]   pinconfig                  |   |   |-- spi5-rx
+ pinconfig  [   ]   pinconfig                  |   |   `-- spi5-tx
+ pinconfig  [   ]   pinconfig                  |   |-- tsadc
+ pinconfig  [   ]   pinconfig                  |   |   |-- otp-gpio
+ pinconfig  [   ]   pinconfig                  |   |   `-- otp-out
+ pinconfig  [   ]   pinconfig                  |   |-- uart0
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart0-xfer
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart0-cts
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart0-rts
+ pinconfig  [   ]   pinconfig                  |   |-- uart1
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart1-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart2a
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart2a-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart2b
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart2b-xfer
+ pinconfig  [ + ]   pinconfig                  |   |-- uart2c
+ pinconfig  [ + ]   pinconfig                  |   |   `-- uart2c-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uart3
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart3-xfer
+ pinconfig  [   ]   pinconfig                  |   |   |-- uart3-cts
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart3-rts
+ pinconfig  [   ]   pinconfig                  |   |-- uart4
+ pinconfig  [   ]   pinconfig                  |   |   `-- uart4-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- uarthdcp
+ pinconfig  [   ]   pinconfig                  |   |   `-- uarthdcp-xfer
+ pinconfig  [   ]   pinconfig                  |   |-- pwm0
+ pinconfig  [   ]   pinconfig                  |   |   |-- pwm0-pin
+ pinconfig  [   ]   pinconfig                  |   |   `-- vop0-pwm-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm1
+ pinconfig  [   ]   pinconfig                  |   |   |-- pwm1-pin
+ pinconfig  [   ]   pinconfig                  |   |   `-- vop1-pwm-pin
+ pinconfig  [ + ]   pinconfig                  |   |-- pwm2
+ pinconfig  [ + ]   pinconfig                  |   |   `-- pwm2-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm3a
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwm3a-pin
+ pinconfig  [   ]   pinconfig                  |   |-- pwm3b
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwm3b-pin
+ pinconfig  [   ]   pinconfig                  |   |-- hdmi
+ pinconfig  [   ]   pinconfig                  |   |   |-- hdmi-i2c-xfer
+ pinconfig  [   ]   pinconfig                  |   |   `-- hdmi-cec
+ pinconfig  [ + ]   pinconfig                  |   |-- pcie
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqn
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqnb
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqn-cpm
+ pinconfig  [   ]   pinconfig                  |   |   |-- pci-clkreqnb-cpm
+ pinconfig  [ + ]   pinconfig                  |   |   |-- pcie-drv
+ pinconfig  [   ]   pinconfig                  |   |   `-- pcie-3g-drv
+ pinconfig  [   ]   pinconfig                  |   |-- buttons
+ pinconfig  [   ]   pinconfig                  |   |   `-- pwrbtn
+ pinconfig  [   ]   pinconfig                  |   |-- lcd-panel
+ pinconfig  [   ]   pinconfig                  |   |   `-- lcd-panel-reset
+ pinconfig  [ + ]   pinconfig                  |   |-- pmic
+ pinconfig  [   ]   pinconfig                  |   |   |-- vsel1-gpio
+ pinconfig  [   ]   pinconfig                  |   |   |-- vsel2-gpio
+ pinconfig  [ + ]   pinconfig                  |   |   `-- pmic-int-l
+ pinconfig  [   ]   pinconfig                  |   |-- sdio-pwrseq
+ pinconfig  [   ]   pinconfig                  |   |   `-- wifi-enable-h
+ pinconfig  [   ]   pinconfig                  |   |-- rt5640
+ pinconfig  [   ]   pinconfig                  |   |   `-- rt5640-hpcon
+ pinconfig  [ + ]   pinconfig                  |   `-- usb2
+ pinconfig  [ + ]   pinconfig                  |       `-- host-vbus-drv
+ clk        [ + ]   fixed_rate_clock           |-- external-gmac-clock
+ regulator  [ + ]   fixed regulator            |-- vcc3v3-pcie-regulator
+ regulator  [ + ]   fixed regulator            |-- vcc3v3-sys
+ regulator  [ + ]   fixed regulator            |-- vcc5v0-host-regulator
+ regulator  [ + ]   fixed regulator            |-- vcc5v0-sys
+ regulator  [ + ]   fixed regulator            |-- vcc-phy-regulator
+ regulator  [ + ]   pwm_regulator              |-- vdd-log
+ regulator  [ + ]   fixed regulator            `-- vccadc-ref
+ 
+ 
+ 
+ //(i2c_generic类)里的 (i2c_generic_chip_drv驱动)
+
+UCLASS_DRIVER(i2c_generic) = {//driver
+	.id		= UCLASS_I2C_GENERIC,
+	.name		= "i2c_generic",
+};
+
+U_BOOT_DRIVER(i2c_generic_chip_drv) = {	//已经存在于driver list里了
+	.name		= "i2c_generic_chip_drv",
+	.id		= UCLASS_I2C_GENERIC,
+};
+
+
+ //U_BOOT_DRIVER(i2c_rockchip)	// i2c_rockchip驱动挂在i2c类下  
+//(I2C类)里的 (i2c_rockchip驱动)
+
+UCLASS_DRIVER(i2c) = {//i2c类
+	.id		= UCLASS_I2C,
+	.name		= "i2c",
+	.flags		= DM_UC_FLAG_SEQ_ALIAS,
+#if CONFIG_IS_ENABLED(OF_CONTROL)
+	.post_bind	= dm_scan_fdt_dev,
+#endif
+	.post_probe	= i2c_post_probe,
+	.per_device_auto_alloc_size = sizeof(struct dm_i2c_bus),
+	.per_child_platdata_auto_alloc_size = sizeof(struct dm_i2c_chip),
+	.child_post_bind = i2c_child_post_bind,
+};
+ 
+// struct driver  驱动
+U_BOOT_DRIVER(i2c_rockchip) = {
+	.name	= "i2c_rockchip",
+	.id	= UCLASS_I2C,
+	.of_match = rockchip_i2c_ids,
+	.ofdata_to_platdata = rockchip_i2c_ofdata_to_platdata,
+	.probe	= rockchip_i2c_probe,
+	.priv_auto_alloc_size = sizeof(struct rk_i2c),
+	.ops	= &rockchip_i2c_ops,
+};
+ 
+ 
+ 
+UCLASS_DRIVER(pmic) = {
+	.id		= UCLASS_PMIC,
+	.name		= "pmic",
+};
+
+ //该驱动属于UCLASS_PMIC 类
+U_BOOT_DRIVER(pmic_rk8xx) = {
+	.name = "rk8xx pmic",
+	.id = UCLASS_PMIC,
+	.of_match = rk8xx_ids,
+#if CONFIG_IS_ENABLED(PMIC_CHILDREN)
+	.bind = rk8xx_bind,
+#endif
+	.priv_auto_alloc_size   = sizeof(struct rk8xx_priv),
+	.probe = rk8xx_probe,
+	.ops = &rk8xx_ops,
+};
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

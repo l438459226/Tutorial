@@ -1,0 +1,2669 @@
+DDR Version 1.14 20180803
+In
+Channel 0: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x32817281, stride = 0x9
+OUT
+Boot1: 2018-08-06, version: 1.15
+CPUId = 0x0
+ChipType = 0x10, 214
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+SdmmcInit=2 1
+mmc0:cmd5,20
+SdmmcInit=0 0
+BootCapSize=0
+UserCapSize=3840MB
+FwPartOffset=2000 , 0
+StorageInit ok = 56346
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+GPT 0x3190d20 signature is wrong
+LoadTrust Addr:0x4000
+No find bl30.bin
+Load uboot, ReadLba = 2000
+Load OK, addr=0x200000, size=0xd69cc
+RunBL31 0x10000
+NOTICE:  BL31: v1.3(debug):56eea3d
+NOTICE:  BL31: Built : 15:27:37, Aug  8 2018
+NOTICE:  BL31: Rockchip release version: v1.1
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1151): pd status 3e
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Initializing BL32
+INF [0x0] TEE-CORE:init_primary_helper:337: Initializing (1.1.0-170-gc4654a6 #16 Wed May 30 08:54:30 UTC 2018 aarch64)
+
+INF [0x0] TEE-CORE:init_primary_helper:338: Release version: 1.2
+
+INF [0x0] TEE-CORE:init_teecore:83: teecore inits done
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+initcall: 0000000000214de0
+initcall: 000000000027c1e4
+initcall: 000000000021ed98
+initcall: 0000000000214dd0
+initcall: 00000000002151bc
+initcall: 0000000000214e14
+initcall: 000000000020406c
+initcall: 00000000002151e0
+initcall: 00000000002151b4
+malloc_simple: size=30, ptr=30, limit=4000: 3fc000
+malloc_simple: size=a0, ptr=d0, limit=4000: 3fc030
+malloc_simple: size=8, ptr=d8, limit=4000: 3fc0d0
+malloc_simple: size=30, ptr=108, limit=4000: 3fc0d8
+malloc_simple: size=a0, ptr=1a8, limit=4000: 3fc108
+Looking for 'mmc' at 5444, name dwmmc@fe320000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Found seq 1
+malloc_simple: size=110, ptr=2b8, limit=4000: 3fc1a8
+Looking for 'mmc' at 5444, name dwmmc@fe320000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Found seq 1
+mmc_bind: alias ret=0, devnum=1
+malloc_simple: size=13, ptr=2cb, limit=4000: 3fc2b8
+malloc_simple: size=30, ptr=300, limit=4000: 3fc2d0
+malloc_simple: size=a0, ptr=3a0, limit=4000: 3fc300
+malloc_simple: size=88, ptr=428, limit=4000: 3fc3a0
+malloc_simple: size=a0, ptr=4c8, limit=4000: 3fc428
+Looking for 'mmc' at 5812, name sdhci@fe330000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+Found seq 0
+malloc_simple: size=110, ptr=5d8, limit=4000: 3fc4c8
+Looking for 'mmc' at 5812, name sdhci@fe330000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+Found seq 0
+mmc_bind: alias ret=0, devnum=0
+malloc_simple: size=13, ptr=5eb, limit=4000: 3fc5d8
+malloc_simple: size=a0, ptr=690, limit=4000: 3fc5f0
+malloc_simple: size=88, ptr=718, limit=4000: 3fc690
+malloc_simple: size=30, ptr=748, limit=4000: 3fc718
+malloc_simple: size=a0, ptr=7e8, limit=4000: 3fc748
+Looking for 'serial' at 11360, name serial@ff1a0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+Found seq 2
+malloc_simple: size=18, ptr=800, limit=4000: 3fc7e8
+malloc_simple: size=30, ptr=830, limit=4000: 3fc800
+malloc_simple: size=a0, ptr=8d0, limit=4000: 3fc830
+malloc_simple: size=a0, ptr=970, limit=4000: 3fc8d0
+malloc_simple: size=a0, ptr=a10, limit=4000: 3fc970
+malloc_simple: size=30, ptr=a40, limit=4000: 3fca10
+malloc_simple: size=a0, ptr=ae0, limit=4000: 3fca40
+malloc_simple: size=30, ptr=b10, limit=4000: 3fcae0
+malloc_simple: size=a0, ptr=bb0, limit=4000: 3fcb10
+malloc_simple: size=30, ptr=be0, limit=4000: 3fcbb0
+malloc_simple: size=a0, ptr=c80, limit=4000: 3fcbe0
+malloc_simple: size=10, ptr=c90, limit=4000: 3fcc80
+malloc_simple: size=a0, ptr=d30, limit=4000: 3fcc90
+malloc_simple: size=30, ptr=d60, limit=4000: 3fcd30
+malloc_simple: size=a0, ptr=e00, limit=4000: 3fcd60
+malloc_simple: size=8, ptr=e08, limit=4000: 3fce00
+malloc_simple: size=a0, ptr=ea8, limit=4000: 3fce08
+malloc_simple: size=10, ptr=eb8, limit=4000: 3fcea8
+malloc_simple: size=a0, ptr=f58, limit=4000: 3fceb8
+initcall: 0000000000214e1c
+initcall: 000000000027ed14
+initcall: 0000000000262f30
+initcall: 0000000000215178
+initcall: 0000000000249410
+malloc_simple: size=20, ptr=f78, limit=4000: 3fcf58
+malloc_simple: size=18, ptr=f90, limit=4000: 3fcf78
+malloc_simple: size=30, ptr=fc0, limit=4000: 3fcf90
+malloc_simple: size=30, ptr=ff0, limit=4000: 3fcfc0
+OF: ** translation for device serial@ff1a0000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 00001aff
+OF: reached root node
+ofnode_read_u32: reg-offset: (not found)
+ofnode_read_u32: reg-shift: 0x2 (2)
+clk_get_by_indexed_prop(dev=00000000003fc748, index=0, clk=00000000003fbd60)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+malloc_simple: size=8, ptr=ff8, limit=4000: 3fcff0
+OF: ** translation for device clock-controller@ff760000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000076ff
+OF: reached root node
+PLL at 00000000ff760000: fbdiv=50, refdiv=1, postdiv1=2, postdiv2=1, vco=1200000 khz, output=600000 khz
+PLL at 00000000ff7600a0: fbdiv=75, refdiv=1, postdiv1=3, postdiv2=1, vco=1800000 khz, output=600000 khz
+PLL at 00000000ff760080: fbdiv=100, refdiv=1, postdiv1=3, postdiv2=1, vco=2400000 khz, output=800000 khz
+clk_of_xlate_default(clk=00000000003fbd60)
+clk_request(dev=00000000003fcc90, clk=00000000003fbd60)
+clk_get_rate(clk=00000000003fbd60)
+initcall: 000000000027d4b8
+
+
+U-Boot 2017.09-g73d3fd4-dirty (Aug 21 2019 - 14:39:29 +0900)
+
+initcall: 0000000000214fe8
+U-Boot code: 00200000 -> 002C9758  BSS: -> 00309598
+initcall: 0000000000215650
+Model: Firefly-RK3399 Board
+initcall: 0000000000215158
+DRAM:  initcall: 0000000000203fd4
+malloc_simple: size=18, ptr=1010, limit=4000: 3fcff8
+malloc_simple: size=8, ptr=1018, limit=4000: 3fd010
+malloc_simple: size=28, ptr=1040, limit=4000: 3fd018
+fdtdec_get_addr_size_auto_noparent: fdtdec_get_addr_size_auto_parent: na=2, ns=2, fdtdec_get_addr_size_fixed: reg: addr=ff320000, size=1000
+OF: ** translation for device syscon@ff320000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000032ff
+OF: reached root node
+rk3399_dmc_probe: pmugrf=00000000ff320000
+rockchip_sdram_size ff320308 32817281
+rank 1 cs0_col 10 bk 3 cs0_row 15                               bw 2 row_3_4 0
+rank 1 cs0_col 10 bk 3 cs0_row 15                               bw 2 row_3_4 0
+SDRAM base=0, size=80000000
+initcall: 00000000002152dc
+Monitor len: 00109598
+Ram size: 80000000
+Ram top: 80000000
+initcall: 0000000000214e00
+initcall: 0000000000214e24
+TLB table from 7fff0000 to 7fff8000
+initcall: 000000000021512c
+Reserving 2000000 Bytes for video at: 7df00000
+Video frame buffers from 7df00000 to 7fff0000
+initcall: 00000000002151e8
+initcall: 0000000000214f98
+Reserving 1061k for U-Boot at: 7ddf6000
+initcall: 0000000000214f5c
+Reserving 32800k for malloc() at: 7bdee000
+initcall: 00000000002150d0
+Reserving 168 Bytes for Board Info at: 7bdedf58
+initcall: 00000000002151f0
+initcall: 0000000000214f20
+Reserving 376 Bytes for Global Data at: 7bdedde0
+initcall: 0000000000214eb0
+Reserving 57984 Bytes for FDT at: 7bddfb60
+initcall: 00000000002151f8
+initcall: 00000000002151d8
+initcall: 0000000000215354
+initcall: 0000000000203c98
+initcall: 000000000021520c
+
+RAM Configuration:
+Bank #0: 200000 130 MiB
+Bank #1: a200000 1.8 GiB
+
+DRAM:  2 GiB
+initcall: 0000000000214e8c
+New Stack Pointer is: 7bddfb50
+initcall: 000000000021508c
+initcall: 0000000000215200
+initcall: 000000000021501c
+Relocation Offset is: 7dbf6000
+Relocating to 7ddf6000, new gd at 7bdedde0, sp at 7bddfb50
+initcall: 000000007de0b5f0
+initcall: 000000007de0b3a4
+initcall: 00000000002155d8 (relocated to 000000007de0b5d8)
+initcall: 000000000021559c (relocated to 000000007de0b59c)
+efi_runtime_relocate: Relocating to offset=7ddf6000
+efi_runtime_relocate: Setting 000000007deb0430 to 7deb04c0
+efi_runtime_relocate: Setting 000000007deb0448 to 7deac020
+efi_runtime_relocate: Setting 000000007deb0458 to 7de805e8
+efi_runtime_relocate: Setting 000000007deb0468 to 7de805e8
+efi_runtime_relocate: Setting 000000007deb0470 to 7deb04d8
+efi_runtime_relocate: Setting 000000007deb0478 to 7de80470
+efi_runtime_relocate: Setting 000000007deb0488 to 7deb0490
+efi_runtime_relocate: Setting 000000007deb04f0 to 7de6222c
+efi_runtime_relocate: Setting 000000007deb04f8 to 7deb0404
+efi_runtime_relocate: Setting 000000007deb0500 to 7deb03fc
+efi_runtime_relocate: Setting 000000007deb0508 to 7deb03fc
+efi_runtime_relocate: Setting 000000007deb0510 to 7de62404
+efi_runtime_relocate: Setting 000000007deb0518 to 7deb040c
+efi_runtime_relocate: Setting 000000007deb0520 to 7deb0404
+efi_runtime_relocate: Setting 000000007deb0528 to 7deb0404
+efi_runtime_relocate: Setting 000000007deb0530 to 7deb0404
+efi_runtime_relocate: Setting 000000007deb0538 to 7deb0404
+efi_runtime_relocate: Setting 000000007deb0540 to 7de62234
+initcall: 00000000002153c4 (relocated to 000000007de0b3c4)
+initcall: 00000000002155f8 (relocated to 000000007de0b5f8)
+initcall: 000000000021555c (relocated to 000000007de0b55c)
+Pre-reloc malloc() used 0x1040 bytes (4 KB)
+using memory 0x7bdee000-0x7ddf6000 for malloc()
+initcall: 0000000000214dd8 (relocated to 000000007de0add8)
+initcall: 0000000000215540 (relocated to 000000007de0b540)
+initcall: 00000000002153bc (relocated to 000000007de0b3bc)
+initcall: 000000000021539c (relocated to 000000007de0b39c)
+initcall: 0000000000231a14 (relocated to 000000007de27a14)
+initcall: 0000000000215528 (relocated to 000000007de0b528)
+initcall: 0000000000202eac (relocated to 000000007ddf8eac)
+initcall: 0000000000215514 (relocated to 000000007de0b514)
+Looking for 'video' at 1968, name display-subsystem
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+video_post_bind: Claiming 20f0000 bytes at 7df00000 for video device 'display-subsystem'
+ofnode_read_u32_array: ranges: fdtdec_get_int_array: ranges
+get_prop_check_min_len: ranges
+Looking for 'eth' at 4480, name ethernet@fe300000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'mmc' at 5444, name dwmmc@fe320000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Found seq 1
+Looking for 'mmc' at 5444, name dwmmc@fe320000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Found seq 1
+mmc_bind: alias ret=0, devnum=1
+Looking for 'mmc' at 5812, name sdhci@fe330000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+Found seq 0
+Looking for 'mmc' at 5812, name sdhci@fe330000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+Found seq 0
+mmc_bind: alias ret=0, devnum=0
+Looking for 'usb' at 6288, name usb@fe380000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'usb' at 6536, name usb@fe3a0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'usb' at 6784, name usb@fe3c0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'usb' at 7032, name usb@fe3e0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'i2c' at 8800, name i2c@ff110000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+Found seq 1
+Looking for 'i2c' at 9596, name i2c@ff130000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+Found seq 3
+Looking for 'serial' at 10792, name serial@ff180000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+Found seq 0
+Looking for 'serial' at 11360, name serial@ff1a0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+Found seq 2
+Looking for 'i2c' at 19784, name i2c@ff3d0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+Found seq 4
+Looking for 'i2c' at 32440, name i2c@ff3c0000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+Found seq 0
+ofnode_read_u32: u-boot,i2c-offset-len: (not found)
+ofnode_read_u32: reg: 0x1b (27)
+ofnode_find_subnode: regulators: regulators
+rk8xx_bind: 'pmic@1b' - found regulators subnode
+pmic_bind_children for 'pmic@1b' at node offset: 32772
+* Found child node: 'DCDC_REG1'
+  - compatible prefix: 'DCDC_REG'
+  - found child driver: 'rk8xx_buck'
+ofnode_read_string: regulator-name: vdd_center
+  - bound child device: 'DCDC_REG1'
+  - set 'child->driver_data': 1
+* Found child node: 'DCDC_REG2'
+  - compatible prefix: 'DCDC_REG'
+  - found child driver: 'rk8xx_buck'
+ofnode_read_string: regulator-name: vdd_cpu_l
+  - bound child device: 'DCDC_REG2'
+  - set 'child->driver_data': 2
+* Found child node: 'DCDC_REG3'
+  - compatible prefix: 'DCDC_REG'
+  - found child driver: 'rk8xx_buck'
+ofnode_read_string: regulator-name: vcc_ddr
+  - bound child device: 'DCDC_REG3'
+  - set 'child->driver_data': 3
+* Found child node: 'DCDC_REG4'
+  - compatible prefix: 'DCDC_REG'
+  - found child driver: 'rk8xx_buck'
+ofnode_read_string: regulator-name: vcc_1v8
+  - bound child device: 'DCDC_REG4'
+  - set 'child->driver_data': 4
+* Found child node: 'LDO_REG1'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc1v8_dvp
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc1v8_dvp
+  - bound child device: 'LDO_REG1'
+  - set 'child->driver_data': 1
+* Found child node: 'LDO_REG2'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc3v0_tp
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc3v0_tp
+  - bound child device: 'LDO_REG2'
+  - set 'child->driver_data': 2
+* Found child node: 'LDO_REG3'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc1v8_pmu
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc1v8_pmu
+  - bound child device: 'LDO_REG3'
+  - set 'child->driver_data': 3
+* Found child node: 'LDO_REG4'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc_sd
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc_sd
+  - bound child device: 'LDO_REG4'
+  - set 'child->driver_data': 4
+* Found child node: 'LDO_REG5'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcca3v0_codec
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcca3v0_codec
+  - bound child device: 'LDO_REG5'
+  - set 'child->driver_data': 5
+* Found child node: 'LDO_REG6'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc_1v5
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc_1v5
+  - bound child device: 'LDO_REG6'
+  - set 'child->driver_data': 6
+* Found child node: 'LDO_REG7'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcca1v8_codec
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcca1v8_codec
+  - bound child device: 'LDO_REG7'
+  - set 'child->driver_data': 7
+* Found child node: 'LDO_REG8'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc_3v0
+  - compatible prefix: 'LDO_REG'
+  - found child driver: 'rk8xx_ldo'
+ofnode_read_string: regulator-name: vcc_3v0
+  - bound child device: 'LDO_REG8'
+  - set 'child->driver_data': 8
+* Found child node: 'SWITCH_REG1'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc3v3_s3
+  - compatible prefix: 'LDO_REG'
+ofnode_read_string: regulator-name: vcc3v3_s3
+  - compatible prefix: 'SWITCH_REG'
+  - found child driver: 'rk8xx_switch'
+ofnode_read_string: regulator-name: vcc3v3_s3
+  - bound child device: 'SWITCH_REG1'
+  - set 'child->driver_data': 1
+* Found child node: 'SWITCH_REG2'
+  - compatible prefix: 'DCDC_REG'
+ofnode_read_string: regulator-name: vcc3v3_s0
+  - compatible prefix: 'LDO_REG'
+ofnode_read_string: regulator-name: vcc3v3_s0
+  - compatible prefix: 'SWITCH_REG'
+  - found child driver: 'rk8xx_switch'
+ofnode_read_string: regulator-name: vcc3v3_s0
+  - bound child device: 'SWITCH_REG2'
+  - set 'child->driver_data': 2
+Bound: 14 children for PMIC: 'pmic@1b'
+pmic_bind_children for 'pmic@1b' at node offset: 32772
+* Found child node: 'regulators'
+  - compatible prefix: 'pwrkey'
+ofnode_read_string: regulator-name: <not found>
+  - compatible prefix not found
+Bound: 0 children for PMIC: 'pmic@1b'
+rk8xx_bind: pmic@1b - no child found
+pmic_bind_children for 'pmic@1b' at node offset: 32772
+* Found child node: 'regulators'
+  - compatible prefix: 'battery'
+ofnode_read_string: regulator-name: <not found>
+  - compatible prefix: 'battery'
+ofnode_read_string: regulator-name: <not found>
+  - compatible prefix: 'battery'
+ofnode_read_string: regulator-name: <not found>
+  - compatible prefix not found
+Bound: 0 children for PMIC: 'pmic@1b'
+rk8xx_bind: pmic@1b - no child found
+Looking for 'pinctrl' at 39080, name pinctrl
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'gpio' at 39204, name gpio0@ff720000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'gpio' at 39408, name gpio1@ff730000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'gpio' at 39612, name gpio2@ff780000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'gpio' at 39800, name gpio3@ff788000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+Looking for 'gpio' at 40004, name gpio4@ff790000
+   - dsi0, /mipi@ff960000
+   - i2c0, /i2c@ff3c0000
+   - i2c1, /i2c@ff110000
+   - i2c2, /i2c@ff120000
+   - i2c3, /i2c@ff130000
+   - i2c4, /i2c@ff3d0000
+   - i2c5, /i2c@ff140000
+   - i2c6, /i2c@ff150000
+   - i2c7, /i2c@ff160000
+   - i2c8, /i2c@ff3e0000
+   - serial0, /serial@ff180000
+   - serial1, /serial@ff190000
+   - serial2, /serial@ff1a0000
+   - serial3, /serial@ff1b0000
+   - serial4, /serial@ff370000
+   - mmc0, /sdhci@fe330000
+   - mmc1, /dwmmc@fe320000
+Not found
+ofnode_read_string: regulator-name: vcc3v3_pcie
+ofnode_read_string: regulator-name: vcc3v3_sys
+ofnode_read_string: regulator-name: vcc5v0_host
+ofnode_read_string: regulator-name: vcc5v0_sys
+ofnode_read_string: regulator-name: vcc_phy
+ofnode_read_string: regulator-name: vdd_log
+ofnode_read_string: regulator-name: vcc1v8_sys
+initcall: 0000000000202e70 (relocated to 000000007ddf8e70)
+ofnode_read_u32: rockchip,grf: 0x18 (24)
+fdtdec_get_addr_size_auto_noparent: fdtdec_get_addr_size_auto_parent: na=2, ns=2, fdtdec_get_addr_size_fixed: reg: addr=ff770000, size=10000
+OF: ** translation for device syscon@ff770000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000077ff
+OF: reached root node
+ofnode_read_u32: rockchip,pmu: 0x70 (112)
+fdtdec_get_addr_size_auto_noparent: fdtdec_get_addr_size_auto_parent: na=2, ns=2, fdtdec_get_addr_size_fixed: reg: addr=ff320000, size=1000
+OF: ** translation for device syscon@ff320000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000032ff
+OF: reached root node
+bank 0, iomux 0 has iom_offset 0x0 drv_offset 0x80
+bank 0, iomux 1 has iom_offset 0x4 drv_offset 0x88
+bank 0, iomux 2 has iom_offset 0x8 drv_offset 0x8c
+bank 0, iomux 3 has iom_offset 0xc drv_offset 0x90
+bank 1, iomux 0 has iom_offset 0x10 drv_offset 0xa0
+bank 1, iomux 1 has iom_offset 0x14 drv_offset 0xa8
+bank 1, iomux 2 has iom_offset 0x18 drv_offset 0xb0
+bank 1, iomux 3 has iom_offset 0x1c drv_offset 0xb8
+bank 2, iomux 0 has iom_offset 0xe000 drv_offset 0xe100
+bank 2, iomux 1 has iom_offset 0xe004 drv_offset 0xe104
+bank 2, iomux 2 has iom_offset 0xe008 drv_offset 0xe108
+bank 2, iomux 3 has iom_offset 0xe00c drv_offset 0xe10c
+bank 3, iomux 0 has iom_offset 0xe010 drv_offset 0xe110
+bank 3, iomux 1 has iom_offset 0xe014 drv_offset 0xe118
+bank 3, iomux 2 has iom_offset 0xe018 drv_offset 0xe120
+bank 3, iomux 3 has iom_offset 0xe01c drv_offset 0xe128
+bank 4, iomux 0 has iom_offset 0xe020 drv_offset 0xe12c
+bank 4, iomux 1 has iom_offset 0xe024 drv_offset 0xe130
+bank 4, iomux 2 has iom_offset 0xe028 drv_offset 0xe138
+bank 4, iomux 3 has iom_offset 0xe02c drv_offset 0xe13c
+ofnode_read_u32: clock-frequency: 0x16e3600 (24000000)
+OF: ** translation for device pmu-clock-controller@ff750000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000075ff
+OF: reached root node
+PLL at 00000000ff750000: fbdiv=112, refdiv=2, postdiv1=2, postdiv2=1, vco=1344000 khz, output=672000 khz
+OF: ** translation for device clock-controller@ff760000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000076ff
+OF: reached root node
+PLL at 00000000ff760000: fbdiv=50, refdiv=1, postdiv1=2, postdiv2=1, vco=1200000 khz, output=600000 khz
+ofnode_read_u32: clock-frequency: 0x7735940 (125000000)
+setting mux of GPIO1-15 to 2
+setting pull of GPIO1-15 to 0
+setting mux of GPIO1-16 to 2
+setting pull of GPIO1-16 to 0
+clk_get_by_indexed_prop(dev=000000007bdf1370, index=0, clk=000000007bdf9b20)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bdf9b20)
+clk_request(dev=000000007bdf0eb0, clk=000000007bdf9b20)
+OF: ** translation for device i2c@ff3c0000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 00003cff
+OF: reached root node
+ofnode_read_u32: clock-frequency: 0x61a80 (400000)
+clk_get_rate(clk=000000007bdf9b20)
+rk_i2c_set_clk: i2c rate = 169000000, scl rate = 400000
+set i2c clk div = 51, divh = 26, divl = 25
+set clk(I2C_CLKDIV: 0x001a0019)
+setting mux of GPIO1-21 to 0
+setting pull of GPIO1-21 to 3
+i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00001736
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00001836
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+PMIC:  RK808 
+ofnode_read_u32: regulator-min-microvolt: 0xb71b0 (750000)
+ofnode_read_u32: regulator-max-microvolt: 0x149970 (1350000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: 0x1771 (6001)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=DCDC_REG1: min_uV=750000, max_uV=1350000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=2ei2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002e36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x1
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=1, ret=0
+pmic_reg_write: reg=2e, value=11i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00112e36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=25, value=1i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00012536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=2fi2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002f36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=f, ret=0
+vdd_center 900000 uV
+pmic_reg_read: reg=90i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00009036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x55
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=55, ret=0
+pmic_reg_write: reg=90, value=57i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00579036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=2fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x002f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0xb71b0 (750000)
+ofnode_read_u32: regulator-max-microvolt: 0x149970 (1350000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: 0x1771 (6001)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=DCDC_REG2: min_uV=750000, max_uV=1350000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=32i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003236
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x1
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=1, ret=0
+pmic_reg_write: reg=32, value=11i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00113236
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x1
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=1, ret=0
+pmic_reg_write: reg=25, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=33i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=f, ret=0
+vdd_cpu_l 900000 uV
+pmic_reg_read: reg=90i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00009036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x57
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=57, ret=0
+pmic_reg_write: reg=90, value=5fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x005f9036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=2fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x002f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=DCDC_REG3: min_uV=-61, max_uV=-61, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=25, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+_buck_set_suspend_value: volt=-61, buck=3, reg=0xff, mask=0x3f, val=0x53df4
+pmic_reg_read: reg=ffi2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x0000ff36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=ff, value=f4i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00f4ff36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=90i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00009036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x5f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=5f, ret=0
+pmic_reg_write: reg=90, value=7fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x007f9036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=2fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x002f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: 0x1b7740 (1800000)
+dev.name=DCDC_REG4: min_uV=1800000, max_uV=1800000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=1800000
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=25, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+_buck_set_suspend_value: volt=1800000, buck=4, reg=0x39, mask=0xf, val=0x0
+pmic_reg_read: reg=39i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003936
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=39, value=0i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003936
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+_buck_set_value: volt=1800000, buck=4, reg=0x38, mask=0xf, val=0x0
+pmic_reg_read: reg=38i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003836
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=38, value=0i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003836
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=90i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00009036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x7f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=7f, ret=0
+pmic_reg_write: reg=90, value=ffi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00ff9036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=2fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x002f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=LDO_REG1: min_uV=1800000, max_uV=1800000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=26, value=1i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00012636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=1800000, ldo=1, reg=0x3b, mask=0x1f, val=0x0
+pmic_reg_read: reg=3bi2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003b36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=3b, value=0i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003b36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xac
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=ac, ret=0
+pmic_reg_write: reg=24, value=adi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00ad2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-max-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=LDO_REG2: min_uV=3000000, max_uV=3000000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x1
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=1, ret=0
+pmic_reg_write: reg=26, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=3000000, ldo=2, reg=0x3d, mask=0x1f, val=0xc
+pmic_reg_read: reg=3di2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003d36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=3d, value=ci2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000c3d36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xad
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=ad, ret=0
+pmic_reg_write: reg=24, value=afi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00af2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: 0x1b7740 (1800000)
+dev.name=LDO_REG3: min_uV=1800000, max_uV=1800000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=1800000
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=26, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_suspend_value: volt=1800000, ldo=3, reg=0x40, mask=0xf, val=0xa
+pmic_reg_read: reg=40i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=40, value=ai2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000a4036
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=1800000, ldo=3, reg=0x3f, mask=0xf, val=0xa
+pmic_reg_read: reg=3fi2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00003f36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xa
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=a, ret=0
+pmic_reg_write: reg=3f, value=ai2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000a3f36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xaf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=af, ret=0
+pmic_reg_write: reg=24, value=afi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00af2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: 0x2dc6c0 (3000000)
+dev.name=LDO_REG4: min_uV=1800000, max_uV=3000000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=3000000
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=26, value=3i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00032636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_suspend_value: volt=3000000, ldo=4, reg=0x42, mask=0x1f, val=0xc
+pmic_reg_read: reg=42i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004236
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=42, value=ci2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000c4236
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xaf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=af, ret=0
+pmic_reg_write: reg=24, value=afi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00af2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-max-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=LDO_REG5: min_uV=3000000, max_uV=3000000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=26, value=13i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00132636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=3000000, ldo=5, reg=0x43, mask=0x1f, val=0xc
+pmic_reg_read: reg=43i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=43, value=ci2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000c4336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xaf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=af, ret=0
+pmic_reg_write: reg=24, value=bfi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00bf2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x16e360 (1500000)
+ofnode_read_u32: regulator-max-microvolt: 0x16e360 (1500000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: 0x16e360 (1500000)
+dev.name=LDO_REG6: min_uV=1500000, max_uV=1500000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=1500000
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x13
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=13, ret=0
+pmic_reg_write: reg=26, value=13i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00132636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_suspend_value: volt=1500000, ldo=6, reg=0x46, mask=0x1f, val=0x7
+pmic_reg_read: reg=46i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=46, value=7i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00074636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=1500000, ldo=6, reg=0x45, mask=0x1f, val=0x7
+pmic_reg_read: reg=45i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x7
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=7, ret=0
+pmic_reg_write: reg=45, value=7i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00074536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xbf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=bf, ret=0
+pmic_reg_write: reg=24, value=bfi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00bf2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=LDO_REG7: min_uV=1800000, max_uV=1800000, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x13
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=13, ret=0
+pmic_reg_write: reg=26, value=53i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00532636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=1800000, ldo=7, reg=0x47, mask=0x1f, val=0xa
+pmic_reg_read: reg=47i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004736
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=47, value=ai2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000a4736
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xbf
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=bf, ret=0
+pmic_reg_write: reg=24, value=ffi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00ff2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-max-microvolt: 0x2dc6c0 (3000000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: false
+ofnode_read_u32: regulator-suspend-microvolt: 0x2dc6c0 (3000000)
+dev.name=LDO_REG8: min_uV=3000000, max_uV=3000000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=3000000
+pmic_reg_read: reg=26i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x53
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=53, ret=0
+pmic_reg_write: reg=26, value=53i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00532636
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_suspend_value: volt=3000000, ldo=8, reg=0x4a, mask=0x1f, val=0xc
+pmic_reg_read: reg=4ai2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004a36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x0
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=0, ret=0
+pmic_reg_write: reg=4a, value=ci2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000c4a36
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ldo_set_value: volt=3000000, ldo=8, reg=0x49, mask=0x1f, val=0xc
+pmic_reg_read: reg=49i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00004936
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xc
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=c, ret=0
+pmic_reg_write: reg=49, value=ci2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x000c4936
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+pmic_reg_read: reg=24i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0xff
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=ff, ret=0
+pmic_reg_write: reg=24, value=ffi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00ff2436
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=SWITCH_REG1: min_uV=-61, max_uV=-61, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x3
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=3, ret=0
+pmic_reg_write: reg=25, value=23i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00232536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+switch_set_suspend_enable: switch1, enable=0, mask=0x20
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=2fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x002f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+switch_set_enable: switch1, enable=1, mask=0x20
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: regulator-state-mem
+ofnode_read_bool: regulator-off-in-suspend: true
+ofnode_read_u32: regulator-suspend-microvolt: (not found)
+dev.name=SWITCH_REG2: min_uV=-61, max_uV=-61, boot-on=1, always-on=1, off-in-suspend=1, suspend_volt=-61
+pmic_reg_read: reg=25i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x23
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=23, ret=0
+pmic_reg_write: reg=25, value=63i2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00632536
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+switch_set_suspend_enable: switch2, enable=0, mask=0x40
+pmic_reg_read: reg=23i2c_xfer: 2 messages
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x00002336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+i2c_xfer: chip=0x1b, len=0x1
+rk_i2c_read: chip = 27, reg = 0, r_len = 0, b_len = 1
+I2c Send Start bit.
+I2c Read RXDATA[0] = 0x2f
+I2C Read bytes_remain_len 0
+I2c Send Stop bit.
+, value=2f, ret=0
+pmic_reg_write: reg=23, value=6fi2c_xfer: 1 messages
+i2c_xfer: chip=0x1b, len=0x2
+rk_i2c_write: chip = 27, reg = 0, r_len = 0, b_len = 2
+I2c Send Start bit.
+I2c Write TXDATA[0] = 0x006f2336
+I2C Write bytes_remain_len 0
+I2c Send Stop bit.
+, ret=0
+switch_set_enable: switch2, enable=1, mask=0x40
+setting mux of GPIO1-17 to 0
+setting pull of GPIO1-17 to 0
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vcc3v3-pcie-regulator: min_uV=-61, max_uV=-61, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: true
+fdtdec_get_int: #gpio-cells: 0x2 (2)
+OF: ** translation for device gpio1@ff730000 **
+OF: bus is default (na=2, ns=2) on pinctrl
+OF: translating address: 00000000 000073ff
+OF: parent bus is default (na=2, ns=2) on 
+OF: no ranges, 1:1 translation
+OF: parent translation for: 00000000 00000000
+OF: with offset: 4285726720
+OF: one level translation: 00000000 000073ff
+OF: reached root node
+ofnode_read_u32: startup-delay-us: (not found)
+fixed_regulator_set_enable: dev='vcc3v3-pcie-regulator', enable=1, delay=0, has_gpio=1
+fixed_regulator_set_enable: done
+ofnode_read_u32: regulator-min-microvolt: 0x325aa0 (3300000)
+ofnode_read_u32: regulator-max-microvolt: 0x325aa0 (3300000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vcc3v3-sys: min_uV=3300000, max_uV=3300000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: false
+gpio_request_tail: Node 'vcc3v3-sys', property 'gpio', failed to request GPIO index 0: -2
+Fixed regulator optional enable GPIO - not found! Error: -2
+ofnode_read_u32: startup-delay-us: (not found)
+setting mux of GPIO1-0 to 0
+setting pull of GPIO1-0 to 0
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: false
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vcc5v0-host-regulator: min_uV=-61, max_uV=-61, boot-on=0, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: true
+fdtdec_get_int: #gpio-cells: 0x2 (2)
+ofnode_read_u32: startup-delay-us: (not found)
+fixed_regulator_set_enable: dev='vcc5v0-host-regulator', enable=1, delay=0, has_gpio=1
+fixed_regulator_set_enable: done
+ofnode_read_u32: regulator-min-microvolt: 0x4c4b40 (5000000)
+ofnode_read_u32: regulator-max-microvolt: 0x4c4b40 (5000000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vcc5v0-sys: min_uV=5000000, max_uV=5000000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: false
+gpio_request_tail: Node 'vcc5v0-sys', property 'gpio', failed to request GPIO index 0: -2
+Fixed regulator optional enable GPIO - not found! Error: -2
+ofnode_read_u32: startup-delay-us: (not found)
+ofnode_read_u32: regulator-min-microvolt: (not found)
+ofnode_read_u32: regulator-max-microvolt: (not found)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vcc-phy-regulator: min_uV=-61, max_uV=-61, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: false
+gpio_request_tail: Node 'vcc-phy-regulator', property 'gpio', failed to request GPIO index 0: -2
+Fixed regulator optional enable GPIO - not found! Error: -2
+ofnode_read_u32: startup-delay-us: (not found)
+fixed_regulator_set_enable: dev='vcc-phy-regulator', enable=1, delay=0, has_gpio=0
+ofnode_read_u32: regulator-min-microvolt: 0x68fb0 (430000)
+ofnode_read_u32: regulator-max-microvolt: 0x155cc0 (1400000)
+ofnode_read_u32: regulator-init-microvolt: 0xe7ef0 (950000)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vdd-log: min_uV=430000, max_uV=1400000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+fdtdec_get_int: #pwm-cells: 0x3 (3)
+ofnode_read_u32: regulator-init-microvolt: 0xe7ef0 (950000)
+OF: ** translation for device pwm@ff420020 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 200042ff
+OF: reached root node
+clk_get_by_indexed_prop(dev=000000007bdf0b50, index=0, clk=000000007bddf940)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddf940)
+clk_request(dev=000000007bdf0eb0, clk=000000007bddf940)
+clk_get_rate(clk=000000007bddf940)
+pwm-regulator(vdd-log): init 950000 uV
+rk_pwm_set_invert: polarity=1
+rk_pwm_set_config: period_ns=25000, duty_ns=13250
+rk_pwm_set_config: period=1207, duty=639
+vdd_log 950000 uV
+rk_pwm_set_invert: polarity=1
+rk_pwm_set_config: period_ns=25000, duty_ns=13250
+rk_pwm_set_config: period=1207, duty=639
+regulator(vdd-log) init 950000 uV
+rk_pwm_set_enable: Enable 'pwm@ff420020'
+setting mux of GPIO1-19 to 1
+setting pull of GPIO1-19 to 0
+ofnode_read_u32: regulator-min-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-max-microvolt: 0x1b7740 (1800000)
+ofnode_read_u32: regulator-init-microvolt: (not found)
+ofnode_read_u32: regulator-min-microamp: (not found)
+ofnode_read_u32: regulator-max-microamp: (not found)
+ofnode_read_bool: regulator-always-on: true
+ofnode_read_bool: regulator-boot-on: true
+ofnode_read_u32: regulator-ramp-delay: (not found)
+ofnode_find_subnode: regulator-state-mem: <none>
+dev.name=vccadc-ref: min_uV=1800000, max_uV=1800000, boot-on=1, always-on=1, off-in-suspend=0, suspend_volt=-61
+ofnode_read_bool: enable-active-high: false
+gpio_request_tail: Node 'vccadc-ref', property 'gpio', failed to request GPIO index 0: -2
+Fixed regulator optional enable GPIO - not found! Error: -2
+ofnode_read_u32: startup-delay-us: (not found)
+rk_board_init PWM0 pinctrl init fail! (ret=-38)
+initcall: 000000000026dd7c (relocated to 000000007de63d7c)
+efi_add_memory_map: 0x200000 0x8200 7 no
+efi_add_memory_map: 0xa200000 0x75e00 7 no
+efi_add_memory_map: 0x7addf000 0x5221 2 no
+efi_add_memory_map: 0x7deb0000 0x1 5 no
+initcall: 0000000000223974 (relocated to 000000007de19974)
+initcall: 00000000002154fc (relocated to 000000007de0b4fc)
+setting mux of GPIO4-19 to 1
+setting pull of GPIO4-19 to 3
+setting mux of GPIO4-20 to 1
+setting pull of GPIO4-20 to 0
+OF: ** translation for device serial@ff1a0000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 00001aff
+OF: reached root node
+ofnode_read_u32: reg-offset: (not found)
+ofnode_read_u32: reg-shift: 0x2 (2)
+clk_get_by_indexed_prop(dev=000000007bdef560, index=0, clk=000000007bddfa20)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddfa20)
+clk_request(dev=000000007bdf1070, clk=000000007bddfa20)
+clk_get_rate(clk=000000007bddfa20)
+initcall: 00000000002154d8 (relocated to 000000007de0b4d8)
+Now running in RAM - U-Boot at: 7ddf6000
+initcall: 0000000000215600 (relocated to 000000007de0b600)
+initcall: 00000000002154b0 (relocated to 000000007de0b4b0)
+MMC:   OF: ** translation for device sdhci@fe330000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000033fe
+OF: reached root node
+ofnode_read_u32: max-frequency: 0x8f0d180 (150000000)
+ofnode_read_u32: bus-width: 0x8 (8)
+clk_get_by_indexed_prop(dev=000000007bdeeb30, index=0, clk=000000007bddfa20)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddfa20)
+clk_request(dev=000000007bdf1070, clk=000000007bddfa20)
+clk_set_rate(clk=000000007bddfa20, rate=150000000)
+ofnode_read_u32: phys: 0x1d (29)
+ofnode_read_u32: reg: 0xf780 (63360)
+OF: ** translation for device dwmmc@fe320000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000032fe
+OF: reached root node
+ofnode_read_u32: bus-width: 0x4 (4)
+ofnode_read_bool: non-removable: false
+ofnode_read_u32: fifo-depth: 0x100 (256)
+ofnode_read_bool: fifo-mode: false
+ofnode_read_u32_array: clock-freq-min-max: fdtdec_get_int_array: clock-freq-min-max
+get_prop_check_min_len: clock-freq-min-max
+ofnode_read_u32: max-frequency: 0x8f0d180 (150000000)
+clk_get_by_indexed_prop(dev=000000007bdee7c0, index=0, clk=000000007bdfa070)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bdfa070)
+clk_request(dev=000000007bdf1070, clk=000000007bdfa070)
+clk_get_by_name(dev=000000007bdee7c0, name=ciu-sample, clk=000000007bdfa080)
+clk_get_by_indexed_prop(dev=000000007bdee7c0, index=3, clk=000000007bdfa080)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bdfa080)
+clk_request(dev=000000007bdf1070, clk=000000007bdfa080)
+ofnode_read_bool: mmc-hs200-1_8v: false
+clk_set_rate(clk=000000007bdfa070, rate=400000)
+dwmmc@fe320000: 1, sdhci@fe330000: 0
+initcall: 0000000000215440 (relocated to 000000007de0b440)
+fdtdec_get_config_int: load-environment
+Using default environment
+
+Destroy Hash Table: 000000007deabdc8 table = 0000000000000000
+Create Hash Table: N=512
+INSERT: table 000000007deabdc8, filled 1/521 rv 000000007bdfd308 ==> name="bootcmd" value="boot_android ${devtype} ${devnum};bootrkp;run distro_bootcmd;"
+INSERT: table 000000007deabdc8, filled 2/521 rv 000000007bdfe3c0 ==> name="bootdelay" value="2"
+INSERT: table 000000007deabdc8, filled 3/521 rv 000000007bdfcac0 ==> name="baudrate" value="1500000"
+DELETE CANDIDATE: "preboot"
+hdelete: DELETE key "preboot"
+DELETE ERROR ##############################
+INSERT: table 000000007deabdc8, filled 4/521 rv 000000007bdfbaf8 ==> name="arch" value="arm"
+INSERT: table 000000007deabdc8, filled 5/521 rv 000000007bdfeaf0 ==> name="cpu" value="armv8"
+INSERT: table 000000007deabdc8, filled 6/521 rv 000000007bdfda60 ==> name="board" value="evb_rk3399"
+INSERT: table 000000007deabdc8, filled 7/521 rv 000000007bdfc070 ==> name="board_name" value="evb_rk3399"
+INSERT: table 000000007deabdc8, filled 8/521 rv 000000007bdfec08 ==> name="vendor" value="rockchip"
+INSERT: table 000000007deabdc8, filled 9/521 rv 000000007bdff798 ==> name="soc" value="rockchip"
+INSERT: table 000000007deabdc8, filled 10/521 rv 000000007bdfc3b8 ==> name="scriptaddr" value="0x00500000"
+INSERT: table 000000007deabdc8, filled 11/521 rv 000000007bdfc098 ==> name="pxefile_addr_r" value="0x00600000"
+INSERT: table 000000007deabdc8, filled 12/521 rv 000000007bdfc688 ==> name="fdt_addr_r" value="0x01f00000"
+INSERT: table 000000007deabdc8, filled 13/521 rv 000000007bdfd3d0 ==> name="kernel_addr_r" value="0x02080000"
+INSERT: table 000000007deabdc8, filled 14/521 rv 000000007bdfee10 ==> name="ramdisk_addr_r" value="0x0a200000"
+INSERT: table 000000007deabdc8, filled 15/521 rv 000000007bdfeb18 ==> name="partitions" value="uuid_disk=${uuid_gpt_disk};name=loader1,start=32K,size=4000K,uuid=${uuid_gpt_loader1};name=loader2,start=8MB,size=4MB,uuid=${uuid_gpt_loader2};name=trust,size=4M,uuid=${uuid_gpt_atf};name=boot,size=112M,bootable,uuid=${uuid_gpt_boot};name=rootfs,size=-,uuid=B921B045-1DF0-41C3-AF44-4C6F280D3FAE;"
+INSERT: table 000000007deabdc8, filled 16/521 rv 000000007bdfebe0 ==> name="stdout" value="serial,vidconsole"
+INSERT: table 000000007deabdc8, filled 17/521 rv 000000007bdfd948 ==> name="stderr" value="serial,vidconsole"
+INSERT: table 000000007deabdc8, filled 18/521 rv 000000007bdfc7f0 ==> name="rkimg_bootdev" value="if mmc dev 1 && rkimgtest mmc 1; then setenv devtype mmc; setenv devnum 1; echo Boot from SDcard;elif mmc dev 0; then setenv devtype mmc; setenv devnum 0;elif rknand dev 0; then setenv devtype rknand; setenv devnum 0;elif rksfc dev 0; then setenv devtype spinand; setenv devnum 0;elif rksfc dev 1; then setenv devtype spinor; setenv devnum 1;fi; "
+INSERT: table 000000007deabdc8, filled 19/521 rv 000000007bdfe8c0 ==> name="mmc_boot" value="if mmc dev ${devnum}; then setenv devtype mmc; run scan_dev_for_boot_part; fi"
+INSERT: table 000000007deabdc8, filled 20/521 rv 000000007be002d8 ==> name="boot_net_usb_start" value="usb start"
+INSERT: table 000000007deabdc8, filled 21/521 rv 000000007bdfd100 ==> name="usb_boot" value="usb start; if usb dev ${devnum}; then setenv devtype usb; run scan_dev_for_boot_part; fi"
+INSERT: table 000000007deabdc8, filled 22/521 rv 000000007bdfe118 ==> name="boot_efi_binary" value="load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi"
+INSERT: table 000000007deabdc8, filled 23/521 rv 000000007bdffdb0 ==> name="load_efi_dtb" value="load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}"
+INSERT: table 000000007deabdc8, filled 24/521 rv 000000007bdfec80 ==> name="efi_dtb_prefixes" value="/ /dtb/ /dtb/current/"
+INSERT: table 000000007deabdc8, filled 25/521 rv 000000007bdfb350 ==> name="scan_dev_for_efi" value="setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile"
+INSERT: table 000000007deabdc8, filled 26/521 rv 000000007bdfb328 ==> name="boot_prefixes" value="/ /boot/"
+INSERT: table 000000007deabdc8, filled 27/521 rv 000000007bdfb3f0 ==> name="boot_scripts" value="boot.scr.uimg boot.scr"
+INSERT: table 000000007deabdc8, filled 28/521 rv 000000007be00058 ==> name="boot_script_dhcp" value="boot.scr.uimg"
+INSERT: table 000000007deabdc8, filled 29/521 rv 000000007bdfeeb0 ==> name="boot_targets" value="mmc1 mmc0 usb0 pxe dhcp "
+INSERT: table 000000007deabdc8, filled 30/521 rv 000000007bdfcb88 ==> name="boot_extlinux" value="sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}extlinux/extlinux.conf"
+INSERT: table 000000007deabdc8, filled 31/521 rv 000000007be000f8 ==> name="scan_dev_for_extlinux" value="if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}extlinux/extlinux.conf; then echo Found ${prefix}extlinux/extlinux.conf; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi"
+INSERT: table 000000007deabdc8, filled 32/521 rv 000000007bdfc4d0 ==> name="boot_a_script" value="load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr}"
+INSERT: table 000000007deabdc8, filled 33/521 rv 000000007bdfff18 ==> name="scan_dev_for_scripts" value="for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done"
+INSERT: table 000000007deabdc8, filled 34/521 rv 000000007bdffd38 ==> name="scan_dev_for_boot" value="echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;"
+INSERT: table 000000007deabdc8, filled 35/521 rv 000000007bdffb58 ==> name="scan_dev_for_boot_part" value="part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done"
+INSERT: table 000000007deabdc8, filled 36/521 rv 000000007bdff298 ==> name="bootcmd_mmc1" value="setenv devnum 1; run mmc_boot"
+INSERT: table 000000007deabdc8, filled 37/521 rv 000000007bdfc1b0 ==> name="bootcmd_mmc0" value="setenv devnum 0; run mmc_boot"
+INSERT: table 000000007deabdc8, filled 38/521 rv 000000007bdfd1f0 ==> name="bootcmd_usb0" value="setenv devnum 0; run usb_boot"
+INSERT: table 000000007deabdc8, filled 39/521 rv 000000007bdfe230 ==> name="bootcmd_pxe" value="run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi"
+INSERT: table 000000007deabdc8, filled 40/521 rv 000000007bdff270 ==> name="bootcmd_dhcp" value="run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;"
+INSERT: table 000000007deabdc8, filled 41/521 rv 000000007bdfdb78 ==> name="distro_bootcmd" value="for target in ${boot_targets}; do run bootcmd_${target}; done"
+INSERT: free(data = 000000007bdfa140)
+INSERT: done
+Initial value for argc=3
+Final value for argc=3
+initcall: 000000000021560c (relocated to 000000007de0b60c)
+initcall: 000000000022398c (relocated to 000000007de1998c)
+ofnode_find_subnode: route: route
+ofnode_read_u32: connect: 0xe (14)
+Warn: can't find crtc driver -19
+Failed to found available display route
+stdio_add_devices: Video device failed (ret=-19)
+initcall: 0000000000215428 (relocated to 000000007de0b428)
+initcall: 000000000021d524 (relocated to 000000007de13524)
+In:    serial@ff1a0000
+Out:   serial@ff1a0000
+Err:   serial@ff1a0000
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+initcall: 000000000021d3d0 (relocated to 000000007de133d0)
+initcall: 0000000000215650 (relocated to 000000007de0b650)
+Model: Firefly-RK3399 Board
+initcall: 000000000020469c (relocated to 000000007ddfa69c)
+OF: ** translation for device efuse@ff690000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000069ff
+OF: reached root node
+cpuid: 544d533631362e30300000000002008b
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+initcall: 0000000000215400 (relocated to 000000007de0b400)
+initcall: 0000000000202e38 (relocated to 000000007ddf8e38)
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+ofnode_read_u32: vmmc-supply: (not found)
+dwmmc@fe320000: No vmmc supply
+Buswidth = 1, clock: 0
+Buswidth = 1, clock: 400000
+clk_set_rate(clk=000000007bdfa070, rate=400000)
+Buswidth = 1, clock: 400000
+clk_set_rate(clk=000000007bdfa070, rate=400000)
+Sending CMD0
+Sending CMD8
+Sending CMD55
+Sending CMD41
+Sending CMD55
+Sending CMD41
+Sending CMD2
+Sending CMD3
+Sending CMD9
+Sending CMD7
+Sending CMD55
+Unaligned buffer length 8
+Sending CMD51
+Sending CMD6
+Sending CMD6
+Sending CMD55
+Sending CMD6
+Buswidth = 4, clock: 400000
+clk_set_rate(clk=000000007bdfa070, rate=400000)
+Sending CMD55
+Sending CMD13
+Buswidth = 4, clock: 50000000
+clk_set_rate(clk=000000007bdfa070, rate=50000000)
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+Sending CMD16
+Sending CMD17
+part_init: try 'EFI': ret=-1
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+Sending CMD16
+Sending CMD18
+Sending CMD12
+Initial value for argc=3
+Final value for argc=3
+part_init: try 'RKPARM': ret=0
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+switch to partitions #0, OK
+mmc1 is current device
+blk_get_devnum_by_typename: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+blk_get_devnum_by_typename: Device desc 000000007bdeeaa0
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+Sending CMD16
+Sending CMD18
+Sending CMD12
+do_rkimg_test found IDB in SDcard
+env_update_filter: [a_item 0]: root=/dev/mmcblk0p1
+env_update_filter: [a_item 1]: rw
+env_update_filter: [a_item 1]: rootfstype=ext4
+env_update_filter: [a_item 2]: mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00006000@0x00008000(resource),0x00010000@0x0000e000(kernel),0x00010000@0x0001e000(boot),-@0x00030000(rootfs)
+env_update_filter: <v_item 0>: sdfwupdate ... do append
+env_append: varvalue = sdfwupdate
+env_exist: not find in middle one
+env_exist: not find in last one
+env_exist: not find in first one
+env_append: reall append: sdfwupdate
+env_append: newvalue:  root=/dev/mmcblk0p1 rw rootfstype=ext4 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00006000@0x00008 sdfwupdatee),0x00010000@0x0000e000(kernel),0x00010000@0x0001e000(boot),-@0x00030000(rootfs)
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+Initial value for argc=3
+Final value for argc=3
+Boot from SDcard
+ofnode_read_bool: vdd-polarity-negative: false
+ofnode_read_u32: vdd-supply: (not found)
+ofnode_read_u32: vdd-microvolts: (not found)
+ofnode_read_bool: vss-polarity-negative: false
+ofnode_read_u32: vss-supply: (not found)
+ofnode_read_u32: vss-microvolts: (not found)
+OF: ** translation for device saradc@ff100000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000010ff
+OF: reached root node
+clk_get_by_indexed_prop(dev=000000007bdef1c0, index=0, clk=000000007bddf8e0)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddf8e0)
+clk_request(dev=000000007bdf1070, clk=000000007bddf8e0)
+clk_set_rate(clk=000000007bddf8e0, rate=1000000)
+env_exist: not find in middle one
+env_exist: not find in last one
+env_exist: not find in first one
+env_update_filter: [a_item 0]: root=/dev/mmcblk0p1
+env_update_filter: [a_item 1]: rw
+env_update_filter: [a_item 1]: rootfstype=ext4
+env_update_filter: [a_item 2]: mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00006000@0x00008000(resource),0x00010000@0x0000e000(kernel),0x00010000@0x0001e000(boot),-@0x00030000(rootfs)
+env_update_filter: [a_item 3]: sdfwupdate
+env_update_filter: <v_item 0>: storagemedia=sd 
+env_update_filter: <v_item 1>: androidboot.mode=sd 
+env_update_filter: <v_title>: storagemedia
+env_update_filter: [a_title]: root
+env_update_filter: [a_title]: rootfstype
+env_update_filter: [a_title]: mtdparts
+env_update_filter: append 'storagemedia=sd' to the 'bootargs' end
+env_append: varvalue = storagemedia=sd
+env_exist: not find in middle one
+env_exist: not find in last one
+env_exist: not find in first one
+env_append: reall append: storagemedia=sd
+env_append: newvalue:  root=/dev/mmcblk0p1 rw rootfstype=ext4 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00006000@0x00008 sdfwupdate storagemedia=sd0000e000(kernel),0x00010000@0x0001e000(boot),-@0x00030000(rootfs)
+Initial value for argc=3
+Final value for argc=3
+env_update_filter: <v_title>: androidboot.mode
+env_update_filter: [a_title]: root
+env_update_filter: [a_title]: rootfstype
+env_update_filter: [a_title]: mtdparts
+env_update_filter: append 'androidboot.mode=sd' to the 'bootargs' end
+env_append: varvalue = androidboot.mode=sd
+env_exist: not find in middle one
+env_exist: not find in last one
+env_exist: not find in first one
+env_append: reall append: androidboot.mode=sd
+env_append: newvalue:  root=/dev/mmcblk0p1 rw rootfstype=ext4 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00006000@0x00008 sdfwupdate storagemedia=sd androidboot.mode=sd0010000@0x0001e000(boot),-@0x00030000(rootfs)
+Initial value for argc=3
+Final value for argc=3
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+blk_find_device: if_type=6, devnum=1: dwmmc@fe320000.blk, 6, 1
+Sending CMD16
+Sending CMD18
+Sending CMD12
+boot mode: None
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$LOGO LOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGOLOGO
+Initial value for argc=3
+Final value for argc=3
+initcall: 00000000002153dc (relocated to 000000007de0b3dc)
+Net:   setting mux of GPIO3-17 to 1
+setting pull of GPIO3-17 to 0
+setting drive of GPIO3-17 to 13
+unsupported driver strength 13
+rockchip_pinctrl_set_state: rockchip_pinconf_set fail: -1
+ofnode_read_string: clock_in_out: input
+ofnode_read_u32: tx_delay: 0x33 (51)
+ofnode_read_u32: rx_delay: 0x45 (69)
+OF: ** translation for device ethernet@fe300000 **
+OF: bus is default (na=2, ns=2) on 
+OF: translating address: 00000000 000030fe
+OF: reached root node
+ofnode_read_string: phy-mode: rgmii
+ofnode_read_u32: max-speed: (not found)
+ofnode_read_bool: snps,reset-active-low: true
+fdtdec_get_int: #gpio-cells: 0x2 (2)
+OF: ** translation for device gpio3@ff788000 **
+OF: bus is default (na=2, ns=2) on pinctrl
+OF: translating address: 00000000 008078ff
+OF: parent bus is default (na=2, ns=2) on 
+OF: no ranges, 1:1 translation
+OF: parent translation for: 00000000 00000000
+OF: with offset: 4286087168
+OF: one level translation: 00000000 008078ff
+OF: reached root node
+ofnode_read_u32_array: snps,reset-delays-us: fdtdec_get_int_array: snps,reset-delays-us
+get_prop_check_min_len: snps,reset-delays-us
+clk_set_defaults(ethernet@fe300000)
+fdtdec_get_int: #clock-cells: 0x0 (0)
+clk_get_by_indexed_prop(dev=000000007bdee690, index=0, clk=000000007bddf9d0)
+fdtdec_get_int: #clock-cells: 0x0 (0)
+clk_of_xlate_default(clk=000000007bddf9d0)
+clk_request(dev=000000007bdf9110, clk=000000007bddf9d0)
+clk_get_by_indexed_prop(dev=000000007bdee690, index=0, clk=000000007bddf9c0)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddf9c0)
+clk_request(dev=000000007bdf1070, clk=000000007bddf9c0)
+clk_set_parent(clk=000000007bddf9c0, parent=000000007bddf9d0)
+rk3399_gmac_set_parent: switching RGMII to CLKIN
+clk_get_by_indexed_prop(dev=000000007bdee690, index=0, clk=000000007bddfa10)
+fdtdec_get_int: #clock-cells: 0x1 (1)
+clk_of_xlate_default(clk=000000007bddfa10)
+clk_request(dev=000000007bdf1070, clk=000000007bddfa10)
+ofnode_read_u32: phy-supply: 0x1a (26)
+fixed_regulator_set_enable: dev='vcc-phy-regulator', enable=1, delay=0, has_gpio=0
+designware_eth_probe, iobase=fe300000, priv=000000007be12e40
+ethernet@fe300000 connected to Generic PHY
+designware_eth_probe, ret=0
+eth0: ethernet@fe300000
+initcall: 00000000002153cc (relocated to 000000007de0b3cc)
+fdtdec_get_config_int: bootdelay
+### main_loop entered: bootdelay=2
+
+fdtdec_get_config_int: kernel-offset
+fdtdec_get_config_int: rootdisk-offset
+fdtdec_get_config_string: bootcmd
+fdtdec_get_config_int: bootsecure
+### main_loop: bootcmd="boot_android ${devtype} ${devnum};bootrkp;run distro_bootcmd;"
+Hit any key to stop autoboot:  0 
+=> 
+=> 
+=> 

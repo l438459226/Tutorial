@@ -1,0 +1,799 @@
+DDR Version 1.14 20180803
+In
+Channel 0: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+Channel 1: DDR3, 800MHz
+Bus Width=32 Col=10 Bank=8 Row=15 CS=1 Die Bus-Width=16 Size=1024MB
+256B stride
+ch 0 ddrconfig = 0x101, ddrsize = 0x20
+ch 1 ddrconfig = 0x101, ddrsize = 0x20
+pmugrf_os_reg[2] = 0x32817281, stride = 0x9
+OUT
+Boot1: 2018-08-06, version: 1.15
+CPUId = 0x0
+ChipType = 0x10, 214
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+emmc reinit
+mmc: ERROR: SDHCI ERR:cmd:0x102,stat:0x18000
+mmc: ERROR: Card did not respond to voltage select!
+SdmmcInit=2 1
+mmc0:cmd5,20
+SdmmcInit=0 0
+BootCapSize=0
+UserCapSize=7386MB
+FwPartOffset=2000 , 0
+StorageInit ok = 56630
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+GPT 0x3190d20 signature is wrong
+LoadTrust Addr:0x4000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 2000
+Load OK, addr=0x200000, size=0x8f884
+RunBL31 0x10000
+NOTICE:  BL31: v1.3(debug):55aa0b4
+NOTICE:  BL31: Built : 16:55:03, Mar 31 2017
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1089): pd status 3e
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+rk serial
+initcall: 0000000000251d3c
+
+
+U-Boot 2017.02-RK3399-06 (Sep 22 2019 - 23:09:01)
+
+initcall: 0000000000216d00
+U-Boot code: 00200000 -> 0028F888  BSS: -> 0030E500
+initcall: 0000000000201f1c
+CPU: rk3399
+cpu version = 0
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+initcall: 00000000002171e0
+Board:  Rockchip platform Board
+Uboot as second level loader
+initcall: 0000000000216dc0
+DRAM:  initcall: 0000000000203c68
+
+DDR End Address: 0x80000000
+initcall: 0000000000216f34
+Monitor len: 0010E500
+Ram size: 08000000
+Ram top: 08000000
+initcall: 0000000000216a40
+initcall: 0000000000216ca4
+TLB table from 07ff0000 to 08000000
+initcall: 0000000000216c68
+LCD base at ddr end, fb base = 7dc00000, size = 01000000
+initcall: 0000000000216bc4
+Reserving 4096k for rk global buffer at 07bf0000
+Reserving 32768k for rk boot buffer at 05bf0000
+Using rk boot buffer as Fastboot transfer buffer.
+Reserving 2048k for fastboot log buffer at 059f0000
+initcall: 0000000000216a54
+initcall: 0000000000216b74
+Reserving 1081k for U-Boot at: 058e1000
+initcall: 0000000000216b3c
+Reserving 2049k for malloc() at: 056e0c00
+initcall: 0000000000216e38
+Reserving 296 Bytes for Board Info at: 056e0ad8
+initcall: 0000000000216a5c
+initcall: 0000000000216b00
+Reserving 432 Bytes for Global Data at: 056e0928
+initcall: 0000000000216a98
+initcall: 0000000000216fac
+initcall: 0000000000216f14
+Found dram banks: 1
+Adding bank:0000000000200000(000000007fe00000)
+initcall: 0000000000216e8c
+
+RAM Configuration:
+Bank #0: 00000000 128 MiB
+
+DRAM:  128 MiB
+initcall: 0000000000216a74
+New Stack Pointer is: 056e0910
+initcall: 0000000000216d8c
+initcall: 0000000000216d34
+Relocation Offset is: 056e1000
+Relocating to 058e1000, new gd at 056e0928, sp at 056e0910
+initcall: 00000000058f8034
+initcall: 00000000058f8184
+initcall: 000000000021716c (relocated to 00000000058f816c)
+start = 0x00000000, end = 0x08000000
+start = 0x00000000, end = 0x20000000
+initcall: 000000000021703c (relocated to 00000000058f803c)
+initcall: 0000000000217060 (relocated to 00000000058f8060)
+initcall: 0000000000217140 (relocated to 00000000058f8140)
+using memory 0x56e0c00-0x58e1000 for malloc()
+initcall: 000000000021702c (relocated to 00000000058f802c)
+initcall: 0000000000212a40 (relocated to 00000000058f3a40)
+initcall: 000000000022538c (relocated to 000000000590638c)
+initcall: 0000000000217128 (relocated to 00000000058f8128)
+initcall: 0000000000217104 (relocated to 00000000058f8104)
+Now running in RAM - U-Boot at: 058e1000
+initcall: 0000000000212a90 (relocated to 00000000058f3a90)
+arch_early_init_r
+rk irq version: 1.2, initialized.
+gpio_irq_init, default enable gpio group interrupt.
+initcall: 0000000000217068 (relocated to 00000000058f8068)
+initcall: 0000000000245718 (relocated to 0000000005926718)
+i2c_reg_read: addr=0x36, reg=0x2f
+i2c_reg_write: addr=0x36, reg=0x01, val=0x01
+i2c_reg_write: addr=0x36, reg=0x10, val=0x01
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0x1
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+i2c_reg_read: addr=0x36, reg=0x11
+
+BL:REG_MODE:0x1i2c_reg_read: addr=0x36, reg=0x13
+i2c_reg_write: addr=0x36, reg=0x13, val=0x7f
+i2c_reg_read: addr=0x36, reg=0x13
+REG_13 = 0x7f
+i2c_reg_write: addr=0x36, reg=0x10, val=0x03
+i2c_reg_write: addr=0x36, reg=0x10, val=0x07
+i2c_reg_write: addr=0x36, reg=0x10, val=0x0f
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+ bl ma = 20
+
+ bl value = 665
+i2c_reg_write: addr=0x36, reg=0x18, val=0x05
+i2c_reg_write: addr=0x36, reg=0x19, val=0xcc
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+ BL:REG_MODE:0x1
+i2c_reg_read: addr=0x36, reg=0x11
+BL_REG_MODE = 0x1
+i2c_reg_read: addr=0x36, reg=0x10
+BL_REG_DEVEICE_ON = 0xf
+i2c_reg_read: addr=0x36, reg=0x19
+REG_19 = 0xcc
+i2c_reg_read: addr=0x36, reg=0x18
+REG_18 = 0x5
+i2c_reg_read: addr=0x36, reg=0x1f
+REG_ERR = 0x11
+i2c_reg_write: addr=0x36, reg=0x11, val=0x01
+initcall: 00000000002170ec (relocated to 00000000058f80ec)
+rk save sdcard iomux config.
+grf gpio4b iomux = 0x0000055a
+Force select jtag from sdcard io.
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 62
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+GetMmcCLK: sd 0, clk = 400000
+SCUSelSDClk: sd id = 0, div = 8
+SdmmcInit = 0 0
+SDCard Update.
+storage init OK!
+initcall: 00000000002170b0 (relocated to 00000000058f80b0)
+Using default environment
+
+Destroy Hash Table: 0000000005967cf8 table = 0000000000000000
+Create Hash Table: N=76
+INSERT: table 0000000005967cf8, filled 1/79 rv 00000000056e0d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005967cf8, filled 2/79 rv 00000000056e1020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005967cf8, filled 3/79 rv 00000000056e0da0 ==> name="baudrate" value="1500000"
+DELETE CANDIDATE: "preboot"
+hdelete: DELETE key "preboot"
+DELETE ERROR ##############################
+INSERT: table 0000000005967cf8, filled 4/79 rv 00000000056e0f80 ==> name="verify" value="n"
+INSERT: table 0000000005967cf8, filled 5/79 rv 00000000056e0d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: free(data = 00000000056e0c10)
+INSERT: done
+INSERT: table 0000000005967cf8, filled 5/79 rv 00000000056e0da0 ==> name="baudrate" value="1500000"
+INSERT: table 0000000005967cf8, filled 5/79 rv 00000000056e0d00 ==> name="bootcmd" value="bootrk"
+INSERT: table 0000000005967cf8, filled 5/79 rv 00000000056e1020 ==> name="bootdelay" value="10"
+INSERT: table 0000000005967cf8, filled 6/79 rv 00000000056e11d8 ==> name="fastboot_unlocked" value="0"
+INSERT: table 0000000005967cf8, filled 6/79 rv 00000000056e0d28 ==> name="initrd_high" value="0xffffffffffffffff=n"
+INSERT: table 0000000005967cf8, filled 6/79 rv 00000000056e0f80 ==> name="verify" value="n"
+INSERT: free(data = 00000000056e1a50)
+INSERT: done
+initcall: 00000000002171b0 (relocated to 00000000058f81b0)
+initcall: 00000000002253a8 (relocated to 00000000059063a8)
+initcall: 0000000000217098 (relocated to 00000000058f8098)
+initcall: 00000000002227dc (relocated to 00000000059037dc)
+initcall: 0000000000203a84 (relocated to 00000000058e4a84)
+rk irq has been initialized.
+initcall: 0000000000217080 (relocated to 00000000058f8080)
+initcall: 0000000000212ab8 (relocated to 00000000058f3ab8)
+board_late_init
+getenv: bootdelay = 16
+Initial value for argc=3
+Final value for argc=3
+setenv: bootdelay = 10
+getenv: bootcmd = bootrk
+getenv: initrd_high = 0xffffffffffffffff=n
+board init saveenv.
+EXPORT  table = 0000000005967cf8, htab.size = 79, htab.filled = 6, size = 508
+Unsorted: n=6
+          0: 00000000056e0d00 ==> bootcmd    => bootrk
+          1: 00000000056e0d28 ==> initrd_high => 0xffffffffffffffff=n
+          2: 00000000056e0da0 ==> baudrate   => 1500000
+          3: 00000000056e0f80 ==> verify     => n
+          4: 00000000056e1020 ==> bootdelay  => 10
+          5: 00000000056e11d8 ==> fastboot_unlocked => 0
+Writing env to storage... 
+done
+GetParam param_addr = 0x0  PARAMETER_NUM = 8 PARAMETER_OFFSET = 1024
+
+ StorageReadLba  GetParam  addr = 0x0:0x4d524946 0x45524157 0x5245565f 0x2e37203a 0xd312e31 0x43414d0a 0x454e4948 0x444f4d5f 0x203a4c45 0x33336b72 0x622d3939 0xa0d786f 0x4843414d 0x5f454e49 0x203a4449 0xd373030 0x4e414d0a 0x43414655 0x45525554 0x52203a52 0x3933334b 0x4d0a0d39 0x43494741 0x7830203a 0x31343035 0x42343235 0x54410a0d 0x203a4741 0x30307830 0x38303032 0xa0d3030 0x4843414d 
+pParam->tag = 0x4d524946  PARM_TAG = 0x4d524150
+pParam->length = 0x45524157  pParam->parameter = 0x5f  pParam->crc = 0x2e37203a
+check parameter success
+param line: FIRMWARE_VER: 7.1.1!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE_MODEL: rk3399-box!
+Unknow param: MACHINE_MODEL: rk3399-box!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE_ID: 007!
+Unknow param: MACHINE_ID: 007!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MANUFACTURER: RK3399!
+Unknow param: MANUFACTURER: RK3399!
+
+magic_code = 0x0  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: MAGIC: 0x5041524B!
+
+magic_code = 0x5041524b  atag_addr = 0x0 machine_type = 0x0 recovery_offset = 0x0
+param line: ATAG: 0x00200800!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0x0 recovery_offset = 0x0
+param line: MACHINE: 3399!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: CHECK_MASK: 0x80!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: PWR_HLD: 0,0,A,0,1!
+Unknow param: PWR_HLD: 0,0,A,0,1!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+param line: CMDLINE: androidboot.baseband=N/A androidboot.selinux=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00008000@0x00008000(resource),0x0000C000@0x00010000(kernel),0x00010000@0x0001C000(boot),0x00010000@0x0002C000(recovery),0x00038000@0x0003C000(backup),0x00040000@0x00074000(cache),0x00300000@0x000B4000(system),0x00008000@0x003B4000(metadata),0x00002000@0x003BC000(baseparamer),-@0x003BE000(userdata)!
+
+magic_code = 0x5041524b  atag_addr = 0x200800 machine_type = 0xd47 recovery_offset = 0x0
+partition(uboot): offset=0x00002000, size=0x00002000
+partition(trust): offset=0x00004000, size=0x00002000
+partition(misc): offset=0x00006000, size=0x00002000
+partition(resource): offset=0x00008000, size=0x00008000
+partition(kernel): offset=0x00010000, size=0x0000C000
+partition(boot): offset=0x0001C000, size=0x00010000
+partition(recovery): offset=0x0002C000, size=0x00010000
+partition(backup): offset=0x0003C000, size=0x00038000
+partition(cache): offset=0x00074000, size=0x00040000
+partition(system): offset=0x000B4000, size=0x00300000
+partition(metadata): offset=0x003B4000, size=0x00008000
+partition(baseparamer): offset=0x003BC000, size=0x00002000
+partition(userdata): offset=0x003BE000, size=0xFFFFFFFF
+remotectl v0.1
+pwm freq=0xb8320
+pwm_freq_nstime=0x52d
+rkimage_prepare_fdt
+Failed to prepare fdt from boot!
+get_content: base_offset = 0x8000
+get_entry: base_offset = 0x8000
+get_entry base_offset = 0x8000
+read_storage base_offset = 0x8000  :0x52 0x53 0x43 0x45 0x0 0x0 0x0 0x0 0x1 0x1 0x1 0x0 0x2 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 
+RSCE
+load_content: load_addr = 0x00000000056e2440
+Load FDT from resource image.
+key_init
+fdtdec_decode_gpio: gpios
+fdtdec_decode_gpios: gpios
+power key: bank-0 pin-5
+pmic_init
+can't find dts node for ricoh619
+can't find dts node for act8846
+i2c address = 0x1b
+i2c iobase = 0xff3c0000
+i2c bus = 0
+i2c_reg_read: addr=0x1b, reg=0x2f
+fdtdec_get_int: regulator-min-microvolt: 0xb71b0 (750000)
+fdtdec_get_int: regulator-max-microvolt: 0x149970 (1350000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+DCDC_REG1--vdd_center
+min_uV:750000
+max_uV:1350000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0xb71b0 (750000)
+fdtdec_get_int: regulator-max-microvolt: 0x149970 (1350000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+DCDC_REG2--vdd_cpu_l
+min_uV:750000
+max_uV:1350000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: (not found)
+fdtdec_get_int: regulator-max-microvolt: (not found)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+DCDC_REG3--vcc_ddr
+min_uV:0
+max_uV:0
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-max-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+DCDC_REG4--vcc_1v8
+min_uV:1800000
+max_uV:1800000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-max-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG1--vcc1v8_dvp
+min_uV:1800000
+max_uV:1800000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x2ab980 (2800000)
+fdtdec_get_int: regulator-max-microvolt: 0x2ab980 (2800000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG2--vcc2v8_dvp
+min_uV:2800000
+max_uV:2800000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-max-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG3--vcc1v8_pmu
+min_uV:1800000
+max_uV:1800000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-max-microvolt: 0x325aa0 (3300000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG4--vcc_sd
+min_uV:1800000
+max_uV:3300000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x2dc6c0 (3000000)
+fdtdec_get_int: regulator-max-microvolt: 0x2dc6c0 (3000000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG5--vcca3v0_codec
+min_uV:3000000
+max_uV:3000000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x16e360 (1500000)
+fdtdec_get_int: regulator-max-microvolt: 0x16e360 (1500000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG6--vcc_1v5
+min_uV:1500000
+max_uV:1500000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-max-microvolt: 0x1b7740 (1800000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG7--vcca1v8_codec
+min_uV:1800000
+max_uV:1800000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: 0x2dc6c0 (3000000)
+fdtdec_get_int: regulator-max-microvolt: 0x2dc6c0 (3000000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+LDO_REG8--vcc_3v0
+min_uV:3000000
+max_uV:3000000
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: (not found)
+fdtdec_get_int: regulator-max-microvolt: (not found)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+SWITCH_REG1--vcc3v3_s3
+min_uV:0
+max_uV:0
+boot_on:1
+
+fdtdec_get_int: regulator-min-microvolt: (not found)
+fdtdec_get_int: regulator-max-microvolt: (not found)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+SWITCH_REG2--vcc3v3_s0
+min_uV:0
+max_uV:0
+boot_on:1
+
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x2f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 0 dcdc_en = 0000002f ldo_en =000000ac
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x2f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 1 dcdc_en = 0000002f ldo_en =000000ac
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x2f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 2 dcdc_en = 0000002f ldo_en =000000ac
+i2c_reg_read: addr=0x1b, reg=0x38
+i2c_reg_write: addr=0x1b, reg=0x38, val=0x00
+i2c_reg_read: addr=0x1b, reg=0x38
+1 rk808_regulator_set_voltage 3 dcdc_vol = 00000000
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x2f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 3 dcdc_en = 0000002f ldo_en =000000ac
+i2c_reg_read: addr=0x1b, reg=0x3b
+i2c_reg_write: addr=0x1b, reg=0x3b, val=0x00
+i2c_reg_read: addr=0x1b, reg=0x3b
+1 rk808_regulator_set_voltage 4 0 ldo_vol =00000000
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xad
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 4 dcdc_en = 0000002f ldo_en =000000ad
+i2c_reg_read: addr=0x1b, reg=0x3d
+i2c_reg_write: addr=0x1b, reg=0x3d, val=0x0a
+i2c_reg_read: addr=0x1b, reg=0x3d
+1 rk808_regulator_set_voltage 5 10 ldo_vol =0000000a
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xaf
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 5 dcdc_en = 0000002f ldo_en =000000af
+i2c_reg_read: addr=0x1b, reg=0x3f
+i2c_reg_write: addr=0x1b, reg=0x3f, val=0x0a
+i2c_reg_read: addr=0x1b, reg=0x3f
+1 rk808_regulator_set_voltage 6 10 ldo_vol =0000000a
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xaf
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 6 dcdc_en = 0000002f ldo_en =000000af
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xaf
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 7 dcdc_en = 0000002f ldo_en =000000af
+i2c_reg_read: addr=0x1b, reg=0x43
+i2c_reg_write: addr=0x1b, reg=0x43, val=0x0c
+i2c_reg_read: addr=0x1b, reg=0x43
+1 rk808_regulator_set_voltage 8 12 ldo_vol =0000000c
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xbf
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 8 dcdc_en = 0000002f ldo_en =000000bf
+i2c_reg_read: addr=0x1b, reg=0x45
+i2c_reg_write: addr=0x1b, reg=0x45, val=0x07
+i2c_reg_read: addr=0x1b, reg=0x45
+1 rk808_regulator_set_voltage 9 7 ldo_vol =00000007
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xbf
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 9 dcdc_en = 0000002f ldo_en =000000bf
+i2c_reg_read: addr=0x1b, reg=0x47
+i2c_reg_write: addr=0x1b, reg=0x47, val=0x0a
+i2c_reg_read: addr=0x1b, reg=0x47
+1 rk808_regulator_set_voltage 10 10 ldo_vol =0000000a
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xff
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 10 dcdc_en = 0000002f ldo_en =000000ff
+i2c_reg_read: addr=0x1b, reg=0x49
+i2c_reg_write: addr=0x1b, reg=0x49, val=0x0c
+i2c_reg_read: addr=0x1b, reg=0x49
+1 rk808_regulator_set_voltage 11 12 ldo_vol =0000000c
+i2c_reg_read: addr=0x1b, reg=0x24
+i2c_reg_write: addr=0x1b, reg=0x24, val=0xff
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 11 dcdc_en = 0000002f ldo_en =000000ff
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x2f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 12 dcdc_en = 0000002f ldo_en =000000ff
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_write: addr=0x1b, reg=0x23, val=0x6f
+i2c_reg_read: addr=0x1b, reg=0x23
+i2c_reg_read: addr=0x1b, reg=0x24
+1 rk808_regulator_enable 13 dcdc_en = 0000006f ldo_en =000000ff
+fdtdec_decode_gpios: gpios
+fdtdec_decode_gpios: property 'gpios' missing
+pmic_alloc: new pmic struct: 0x00000000056f4a50
+rk808 i2c_bus:0 addr:0x1b
+usb bc init: usb bc max = 11
+usb bc: can find node by path: /dwc-control-usb/usb_bc
+dwc_otg_check_dpdm: usb bc disconnected
+no fuel gauge found
+charger_init, charger_type = 0, dc_is_charging= 0
+pmic_rk808_charger_setting charger_type = 3
+i2c_reg_read: addr=0x6b, reg=0x0a
+pmic_rk808_charger_setting charge ic id = 0xff
+i2c_reg_read: addr=0x6b, reg=0x00
+i2c_reg_write: addr=0x6b, reg=0x00, val=0xff
+pmic:rk808
+pwm_regulator_init
+can't find dts node for pwm1
+fdtdec_get_int_array: pwms
+get_prop_check_min_len: pwms
+fdtdec_get_int_array: rockchip,pwm_voltage_map
+get_prop_check_min_len: rockchip,pwm_voltage_map
+Cannot decode PWM property pwms
+fdtdec_get_int: rockchip,pwm_id: 0x2 (2)
+pwm init id = 2
+fdtdec_get_int: rockchip,pwm_voltage: 0xf4240 (1000000)
+fdtdec_get_int: regulator-min-microvolt: 0xc3500 (800000)
+fdtdec_get_int: regulator-max-microvolt: 0x10c8e0 (1100000)
+fdtdec_get_int: regulator-init-microvolt: (not found)
+pwm_dcdc1--vdd_log
+min_uV:800000
+max_uV:1100000
+boot_on:1
+
+pwm config id = 2, clock = 48285714, duty_ns = 16500, period_ns = 25000
+set pwm voltage ok,pwm_id =2 vol=1000000,pwm_value=66
+CPU's clock information:
+    aplll = 816000000HZ
+    apllb = 24000000HZ
+    gpll = 800000000HZ
+               aclk_periph_h = 133333333HZ, hclk_periph_h = 66666666HZ, pclk_periph_h = 33333333HZ
+               aclk_periph_l0 = 100000000HZ, hclk_periph_l0 = 100000000HZ, pclk_periph_l0 = 50000000HZ
+               hclk_periph_l1 = 100000000HZ, pclk_periph_l1 = 50000000HZ
+    cpll = 800000000HZ
+    dpll = 800000000HZ
+    vpll = 24000000HZ
+    npll = 24000000HZ
+    ppll = 676000000HZ
+fg_init
+charger init
+idb init
+SecureBootEn = 0, SecureBootLock = 0
+
+#Boot ver: 0000-00-00#0.00
+empty serial no.
+fbt preboot
+normal boot.
+no fuel gauge found
+no fuel gauge found
+$$$$$$$$$$$$$$$$$$$$$$1 gd->fdt_blob:91104320
+$$$$$$$$$^^^^^^^^^1 gd->fdt_blob:91104320
+$$$$$$$$$^^^^^^^^^2 gd->fdt_blob:91104320
+***********rockchip_display_init
+***********************rockchip_get_crtc:rockchip,rk3399-vop-bigfdtdec_get_int: reg: 0x0 (0)
+failed to find phy node
+**************connector_panel_init
+connector_panel_init-219:enter
+******************rockchip_get_panel:simple-panel-dsi
+***********connector_pclist_parse_dt
+connector_pclist_parse_dt-123:enter
+fdtdec_get_int: rockchip,debug: 0x0 (0)
+fdtdec_get_int: rockchip,power_type: (not found)
+fdtdec_decode_gpio: gpios
+fdtdec_decode_gpios: gpios
+fdtdec_get_int: rockchip,delay: 0xa (10)
+fdtdec_get_int: rockchip,power_type: (not found)
+fdtdec_decode_gpio: gpios
+fdtdec_decode_gpios: gpios
+fdtdec_get_int: rockchip,delay: 0x6 (6)
+**************rockchip_panel_init
+*************rockchip_dsi_panel_init
+fdtdec_decode_gpio: enable-gpios
+fdtdec_decode_gpios: enable-gpios
+fdtdec_decode_gpios: property 'enable-gpios' missing
+fdtdec_decode_gpio: reset-gpios
+fdtdec_decode_gpios: reset-gpios
+fdtdec_decode_gpios: property 'reset-gpios' missing
+fdtdec_get_int: reset-delay-ms: (not found)
+fdtdec_get_int: delay,prepare: 0x6 (6)
+fdtdec_get_int: delay,unprepare: 0x0 (0)
+fdtdec_get_int: delay,enable: 0x23 (35)
+fdtdec_get_int: delay,disable: 0x14 (20)
+fdtdec_get_int: bus-format: 0x1009 (4105)
+****rockchip_dsi_panel_parse_cmds::dcs_cmd=39 96 4 b9 len=22, cmd_cnt=4
+****rockchip_dsi_panel_parse_cmds::dcs_cmd=5 5 1 28 len=8, cmd_cnt=2
+gpio = 0xffffffff is not valid!
+gpio = 0xffffffff is not valid!
+rk pwm parse dt start.
+fdtdec_decode_gpio: enable-gpios
+fdtdec_decode_gpios: enable-gpios
+fdtdec_decode_gpios: property 'enable-gpios' missing
+fdtdec_get_int_array_count: pwms
+fdtdec_get_int_array: pwms
+get_prop_check_min_len: pwms
+bl id = 1, base= 0xff420010
+fdtdec_get_int_array: brightness-levels
+get_prop_check_min_len: brightness-levels
+fdtdec_get_int: default-brightness-level: 0xc8 (200)
+rk pwm parse dt end.
+gpio = 0xffffffff is not valid!
+gpio = 0xffffffff is not valid!
+rk_pwm_bl_config: brightness: 0
+$$$$$$$$$$$$$$$$$$$$$$6 rockchip_display_init:5907544:0
+$$$$$$$$$$$$$$$$$$$$$$5 rockchip_display_init:5907544:1
+read logo on state from dts [1]
+no fuel gauge found
+enter rockchip_show_logo
+Failed to find part: 'logo'
+get_content: base_offset = 0x0
+get_entry: base_offset = 0x8000
+get_entry base_offset = 0x8000
+read_storage base_offset = 0x8000  :0x52 0x53 0x43 0x45 0x0 0x0 0x0 0x0 0x1 0x1 0x1 0x0 0x2 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 
+RSCE
+1get_display_buffer memory_end:0x7dc00000--size:0x73afd6
+2get_display_buffer memory_end:0x7e33afd6--size:0x73afd6  buf:0x7dc00000  memory_end:0x7e33afd6
+Failed to find part: 'logo'
+get_content: base_offset = 0x0
+get_entry: base_offset = 0x8000
+get_entry base_offset = 0x8000
+read_storage base_offset = 0x8000  :0x52 0x53 0x43 0x45 0x0 0x0 0x0 0x0 0x1 0x1 0x1 0x0 0x2 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 
+RSCE
+get_display_buffer logo->mem:0x7dc00000
+fdtdec_get_addr_size: reg: ff960000
+fdtdec_get_int: dsi,lanes: 0x4 (4)
+fdtdec_get_int: dsi,format: 0x0 (0)
+fdtdec_get_int: dsi,flags: 0x3 (3)
+fdtdec_get_int: reg: 0x0 (0)
+fdtdec_get_int: hactive: 0x438 (1080)
+fdtdec_get_int: vactive: 0x924 (2340)
+fdtdec_get_int: clock-frequency: 0x88601c0 (143000000)
+fdtdec_get_int: hsync-len: 0x8 (8)
+fdtdec_get_int: hfront-porch: 0x18 (24)
+fdtdec_get_int: hback-porch: 0x36 (54)
+fdtdec_get_int: vsync-len: 0x2e (46)
+fdtdec_get_int: vfront-porch: 0x8 (8)
+fdtdec_get_int: vback-porch: 0x7 (7)
+fdtdec_get_int: hsync-active: 0x0 (0)
+fdtdec_get_int: vsync-active: 0x0 (0)
+Using display timing dts
+Detailed mode clock 143000 kHz, flags[a]
+    H: 1080 1104 1112 1166
+    V: 2340 2348 2394 2401
+bus_format: 1009
+****************rockchip_vop_init
+fdtdec_get_addr_size: reg: ff900000
+vop reg :0xff900000,0x56f57b0,0x5953ce8,0x0,0x5953af0,0x305
+rk lcdc aclk config: aclk = 400000000HZ, pll select = 2, div = 2
+rk lcdc hclk config: hclk = 100000000HZ, div = 4
+rkclk_pll_set_any_freq, pll_id[3], freq=143000000
+fin=24, fout=143000000, gcd=6, refdiv=4, fbdiv=143, postdiv1=1, postdiv2=6, frac=0
+****************rkclk_lcdc_dclk_set rk lcdc - 0 dclk set: dclk = 143000000HZ, pll select = 1, div = 1
+***************rkclk_lcdc_clk_set
+Vop Write : 0x20801800  , 0xff900000 , 0xff900008
+Vop Write : 0x1  , 0xff900000 , 0xff9000b0
+Vop Write : 0x1  , 0xff900000 , 0xff900100
+Vop Write : 0x0  , 0xff900000 , 0xff900010
+Warning: not support pin_pol
+vop reg :0xff900000,0x56f57b0,0x5953ce8,0x0,0x5953af0,0x305
+Vop Write : 0x20809800  , 0xff900000 , 0xff900008
+Vop Write : 0x8000e400  , 0xff900000 , 0xff900014
+Vop Write : 0x8000e40e  , 0xff900000 , 0xff900014
+Vop Write : 0x0  , 0xff900000 , 0xff900010
+Vop Write : 0x48e0008  , 0xff900000 , 0xff900188
+Vop Write : 0x3e0476  , 0xff900000 , 0xff90018c
+Vop Write : 0x3e0476  , 0xff900000 , 0xff900170
+Vop Write : 0x961002e  , 0xff900000 , 0xff900190
+Vop Write : 0x350959  , 0xff900000 , 0xff900194
+Vop Write : 0x350959  , 0xff900000 , 0xff900174
+Vop Write : 0x20c09800  , 0xff900000 , 0xff900008
+Vop Write : 0x956  , 0xff900000 , 0xff9002a0
+Vop Write : 0x1  , 0xff900000 , 0xff900000
+logo->mem锛x7dc00000   logo->offset:0x36
+==========================================1fb addr: 0x7dc00036
+==========================================src_h: 0x924 xvir:0x5929f60
+Vop Write : 0x3a400040  , 0xff900000 , 0xff900030
+Vop Write : 0x3a400042  , 0xff900000 , 0xff900030
+Vop Write : 0x140032a  , 0xff900000 , 0xff90003c
+Vop Write : 0x7e33a32e  , 0xff900000 , 0xff900040
+==========================================2fb addr: 0x7e33a32e
+Vop Write : 0x3a400082  , 0xff900000 , 0xff900030
+Vop Write : 0x10001000  , 0xff900000 , 0xff900054
+Vop Write : 0x10001000  , 0xff900000 , 0xff900054
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x0  , 0xff900000 , 0xff900034
+Vop Write : 0x400000  , 0xff900000 , 0xff900034
+Vop Write : 0x9230437  , 0xff900000 , 0xff900048
+Vop Write : 0x9230437  , 0xff900000 , 0xff90004c
+Vop Write : 0x35003e  , 0xff900000 , 0xff900050
+Vop Write : 0x3a401082  , 0xff900000 , 0xff900030
+Vop Write : 0x0  , 0xff900000 , 0xff900060
+Vop Write : 0x3a401083  , 0xff900000 , 0xff900030
+Vop Write : 0x1  , 0xff900000 , 0xff900000
+rockchip_phy_power_on: failed to find phy power on funcs
+failed to wait for phy clk lane stop state
+*************rockchip_dsi_panel_send_cmds
+mipi_dsi:len:0x4 0x439
+**mipi_dsi:tx_buf:0x2a1183b9 
+**dw_mipi_dsi_short_write:0x1bd15 
+**dw_mipi_dsi_short_write:0x1115 
+**dw_mipi_dsi_short_write:0x2915 
+Vop Write : 0x20809800  , 0xff900000 , 0xff900008
+Vop Write : 0x1  , 0xff900000 , 0xff900000
+gpio = 0xffffffff is not valid!
+rk_pwm_bl_config: brightness: 200
+Failed to find part: 'logo'
+get_content: base_offset = 0x0
+get_entry: base_offset = 0x8000
+get_entry base_offset = 0x8000
+read_storage base_offset = 0x8000  :0x52 0x53 0x43 0x45 0x0 0x0 0x0 0x0 0x1 0x1 0x1 0x0 0x2 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 
+RSCE
+ERROR: [get_entry_ram]: Cannot find logo_kernel.bmp!
+failed to display kernel logo
+exit rockchip_show_logo
+board_RemotectlDeInit
+
+board_fbt_preboot: check misc command.
+initcall: 0000000000217070 (relocated to 00000000058f8070)
+hello world
+### main_loop entered: bootdelay=10
+
+### main_loop: bootcmd="bootrk"
+Hit any key to stop autoboot:  0 
+rkboot # 
+rkboot # 
+rkboot # mipiwrite 0x39 0x28 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+Run do_mipi_dsi_write....  argc = 18 
+dsi_buf: 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+mipi_dsi_write :dsitype = 0x39  reg = 0x28 n = 0x1
+mipi_dsi:len:0x1 0x139
+wrong tx buf length 1 for long write
+rkboot # mipiwrite 0x39 0x28 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+Run do_mipi_dsi_write....  argc = 18 
+dsi_buf: 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+mipi_dsi_write :dsitype = 0x39  reg = 0x28 n = 0x1
+mipi_dsi:len:0x1 0x139
+wrong tx buf length 1 for long write
+rkboot # mipiwrite 0x39 0x28 0x04 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+Run do_mipi_dsi_write....  argc = 18 
+dsi_buf: 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+mipi_dsi_write :dsitype = 0x39  reg = 0x28 n = 0x4
+mipi_dsi:len:0x4 0x439
+**mipi_dsi:tx_buf:0x0 
+rkboot # 

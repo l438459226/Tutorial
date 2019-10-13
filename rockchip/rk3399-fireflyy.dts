@@ -1,0 +1,253 @@
+
+/*
+ * Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+
+#include "rk3399-firefly-port.dtsi" 	
+
+/ {
+	model = "Firefly-RK3399 Board mipi (Android)";
+	compatible = "rockchip,android", "rockchip,rk3399-firefly-mipi", "rockchip,rk3399";
+
+	test-power {
+		status = "okay";
+	};
+};
+
+&backlight {
+	status = "okay";
+	pwms = <&pwm1 0 25000 0>;
+};
+
+
+&mipi_dsi {
+	status = "okay";
+	dsi_panel: panel {
+		compatible ="simple-panel-dsi";
+		reg = <0>;
+		//ddc-i2c-bu
+		//power-supply = <&vcc_lcd>;
+		//pinctrl-0 = <&lcd_panel_reset &lcd_panel_enable>;
+		backlight = <&backlight>;
+		/*
+		enable-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpio4 29 GPIO_ACTIVE_HIGH>;
+		*/
+		dsi,flags = <(MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST /*| MIPI_DSI_MODE_VIDEO_SYNC_PULSE*/)>;
+		dsi,format = <MIPI_DSI_FMT_RGB888>;
+		bus-format = <MEDIA_BUS_FMT_RGB666_1X18>;
+		dsi,lanes = <4>;
+
+        dsi,channel = <0>;
+
+        delay,enable = <35>;
+        delay,prepare = <6>;
+		/*
+        delay,power = <10>;
+        delay,reset = <250>;
+
+        delay,unreset = <0>;
+        delay,unpower = <0>;
+		*/
+        delay,unprepare = <0>;
+        delay,disable = <20>;
+		
+        size,width = <120>;
+        size,height = <170>;
+
+        status = "okay";
+				
+
+        panel-init-sequence = [
+            //39 1 02 35 00 
+	    //39 20 05 DE 01 3F FF 50
+	    39 20 02 35 00
+            39 20 02 29 00
+            39 96 02 11 00
+	    39 20 02 FF 20
+	    39 20 02 FB 01
+        ];
+
+		panel-exit-sequence = [
+			05 05 01 28
+			05 78 01 10
+		];
+		
+		power_ctr: power_ctr {
+               rockchip,debug = <0>;
+               lcd_en: lcd-en {
+                       gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_enable>;
+                       rockchip,delay = <10>;
+               };
+               lcd_rst: lcd-rst {
+                       gpios = <&gpio4 29 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_reset>;
+                       rockchip,delay = <6>;
+               };
+	   	};
+
+		disp_timings: display-timings {
+				          native-mode = <&timing0>;
+				          timing0: timing0 {
+				                       clock-frequency = <200000000>;
+				                       hactive = <1080>;
+				                       vactive = <2340>;
+				                       hsync-len = <46>;   //20, 50
+				                       hback-porch = <124>; //50, 56
+				                       hfront-porch = <148>;//50, 30
+				                       vsync-len = <46>;
+				                       vback-porch = <52>;
+				                       vfront-porch = <132>;
+				                       hsync-active = <0>;
+				                       vsync-active = <0>;
+				                       de-active = <0>;
+				                       pixelclk-active = <0>;
+				                   };
+				      };
+	};
+};
+
+
+
+&pwm1 {
+	status = "okay";
+};
+
+&mipi_in_vopl {
+	status = "disabled";
+};
+
+&mipi_in_vopb {
+	status = "okay";
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vopb {
+	status = "disabled";
+};
+&hdmi_in_vopl {
+	status = "okay";
+};
+
+&cdn_dp {
+    status = "okay";
+    extcon = <&fusb0>;
+    phys = <&tcphy0_dp>;
+};
+
+&dp_in_vopb {
+    status = "disabled";
+};
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&i2s2 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+    gsl3680: gsl3680@41 {
+	      status = "okay";
+              compatible = "gslX680";
+              reg = <0x40>;
+              screen_max_x = <1536>;
+              screen_max_y = <2048>;
+              touch-gpio = <&gpio4 28 IRQ_TYPE_LEVEL_LOW>;
+              reset-gpio = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+     };
+
+	mpu6050:mpu@68{
+            status = "okay";
+            compatible = "invensense,mpu6050";
+            reg = <0x68>;
+            mpu-int_config = <0x10>;
+            mpu-level_shifter = <0>;
+            mpu-orientation = <0 1 0 1 0 0 0 0 1>;
+            orientation-x= <1>;
+            orientation-y= <1>;
+            orientation-z= <1>;
+            irq-gpio = <&gpio1 4 IRQ_TYPE_LEVEL_LOW>;
+            mpu-debug = <1>;
+        };
+
+};
+
+&vopb {
+	assigned-clocks = <&cru DCLK_VOP0_DIV>;
+	assigned-clock-parents = <&cru PLL_CPLL>;
+};
+
+&vopl {
+	assigned-clocks = <&cru DCLK_VOP1_DIV>;
+	assigned-clock-parents = <&cru PLL_VPLL>;
+};
+
+&route_hdmi {
+	status = "disabled";
+	logo,mode = "center";
+};
+&route_mipi {
+	status = "okay";
+	logo,mode = "center";
+};
+&pinctrl {
+	lcd-panel {
+		lcd_panel_reset: lcd-panel-reset {
+			rockchip,pins = <4 29 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+		lcd_panel_enable: lcd-panel-enable {
+			rockchip,pins = <1 1 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+	};
+};

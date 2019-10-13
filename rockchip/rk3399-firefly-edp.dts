@@ -1,0 +1,199 @@
+
+/*
+ * Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+
+#include "rk3399-firefly-port.dtsi" 	
+
+/ {
+	model = "Firefly-RK3399 Board 7.85 edp (Android)";
+	compatible = "rockchip,android", "rockchip,rk3399-firefly-edp", "rockchip,rk3399";
+
+	edp_panel: edp-panel {
+		/* config 2 */
+		compatible = "lg,lp079qx1-sp0v";
+		/* config 3 */
+		//compatible = "simple-panel";
+		bus-format = <MEDIA_BUS_FMT_RGB666_1X18>;
+
+		backlight = <&backlight>;
+
+		ports {
+			panel_in_edp: endpoint {
+				remote-endpoint = <&edp_out_panel>;
+			};
+		};
+
+		power_ctr: power_ctr {
+               rockchip,debug = <0>;
+               lcd_en: lcd-en {
+                       gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_enable>;
+                       rockchip,delay = <20>;
+               };
+               lcd_rst: lcd-rst {
+                       gpios = <&gpio4 29 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_reset>;
+                       rockchip,delay = <20>;
+               };
+       };
+	};
+
+	test-power {
+		status = "okay";
+	};
+};
+
+&backlight {
+	status = "okay";
+};
+
+&edp {
+	status = "okay";
+
+	ports {
+		edp_out: port@1 {
+			reg = <1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			edp_out_panel: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&panel_in_edp>;
+			};
+		};
+	};
+};
+
+&edp_in_vopb {
+	status = "okay";
+};
+&edp_in_vopl {
+	status = "disabled";
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vopb {
+	status = "disabled";
+};
+&hdmi_in_vopl {
+	status = "okay";
+};
+
+&cdn_dp {
+    status = "okay";
+    extcon = <&fusb0>;
+    phys = <&tcphy0_dp>;
+};
+
+&dp_in_vopb {
+    status = "disabled";
+};
+
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&i2s2 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+    gsl3680: gsl3680@41 {
+	      status = "okay";
+              compatible = "gslX680";
+              reg = <0x41>;
+              screen_max_x = <1536>;
+              screen_max_y = <2048>;
+              touch-gpio = <&gpio1 20 IRQ_TYPE_LEVEL_LOW>;
+              reset-gpio = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+      };
+
+	mpu6050:mpu@68{
+            status = "okay";
+            compatible = "invensense,mpu6050";
+            reg = <0x68>;
+            mpu-int_config = <0x10>;
+            mpu-level_shifter = <0>;
+            mpu-orientation = <0 1 0 1 0 0 0 0 1>;
+            orientation-x= <1>;
+            orientation-y= <1>;
+            orientation-z= <1>;
+            irq-gpio = <&gpio1 4 IRQ_TYPE_LEVEL_LOW>;
+            mpu-debug = <1>;
+        };
+
+};
+
+&vopb {
+	assigned-clocks = <&cru DCLK_VOP0_DIV>;
+	assigned-clock-parents = <&cru PLL_CPLL>;
+};
+
+&vopl {
+	assigned-clocks = <&cru DCLK_VOP1_DIV>;
+	assigned-clock-parents = <&cru PLL_VPLL>;
+};
+
+&route_edp {
+	status = "okay";
+	logo,mode = "center";
+};
+
+&pinctrl {
+	lcd-panel {
+		lcd_panel_reset: lcd-panel-reset {
+			rockchip,pins = <4 29 RK_FUNC_GPIO &pcfg_pull_up>;
+		};
+		lcd_panel_enable: lcd-panel-enable {
+			rockchip,pins = <1 1 RK_FUNC_GPIO &pcfg_pull_up>;
+		};
+	};
+};

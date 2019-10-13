@@ -1,0 +1,472 @@
+
+/*
+ * Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+
+#include "rk3399-firefly-port.dtsi" 	
+
+/ {
+	model = "AIO Board lvds (Android)";
+	compatible = "rockchip,android", "rockchip,rk3399-firefly-lvds", "rockchip,rk3399";
+
+	test-power {
+		status = "okay";
+	};
+
+	sdmmc_pwrseq: sdmmc-pwrseq {
+           compatible = "mmc-pwrseq-simple";
+           clocks = <&rk808 1>;
+           clock-names = "ext_clock";
+           pinctrl-names = "default";
+           pinctrl-0 = <&sdcard_enable_h>;
+           /*
+            * On the module itself this is one of these (depending
+            * on the actual card populated):
+            * - SDIO_RESET_L_WL_REG_ON
+            * - PDN (power down when low)
+            */
+           reset-gpios = <&gpio1 20 GPIO_ACTIVE_LOW>; /* GPIO4_D6 */
+	};
+
+
+        rt5640-sound {
+        simple-audio-card,dai-link@0 {                                                                                                         
+                format = "i2s";
+                bitclock-master = <&rt5640_aif1>;
+                frame-master = <&rt5640_aif1>;
+                cpu {
+                        sound-dai = <&i2s1 0>;
+                };
+                rt5640_aif1:codec {
+                        sound-dai = <&rt5640 0>;
+                };
+        };
+        simple-audio-card,dai-link@1 {
+               format = "i2s";
+               bitclock-master = <&rt5640_aif2>;
+               frame-master = <&rt5640_aif2>;
+                cpu {
+                        sound-dai = <&i2s1 1>;
+                };
+                rt5640_aif2:codec {
+                        sound-dai = <&rt5640 1>;
+                };
+        };
+
+        simple-audio-card,dai-link@2 {     
+                format = "i2s";
+                bitclock-master = <&tc358749x_audio>;
+                frame-master = <&tc358749x_audio>;
+                cpu {
+                        sound-dai = <&i2s1 0>;
+                };
+                tc358749x_audio:codec {
+                        sound-dai = <&tc358749x 0>;
+                };
+        };
+
+	};
+
+};
+
+&backlight {
+	status = "okay";
+	brightness-levels = < 150 151
+	152 153 154 155 156 157 158 159
+	160 161 162 163 164 165 166 167
+	168 169 170 171 172 173 174 175
+	176 177 178 179 180 181 182 183
+	184 185 186 187 188 189 190 191
+	192 193 194 195 196 197 198 199
+	200 201 202 203 204 205 206 207
+	208 209 210 211 212 213 214 215
+	216 217 218 219 220 221 222 223
+	224 225 226 227 228 229 230 231
+	232 233 234 235 236 237 238 239
+	240 241 242 243 244 245 246 247
+	248 249 250 251 252 253 254 255>;
+};
+
+
+&mipi_dsi {
+	status = "okay";
+	dsi_panel: panel {
+		compatible ="simple-panel-dsi";
+		reg = <0>;
+		//ddc-i2c-bu
+		//power-supply = <&vcc_lcd>;
+		//pinctrl-0 = <&lcd_panel_reset &lcd_panel_enable>;
+		backlight = <&backlight>;
+		/*
+		enable-gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpio4 29 GPIO_ACTIVE_LOW>;
+		*/
+		dsi,flags = <(MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST | MIPI_DSI_MODE_LPM | MIPI_DSI_MODE_EOT_PACKET)>;
+		dsi,format = <MIPI_DSI_FMT_RGB888>;
+		//bus-format = <MEDIA_BUS_FMT_RGB666_1X18>;
+		dsi,lanes = <4>;
+
+        dsi,channel = <0>;
+
+        delay,enable = <35>;
+        delay,prepare = <6>;
+		/*
+        delay,power = <10>;
+        delay,reset = <250>;
+
+        delay,unreset = <0>;
+        delay,unpower = <0>;
+		*/
+        delay,unprepare = <0>;
+        delay,disable = <20>;
+		
+        size,width = <120>;
+        size,height = <170>;
+
+        status = "okay";
+				
+
+        panel-init-sequence = [
+	29 00 06 3C 01 09 00 07 00
+	29 00 06 14 01 06 00 00 00
+	29 00 06 64 01 0B 00 00 00
+	29 00 06 68 01 0B 00 00 00
+	29 00 06 6C 01 0B 00 00 00
+	29 00 06 70 01 0B 00 00 00
+	29 00 06 34 01 1F 00 00 00
+	29 00 06 10 02 1F 00 00 00
+	29 00 06 04 01 01 00 00 00
+	29 00 06 04 02 01 00 00 00
+	29 00 06 50 04 20 01 F0 03
+	29 00 06 54 04 32 00 B4 00
+	29 00 06 58 04 80 07 48 00
+	29 00 06 5C 04 0A 00 19 00
+	29 00 06 60 04 38 04 0A 00
+	29 00 06 64 04 01 00 00 00
+	29 01 06 A0 04 06 80 44 00
+	29 00 06 A0 04 06 80 04 00
+	29 00 06 04 05 04 00 00 00
+	29 00 06 80 04 00 01 02 03
+	29 00 06 84 04 04 07 05 08
+	29 00 06 88 04 09 0A 0E 0F
+	29 00 06 8C 04 0B 0C 0D 10
+	29 00 06 90 04 16 17 11 12
+	29 00 06 94 04 13 14 15 1B
+	29 00 06 98 04 18 19 1A 06
+	29 02 06 9C 04 33 04 00 00
+        ];
+
+		panel-exit-sequence = [
+			05 05 01 28
+			05 78 01 10
+		];
+		
+		power_ctr: power_ctr {
+               rockchip,debug = <0>;
+               lcd_en: lcd-en {
+                       gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_enable>;
+                       rockchip,delay = <10>;
+               };
+
+               lcd_pwr_en: lcd-pwr-en {
+                       gpios = <&gpio3 16 GPIO_ACTIVE_HIGH>;
+                       pinctrl-names = "default";
+                       pinctrl-0 = <&lcd_panel_pwr_en>;
+                       rockchip,delay = <10>;
+               };
+
+               lcd_rst: lcd-rst {
+                       gpios = <&gpio2 27 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_reset>;
+                       rockchip,delay = <6>;
+               };
+	   	};
+
+		disp_timings: display-timings {
+				          native-mode = <&timing0>;
+				          timing0: timing0 {
+				                       clock-frequency = <150000000>;
+				                       hactive = <1920>;
+				                       vactive = <1080>;
+				                       hsync-len = <10>;   //20, 50
+				                       hback-porch = <10>; //50, 56
+				                       hfront-porch = <282>;//50, 30
+				                       vsync-len = <10>;
+				                       vback-porch = <25>;
+				                       vfront-porch = <10>;
+				                       hsync-active = <0>;
+				                       vsync-active = <0>;
+				                       de-active = <0>;
+				                       pixelclk-active = <0>;
+				                   };
+				      };
+	};
+};
+
+&spdif_bus_1 {
+    rockchip,pins =
+    <3 16 RK_FUNC_GPIO &pcfg_pull_none>;
+};
+
+&pwm0 {
+	status = "okay";
+};
+
+&mipi_in_vopl {
+	status = "disabled";
+};
+
+&mipi_in_vopb {
+	status = "okay";
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vopb {
+	status = "disabled";
+};
+&hdmi_in_vopl {
+	status = "okay";
+};
+
+&cdn_dp {
+    status = "disabled";
+    extcon = <&fusb0>;
+    phys = <&tcphy0_dp>;
+};
+
+&dp_in_vopb {
+    status = "disabled";
+};
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&i2c1 {
+	status = "okay";
+        rt5640: rt5640@1c {
+                #sound-dai-cells = <1>;
+        };
+
+	tc358749x: tc358749x@0f {
+		compatible = "toshiba,tc358749x";
+		#sound-dai-cells = <0>;
+		reg = <0x0f>;
+		power-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>; 
+		reset-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+		int-gpios = <&gpio2 28 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&hdmiin_gpios>;
+		status = "okay";
+	};
+
+};
+
+&i2s2 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+};
+
+&gsl3680 {
+	status = "okay";
+    reg = <0x40>;
+    touch-gpio = <&gpio4 28 IRQ_TYPE_LEVEL_LOW>;
+};
+
+&vopb {
+	assigned-clocks = <&cru DCLK_VOP0_DIV>;
+	assigned-clock-parents = <&cru PLL_CPLL>;
+};
+
+&vopl {
+	assigned-clocks = <&cru DCLK_VOP1_DIV>;
+	assigned-clock-parents = <&cru PLL_VPLL>;
+};
+
+&route_hdmi {
+	status = "disabled";
+	logo,mode = "center";
+};
+&route_mipi {
+	status = "okay";
+	logo,mode = "center";
+};
+
+&sdmmc {
+    status = "okay";
+	sd-uhs-sdr104;
+	mmc-pwrseq = <&sdmmc_pwrseq>;
+};
+
+&rt5640 {
+    aux-det-adc-value = <1000>;
+    io-channels = <&saradc 4>,<&saradc 2>;
+    io-channel-names = "hp-det","aux-det";
+};
+
+&power_led {
+    gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+};
+
+&user_led {
+    gpios = <&gpio2 2 GPIO_ACTIVE_HIGH>;
+};
+
+/* spi to uart */
+&uart4 {
+    status = "disabled";
+};
+
+&vdd_cpu_b {
+    /delete-property/ vsel-gpios;  //wk2xxx reset pin
+};
+
+&spi1 {
+    status = "okay";
+};
+
+&spi_wk2xxx {
+    status = "okay";
+};
+
+&vcc3v3_pcie {
+    gpio = <&gpio2 2 GPIO_ACTIVE_HIGH>;
+};
+
+&vcc3v3_3g {
+    gpio = <&gpio2 6 GPIO_ACTIVE_HIGH>;
+};
+
+/* Otg */
+&fusb0 {
+    status = "disabled";
+};
+
+&tcphy0 {
+    /delete-property/ extcon;
+    status = "okay";
+};
+ 
+&u2phy0 {
+    status = "okay";
+    /delete-property/ extcon;   
+                
+    u2phy0_otg: otg-port {
+        rockchip,vbus-always-on;
+        vbus-5v-gpios = <&gpio1 3 GPIO_ACTIVE_HIGH>;
+        status = "okay";
+    };
+};
+
+&usbdrd3_0 {
+    status = "okay";
+    /delete-property/ extcon;
+};
+
+&sdio0 {
+	clock-frequency = <100000000>;
+	clock-freq-min-max = <200000 100000000>;
+};
+
+&pinctrl {
+	lcd-panel {
+		lcd_panel_reset: lcd-panel-reset {
+			rockchip,pins = <2 27 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+        lcd_panel_pwr_en: lcd-panel-pwr-en {
+            rockchip,pins = <3 16 RK_FUNC_GPIO &pcfg_pull_down>;
+        };
+
+		lcd_panel_enable: lcd-panel-enable {
+			rockchip,pins = <1 1 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+	};
+
+	sdmmc-pwrseq {
+		sdcard_enable_h: sdcard-enable-h {
+			rockchip,pins =
+			<1 20 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+
+    pcie {
+        pcie_drv: pcie-drv {
+            rockchip,pins =
+            <0 13 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+        
+        pcie_3g_drv: pcie-3g-drv {
+            rockchip,pins = 
+            <2 6 RK_FUNC_GPIO &pcfg_pull_up>;
+        };
+    };
+
+	hdmiin {
+		hdmiin_gpios: hdmiin_gpios {
+			rockchip,pins =
+				<2 3 RK_FUNC_GPIO &pcfg_pull_none>,
+				<0 2 RK_FUNC_GPIO &pcfg_pull_none>,
+				<2 28 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+    leds {
+        led_power: led-power {
+            rockchip,pins = <2 7 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+
+        led_user: led-user {
+            rockchip,pins = <2 2 RK_FUNC_GPIO &pcfg_pull_none>;
+        };
+    };
+};

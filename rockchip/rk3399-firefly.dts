@@ -1,0 +1,410 @@
+
+/*
+ * Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+
+#include "rk3399-firefly-port.dtsi" 	
+
+/ {
+	model = "Firefly-RK3399 Board mipi (Android)";
+	compatible = "rockchip,android", "rockchip,rk3399-firefly-mipi", "rockchip,rk3399";
+
+	test-power {
+		status = "okay";
+	};
+};
+
+&backlight {
+	status = "okay";
+	pwms = <&pwm1 0 25000 0>;
+};
+
+
+&mipi_dsi {
+	status = "okay";
+	dsi_panel: panel {
+		compatible ="simple-panel-dsi";
+		reg = <0>;
+		backlight = <&backlight>;
+		dsi,flags = <(MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST /*| MIPI_DSI_MODE_VIDEO_SYNC_PULSE*/)>;
+		dsi,format = <MIPI_DSI_FMT_RGB888>;
+		bus-format = <MEDIA_BUS_FMT_RGB666_1X18>;
+		dsi,lanes = <4>;
+
+        dsi,channel = <0>;
+
+        delay,enable = <35>;
+        delay,prepare = <6>;
+
+        delay,unprepare = <0>;
+        delay,disable = <20>;
+		
+        size,width = <120>;
+        size,height = <170>;
+
+        status = "okay";
+				
+
+        panel-init-sequence = [
+		
+			39 20 02 FF 10
+			39 20 02 FB 01
+			39 20 06 3B 03 0A 0A 04 04
+			39 20 02 FF 20
+			39 20 02 FB 01
+			39 20 02 89 18
+			39 20 02 06 9B
+			39 20 02 07 A1
+			39 20 02 0E AD
+			39 20 02 0F AC
+			39 20 02 62 AB
+			39 20 02 6D 44
+			39 20 02 FF 24
+			39 20 02 FB 01
+			39 20 02 00 1C
+			39 20 02 01 0D
+			39 20 02 02 1C
+			39 20 02 03 0A
+			39 20 02 04 1C
+			39 20 02 05 23
+			39 20 02 06 1C
+			39 20 02 07 1C
+			39 20 02 08 06
+			39 20 02 09 05
+			39 20 02 0A 04
+			39 20 02 0B 03
+			39 20 02 0C 1C
+			39 20 02 0D 1C
+			39 20 02 0E 1C
+			39 20 02 0F 1C
+			39 20 02 10 1C
+			39 20 02 11 14
+			39 20 02 12 10
+			39 20 02 13 12
+			39 20 02 14 1C
+			39 20 02 15 11
+			39 20 02 16 13
+			39 20 02 17 1C
+			39 20 02 18 1C
+			39 20 02 19 1C
+			39 20 02 1A 01
+			39 20 02 1B 1C
+			39 20 02 1C 23
+			39 20 02 1D 1C
+			39 20 02 1E 1C
+			39 20 02 1F 06
+			39 20 02 20 05
+			39 20 02 21 04
+			39 20 02 22 03
+			39 20 02 23 1C
+			39 20 02 24 1C
+			39 20 02 25 1C
+			39 20 02 26 1C
+			39 20 02 27 1C
+			39 20 02 28 14
+			39 20 02 29 10
+			39 20 02 2A 12
+			39 20 02 2B 1C
+			39 20 02 2D 11
+			39 20 02 2F 13
+			39 20 02 31 04
+			39 20 02 32 08
+			39 20 02 33 00
+			39 20 02 34 00
+			39 20 02 35 00
+			39 20 02 37 22
+			39 20 02 38 5F
+			39 20 02 39 5F
+			39 20 02 3F 5F
+			39 20 02 41 04
+			39 20 02 42 08
+			39 20 02 4C 15
+			39 20 02 4D 15
+			39 20 02 60 90
+			39 20 02 61 24
+			39 20 02 62 03
+			39 20 02 6F 90
+			39 20 02 72 00
+			39 20 02 73 00
+			39 20 02 74 00
+			39 20 02 75 00
+			39 20 02 79 01
+			39 20 02 7A 03
+			39 20 02 7B 9C
+			39 20 02 7C 80
+			39 20 02 7D 05
+			39 20 02 80 42
+			39 20 02 82 13
+			39 20 02 83 22
+			39 20 02 84 31
+			39 20 02 85 00
+			39 20 02 86 00
+			39 20 02 87 00
+			39 20 02 88 13
+			39 20 02 89 22
+			39 20 02 8A 31
+			39 20 02 8B 00
+			39 20 02 8C 00
+			39 20 02 8D 00
+			39 20 02 8E F4
+			39 20 02 8F 01
+			39 20 02 90 80
+			39 20 02 92 73
+			39 20 02 93 20
+			39 20 02 94 11
+			39 20 02 B3 22
+			39 20 02 B4 85
+			39 20 02 B5 54
+			39 20 02 C2 86
+			39 20 02 DC 00
+			39 20 02 DE 10
+			39 20 02 DF 39
+			39 20 02 E0 39
+			39 20 02 EB 03
+			39 20 02 EF 14
+			39 20 02 F0 01
+			39 20 02 F3 40
+			39 20 02 FF 25
+			39 20 02 FB 01
+			39 20 02 21 1C
+			39 20 02 22 1C
+			39 20 02 24 73
+			39 20 02 25 73
+			39 20 02 68 50
+			39 20 02 69 10
+			39 20 02 6B 00
+			39 20 02 6D 0D
+			39 20 02 71 5D
+			39 20 02 72 31
+			39 20 02 73 48
+			39 20 02 74 12
+			39 20 02 77 70
+			39 20 02 78 85
+			39 20 02 7D 40
+			39 20 02 7E 1D
+			39 20 02 7F 00
+			39 20 02 84 4D
+			39 20 02 BC 23
+			39 20 02 BF C0
+			39 20 02 D0 80
+			39 20 02 D9 69
+			39 20 02 FF 26
+			39 20 02 FB 01
+			39 20 02 06 FF
+			39 20 02 0C 11
+			39 20 02 0F 09
+			39 20 02 10 0A
+			39 20 02 12 82
+			39 20 02 1A EE
+			39 20 02 1C AF
+			39 20 02 1D 0B
+			39 20 02 1E 71
+			39 20 02 98 F1
+			39 20 02 9A 81
+			39 20 02 9D 00
+			39 20 02 9E 01
+			39 20 02 A9 11
+			39 20 02 AE 42
+			39 20 02 AF 06
+			39 20 02 B1 05
+			39 20 02 B2 2C
+			39 20 02 B4 AE
+			39 20 02 FF 27
+			39 20 02 FB 01
+			39 20 02 13 00
+			39 20 02 1E 15
+			39 20 02 FF F0
+			39 20 02 FB 01
+			39 20 02 A2 00
+			39 20 02 FF 10
+
+			39 20 02 FF 10
+			39 20 02 35 00
+		    39 96 02 11 00
+		    39 96 02 29 00
+
+        ];
+
+		panel-exit-sequence = [
+			05 05 01 28
+			05 78 01 10
+		];
+		
+		power_ctr: power_ctr {
+               rockchip,debug = <0>;
+               lcd_en: lcd-en {
+                       gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_enable>;
+                       rockchip,delay = <10>;
+               };
+               lcd_rst: lcd-rst {
+                       gpios = <&gpio4 29 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_reset>;
+                       rockchip,delay = <6>;
+               };
+	   	};
+
+		disp_timings: display-timings {
+				          native-mode = <&timing0>;
+				          timing0: timing0 {
+				                       clock-frequency = <143000000>;
+				                       hactive = <1080>;
+				                       vactive = <2340>;
+				                       hsync-len = <8>;  
+				                       hback-porch = <54>;
+				                       hfront-porch = <24>;
+				                       vsync-len = <46>;
+				                       vback-porch = <7>;
+				                       vfront-porch = <8>;
+				                       hsync-active = <0>;
+				                       vsync-active = <0>;
+				                       de-active = <0>;
+				                       pixelclk-active = <0>;
+				                   };
+				      };
+	};
+};
+
+
+
+&pwm1 {
+	status = "okay";
+};
+
+&mipi_in_vopl {
+	status = "disabled";
+};
+
+&mipi_in_vopb {
+	status = "okay";
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vopb {
+	status = "disabled";
+};
+&hdmi_in_vopl {
+	status = "okay";
+};
+
+&cdn_dp {
+    status = "okay";
+    extcon = <&fusb0>;
+    phys = <&tcphy0_dp>;
+};
+
+&dp_in_vopb {
+    status = "disabled";
+};
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&i2s2 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+    gsl3680: gsl3680@41 {
+	      status = "okay";
+              compatible = "gslX680";
+              reg = <0x40>;
+              screen_max_x = <1536>;
+              screen_max_y = <2048>;
+              touch-gpio = <&gpio4 28 IRQ_TYPE_LEVEL_LOW>;
+              reset-gpio = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+     };
+
+	mpu6050:mpu@68{
+            status = "okay";
+            compatible = "invensense,mpu6050";
+            reg = <0x68>;
+            mpu-int_config = <0x10>;
+            mpu-level_shifter = <0>;
+            mpu-orientation = <0 1 0 1 0 0 0 0 1>;
+            orientation-x= <1>;
+            orientation-y= <1>;
+            orientation-z= <1>;
+            irq-gpio = <&gpio1 4 IRQ_TYPE_LEVEL_LOW>;
+            mpu-debug = <1>;
+        };
+
+};
+
+&vopb {
+	assigned-clocks = <&cru DCLK_VOP0_DIV>;
+	assigned-clock-parents = <&cru PLL_CPLL>;
+};
+
+&vopl {
+	assigned-clocks = <&cru DCLK_VOP1_DIV>;
+	assigned-clock-parents = <&cru PLL_VPLL>;
+};
+
+&route_hdmi {
+	status = "disabled";
+	logo,mode = "center";
+};
+&route_mipi {
+	status = "okay";
+	logo,mode = "center";
+};
+&pinctrl {
+	lcd-panel {
+		lcd_panel_reset: lcd-panel-reset {
+			rockchip,pins = <4 29 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+		lcd_panel_enable: lcd-panel-enable {
+			rockchip,pins = <1 1 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+	};
+};

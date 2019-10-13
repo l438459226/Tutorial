@@ -1,0 +1,404 @@
+
+/*
+ * Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
+ *
+ * This file is dual-licensed: you can use it either under the terms
+ * of the GPL or the X11 license, at your option. Note that this dual
+ * licensing only applies to this file, and not this project as a
+ * whole.
+ *
+ *  a) This file is free software; you can redistribute it and/or
+ *     modify it under the terms of the GNU General Public License as
+ *     published by the Free Software Foundation; either version 2 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This file is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ * Or, alternatively,
+ *
+ *  b) Permission is hereby granted, free of charge, to any person
+ *     obtaining a copy of this software and associated documentation
+ *     files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use,
+ *     copy, modify, merge, publish, distribute, sublicense, and/or
+ *     sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following
+ *     conditions:
+ *
+ *     The above copyright notice and this permission notice shall be
+ *     included in all copies or substantial portions of the Software.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/dts-v1/;
+
+#include "rk3399-firefly-port.dtsi" 	
+
+/ {
+	model = "Firefly-RK3399 Board mipi (Android)";
+	compatible = "rockchip,android", "rockchip,rk3399-firefly-mipi", "rockchip,rk3399";
+
+	test-power {
+		status = "okay";
+	};
+};
+
+&backlight {
+	status = "okay";
+	pwms = <&pwm1 0 25000 0>;
+};
+
+
+&mipi_dsi {
+	status = "okay";
+	dsi_panel: panel {
+		compatible ="simple-panel-dsi";
+		reg = <0>;
+
+		backlight = <&backlight>;
+
+		dsi,flags = <(MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST )>;
+		dsi,format = <MIPI_DSI_FMT_RGB888>;
+		bus-format = <MEDIA_BUS_FMT_RGB666_1X18>;
+		dsi,lanes = <4>;
+
+        dsi,channel = <0>;
+
+        delay,enable = <35>;
+        delay,prepare = <6>;
+
+        delay,unprepare = <0>;
+        delay,disable = <20>;
+		
+        size,width = <120>;
+        size,height = <170>;
+
+        status = "okay";
+				
+
+        panel-init-sequence = [
+
+39 00 80
+39 C0 00 79 00 6D 00 10
+
+39 00 8A
+39 C0 1D 08
+
+39 00 90
+39 C0 00 79 00 6D 00 10
+
+39 00 A0
+39 C0 01 05 00 3B 00 10
+
+39 00 D7
+39 C0 00 74 00 71 00 10
+
+39 00 B0
+39 C0 00 79 02 2A 10
+
+39 00 C1
+39 C0 00 AE 00 88 00 74 00 CC
+
+39 00 A5
+39 C1 00 56 00 02
+
+39 00 82
+39 CE 01 09 00 D8 00 D8 00 90 00 90 0D 0E 09
+
+39 00 90
+39 CE 00 82 0D 5C 00 82 80 09
+
+39 00 A0
+39 CE 00 00 00
+
+39 00 B0
+39 CE 22 00 00
+
+39 00 C0
+39 CE 00 00 00
+
+39 00 D1
+39 CE 00 0A 01 01 00 5E 01
+
+39 00 E1
+39 CE 08 02 15 02 15 02 15 00 2C 00 62
+39 00 F1
+39 CE 17 0B 0F 00 B0 01 3D 01 63
+
+
+39 00 82
+39 CF 06
+
+39 00 84
+39 CF 06
+
+39 00 87
+39 CF 06
+
+39 00 89
+39 CF 06
+
+39 00 8A
+39 CF 07
+
+39 00 8B
+39 CF 00
+
+39 00 8C
+39 CF 06
+
+39 00 92
+39 CF 06
+
+39 00 94
+39 CF 06
+
+39 00 97
+39 CF 06
+
+39 00 99
+39 CF 06
+
+39 00 9A
+39 CF 07
+
+39 00 9B
+39 CF 00
+
+39 00 9C
+39 CF 06
+
+39 00 A0
+39 CF 24
+
+39 00 A2
+39 CF 06
+
+39 00 A4
+39 CF 06
+
+39 00 A7
+39 CF 06
+
+39 00 A9
+39 CF 06
+
+39 00 B0
+39 CF 00 00 6C 70
+
+39 00 B5
+39 CF 05 05 35 39
+
+39 00 C0
+39 CF 08 08 CA CE
+
+39 00 C5
+39 CF 00 00 08 0C
+
+39 00 00
+39 E1 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 6a 71 77 42 7d 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ee F9 FF 57
+39 00 00
+39 E2 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E3 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E4 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E5 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E6 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E1 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 6a 71 77 42 7d 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ee F9 FF 57
+39 00 00
+39 E2 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E3 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E4 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E5 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E6 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E1 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 6a 71 77 42 7d 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ee F9 FF 57
+39 00 00
+39 E2 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E3 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E4 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E5 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E6 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E1 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 6a 71 77 42 7d 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ee F9 FF 57
+39 00 00
+39 E2 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E3 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E4 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E5 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+39 00 00
+39 E6 00 05 0D 17 3B 24 2D 35 41 74 4A 51 57 5C 16 61 69 70 76 42 7c 83 8A 92 E9 9B A0 A6 Ac 57 B4 Be Cb D3 F6 De Ed F8 FF 57
+
+            05 20 01 29
+            05 96 01 11
+        ];
+
+		panel-exit-sequence = [
+			05 05 01 28
+			05 78 01 10
+		];
+		
+		power_ctr: power_ctr {
+               rockchip,debug = <0>;
+               lcd_en: lcd-en {
+                       gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_enable>;
+                       rockchip,delay = <10>;
+               };
+               lcd_rst: lcd-rst {
+                       gpios = <&gpio4 29 GPIO_ACTIVE_HIGH>;
+					   pinctrl-names = "default";
+					   pinctrl-0 = <&lcd_panel_reset>;
+                       rockchip,delay = <6>;
+               };
+	   	};
+
+		disp_timings: display-timings {
+				          native-mode = <&timing0>;
+				          timing0: timing0 {
+				                       clock-frequency = <80000000>;
+				                       hactive = <768>;
+				                       vactive = <1024>;
+				                       hsync-len = <20>;   
+				                       hback-porch = <130>;
+				                       hfront-porch = <150>;
+				                       vsync-len = <40>;
+				                       vback-porch = <130>;
+				                       vfront-porch = <136>;
+				                       hsync-active = <0>;
+				                       vsync-active = <0>;
+				                       de-active = <0>;
+				                       pixelclk-active = <0>;
+				                   };
+				      };
+	};
+};
+
+
+
+&pwm1 {
+	status = "okay";
+};
+
+&mipi_in_vopl {
+	status = "disabled";
+};
+
+&mipi_in_vopb {
+	status = "okay";
+};
+
+&hdmi {
+	status = "okay";
+};
+
+&hdmi_in_vopb {
+	status = "disabled";
+};
+&hdmi_in_vopl {
+	status = "okay";
+};
+
+&cdn_dp {
+    status = "okay";
+    extcon = <&fusb0>;
+    phys = <&tcphy0_dp>;
+};
+
+&dp_in_vopb {
+    status = "disabled";
+};
+
+&hdmi_sound {
+	status = "okay";
+};
+
+&i2s2 {
+	status = "okay";
+};
+
+&i2c4 {
+	status = "okay";
+    gsl3680: gsl3680@41 {
+	      status = "okay";
+              compatible = "gslX680";
+              reg = <0x40>;
+              screen_max_x = <1536>;
+              screen_max_y = <2048>;
+              touch-gpio = <&gpio4 28 IRQ_TYPE_LEVEL_LOW>;
+              reset-gpio = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+     };
+
+	mpu6050:mpu@68{
+            status = "okay";
+            compatible = "invensense,mpu6050";
+            reg = <0x68>;
+            mpu-int_config = <0x10>;
+            mpu-level_shifter = <0>;
+            mpu-orientation = <0 1 0 1 0 0 0 0 1>;
+            orientation-x= <1>;
+            orientation-y= <1>;
+            orientation-z= <1>;
+            irq-gpio = <&gpio1 4 IRQ_TYPE_LEVEL_LOW>;
+            mpu-debug = <1>;
+        };
+
+};
+
+&vopb {
+	assigned-clocks = <&cru DCLK_VOP0_DIV>;
+	assigned-clock-parents = <&cru PLL_CPLL>;
+};
+
+&vopl {
+	assigned-clocks = <&cru DCLK_VOP1_DIV>;
+	assigned-clock-parents = <&cru PLL_VPLL>;
+};
+
+&route_hdmi {
+	status = "disabled";
+	logo,mode = "center";
+};
+&route_mipi {
+	status = "okay";
+	logo,mode = "center";
+};
+&pinctrl {
+	lcd-panel {
+		lcd_panel_reset: lcd-panel-reset {
+			rockchip,pins = <4 29 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+		lcd_panel_enable: lcd-panel-enable {
+			rockchip,pins = <1 1 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+	};
+};
